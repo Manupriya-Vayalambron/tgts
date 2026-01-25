@@ -232,8 +232,11 @@
 
     header h1 {
       color: var(--blue);
-      font-size: 1.4rem;
-      font-weight: 700;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+      line-height: 1.3;
+      opacity: 0.85;
     }
 
     /* ===== DESKTOP NAV ===== */
@@ -1233,6 +1236,14 @@ footer {
     display: flex;
   }
 
+  header h1 {
+    font-size: 0.85rem;
+  }
+
+  .logo-container img {
+    height: 40px;
+  }
+
   .hero h2 {
     font-size: 2rem;
   }
@@ -1262,6 +1273,14 @@ footer {
 }
 
 @media (max-width: 480px) {
+  header h1 {
+    font-size: 0.7rem;
+  }
+
+  .logo-container img {
+    height: 35px;
+  }
+
   .footer-grid {
     gap: 1.5rem;
   }
@@ -1292,7 +1311,7 @@ footer {
   <div class="nav">
     <a href="#home" class="logo-container">
       <img src="assets/tgt-logo.png" alt="TGTS Logo">
-      <h1>TGTS</h1>
+      <h1>Measure Below to Assure Above</h1>
     </a>
 
     <!-- Desktop Nav -->
