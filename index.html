@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trivandrum Geotechnical Testing and Solutions | TGTS</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0a4fa3;
+      --light-blue: #eaf3ff;
+      --white: #ffffff;
+      --gray: #5a6775;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: #1c1c1c;
+      background: var(--white);
+      line-height: 1.6;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--light-blue);
+      padding: 1rem;
+    }
+
+    .nav {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    header h1 {
+      color: var(--blue);
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    /* ===== DESKTOP NAV ===== */
+    nav.desktop-nav {
+      display: flex;
+      gap: 1.2rem;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    nav a:hover {
+      color: var(--blue);
+    }
+
+    /* ===== HAMBURGER ===== */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 4px;
+      cursor: pointer;
+    }
+
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: var(--blue);
+      border-radius: 2px;
+    }
+
+    /* ===== MOBILE MENU ===== */
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      background: var(--white);
+      border-top: 1px solid var(--light-blue);
+    }
+
+    .mobile-menu a {
+      padding: 1rem;
+      border-bottom: 1px solid var(--light-blue);
+      text-decoration: none;
+      color: var(--gray);
+      font-size: 1rem;
+    }
+
+    .mobile-menu a:hover {
+      background: var(--light-blue);
+      color: var(--blue);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 90vh;
+      background:
+        linear-gradient(rgba(10,79,163,0.75), rgba(10,79,163,0.75)),
+        url('lab-hero.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      padding: 2rem 1.2rem;
+    }
+
+    .hero-content {
+      max-width: 900px;
+      color: white;
+    }
+
+    .hero h2 {
+      font-size: 2.6rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 1.15rem;
+      max-width: 700px;
+    }
+
+    .hero button {
+      margin-top: 1.8rem;
+      padding: 0.9rem 1.8rem;
+      font-size: 1rem;
+      background: white;
+      color: var(--blue);
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero button::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: -100%;
+      background: linear-gradient(90deg, transparent, rgba(10,79,163,0.2), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .hero button:hover {
+      transform: scale(1.08);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      background: var(--light-blue);
+    }
+
+    .hero button:hover::after {
+      left: 100%;
+    }
+
+    section {
+      padding: 3.5rem 1.2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h3 {
+      color: var(--blue);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    p {
+      color: var(--gray);
+    }
+
+    /* ===== FACILITIES ===== */
+    .facility-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.6rem;
+      margin-top: 2rem;
+    }
+
+    .facility-card {
+      border: 1px solid var(--light-blue);
+      padding: 1.6rem;
+      border-radius: 6px;
+      background: var(--white);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .facility-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(10,79,163,0.1), transparent);
+      transition: left 0.5s ease;
+    }
+
+    .facility-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(10,79,163,0.15);
+      border-color: var(--blue);
+    }
+
+    .facility-card:hover::before {
+      left: 100%;
+    }
+
+    /* ===== ABOUT ===== */
+    .about {
+      background: var(--light-blue);
+    }
+
+    /* ===== GALLERY ===== */
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 6px;
+      transition: all 0.4s ease;
+      cursor: pointer;
+      filter: brightness(0.95);
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(10,79,163,0.25);
+      filter: brightness(1.05);
+      z-index: 10;
+      position: relative;
+    }
+
+    /* ===== TEAM ===== */
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.8rem;
+      margin-top: 2rem;
+    }
+
+    .team-card {
+      border: 1px solid var(--light-blue);
+      padding: 1.6rem 1.2rem;
+      border-radius: 6px;
+      text-align: center;
+      background: var(--white);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .team-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(10,79,163,0.15);
+      border-color: var(--blue);
+    }
+
+    .team-card img {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      margin-bottom: 1rem;
+      object-fit: cover;
+      transition: all 0.4s ease;
+      border: 3px solid transparent;
+    }
+
+    .team-card:hover img {
+      transform: scale(1.1);
+      border-color: var(--blue);
+      box-shadow: 0 8px 25px rgba(10,79,163,0.3);
+    }
+
+    /* ===== CONTACT ===== */
+    .contact {
+      background: var(--light-blue);
+    }
+
+    form {
+      max-width: 600px;
+      margin-top: 1.5rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: 1px solid #cdddf2;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    button.submit {
+      background: var(--blue);
+      color: white;
+      padding: 0.9rem 1.6rem;
+      border: none;
+      border-radius: 4px;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    button.submit::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.6s ease, height 0.6s ease;
+    }
+
+    button.submit:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(10,79,163,0.4);
+      background: #0860c4;
+    }
+
+    button.submit:hover::before {
+      width: 300px;
+      height: 300px;
+    }
+
+    /* ===== CURSOR FOLLOWER ===== */
+    .cursor-follower {
+      position: fixed;
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--blue);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+      transform: translate(-50%, -50%);
+      mix-blend-mode: difference;
+    }
+
+    .cursor-follower.hover {
+      width: 50px;
+      height: 50px;
+      background: rgba(10,79,163,0.1);
+      border-color: var(--blue);
+    }
+
+    .cursor-dot {
+      position: fixed;
+      width: 6px;
+      height: 6px;
+      background: var(--blue);
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    /* ===== INPUT FOCUS EFFECTS ===== */
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(10,79,163,0.15);
+      transform: scale(1.01);
+    }
+
+    input, textarea {
+      transition: all 0.3s ease;
+    }
+
+    /* ===== TOUCH ACTIVE STATES (Mobile) ===== */
+    .facility-card.touch-active {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(10,79,163,0.15);
+      border-color: var(--blue);
+    }
+
+    .facility-card.touch-active::before {
+      left: 100%;
+    }
+
+    .gallery-grid img.touch-active {
+      transform: scale(1.05);
+      box-shadow: 0 15px 40px rgba(10,79,163,0.25);
+      filter: brightness(1.05);
+      z-index: 10;
+      position: relative;
+    }
+
+    .team-card.touch-active {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(10,79,163,0.15);
+      border-color: var(--blue);
+    }
+
+    .team-card.touch-active img {
+      transform: scale(1.1);
+      border-color: var(--blue);
+      box-shadow: 0 8px 25px rgba(10,79,163,0.3);
+    }
+
+    /* ===== RIPPLE EFFECT ===== */
+    button {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .ripple {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      transform: translate(-50%, -50%) scale(0);
+      animation: rippleEffect 0.6s ease-out forwards;
+      pointer-events: none;
+    }
+
+    @keyframes rippleEffect {
+      to {
+        transform: translate(-50%, -50%) scale(30);
+        opacity: 0;
+      }
+    }
+
+    /* ===== TOUCH ACTIVE FOR BUTTONS ===== */
+    button:active,
+    .hero button:active {
+      transform: scale(0.96);
+    }
+
+    button.submit:active {
+      transform: scale(0.96);
+      background: #0860c4;
+    }
+
+    /* Smooth transitions for touch */
+    @media (hover: none) and (pointer: coarse) {
+      .facility-card,
+      .team-card,
+      .gallery-grid img {
+        transition: all 0.2s ease;
+      }
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-blue);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+    /* ================= FOOTER (THEME CONSISTENT) ================= */
+footer {
+  background: var(--light-blue);
+  color: var(--gray);
+  padding: 3.5rem 1.2rem 1.5rem;
+  border-top: 2px solid #d6e6fb;
+}
+
+.footer-grid {
+  max-width: 1200px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr 1fr 1fr;
+  gap: 2.5rem;
+}
+
+.footer-brand h4 {
+  color: var(--blue);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.footer-brand p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.footer-section h4 {
+  color: var(--blue);
+  font-size: 1.05rem;
+  margin-bottom: 0.8rem;
+}
+
+.footer-links {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(90px, 1fr));
+  gap: 0.4rem 1rem;
+}
+
+.footer-links a {
+  color: var(--gray);
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 2px 0;
+}
+
+.footer-links a:hover {
+  color: var(--blue);
+}
+
+.footer-contact p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.map iframe {
+  width: 100%;
+  height: 160px;
+  border: 1px solid #cfe0f7;
+  border-radius: 6px;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2.5rem;
+  font-size: 0.85rem;
+  color: var(--gray);
+  border-top: 1px solid #cfe0f7;
+  padding-top: 1rem;
+}
+
+/* ================= NAV RESPONSIVE FIX ================= */
+@media (max-width: 768px) {
+  nav.desktop-nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .hero h2 {
+    font-size: 2rem;
+  }
+
+  /* Footer mobile fix */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-section,
+  .footer-contact {
+    text-align: center;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    gap: 0.6rem;
+  }
+
+  .map iframe {
+    height: 180px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    gap: 1.5rem;
+  }
+
+  .footer-links {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  footer {
+    padding: 2.5rem 1rem 1.5rem;
+  }
+
+  .footer-brand p {
+    font-size: 0.9rem;
+  }
+
+  .map iframe {
+    height: 150px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="nav">
+    <h1>TGTS</h1>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <a href="#home">Home</a>
+      <a href="#facilities">Facilities</a>
+      <a href="#about">About</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#team">Team</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- Hamburger -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#home" onclick="toggleMenu()">Home</a>
+    <a href="#facilities" onclick="toggleMenu()">Facilities</a>
+    <a href="#about" onclick="toggleMenu()">About</a>
+    <a href="#gallery" onclick="toggleMenu()">Gallery</a>
+    <a href="#team" onclick="toggleMenu()">Team</a>
+    <a href="#contact" onclick="toggleMenu()">Contact</a>
+  </div>
+</header>
+
+<section id="home" class="hero">
+  <div class="hero-content">
+    <h2>Trivandrum Geotechnical Testing and Solutions</h2>
+    <p>
+      A professional geotechnical testing laboratory delivering reliable
+      soil and material testing services for construction projects.
+    </p>
+    <button onclick="location.href='#contact'">Book a Test</button>
+  </div>
+</section>
+
+<section id="facilities">
+  <div class="container">
+    <h3>Our Laboratory Facilities</h3>
+    <div class="facility-grid">
+      <div class="facility-card">Soil Testing Laboratory</div>
+      <div class="facility-card">Compaction & Strength Testing</div>
+      <div class="facility-card">Advanced Testing Equipment</div>
+      <div class="facility-card">Field Investigation Support</div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="about">
+  <div class="container">
+    <h3>About TGTS</h3>
+    <p>
+      TGTS provides accurate and standardized geotechnical testing
+      services to support safe and sustainable construction practices.
+    </p>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <h3>Laboratory & Work Area</h3>
+    <div class="gallery-grid">
+      <img src="gallery1.jpg">
+      <img src="gallery2.jpg">
+      <img src="gallery3.jpg">
+      <img src="gallery4.jpg">
+    </div>
+  </div>
+</section>
+
+<section id="team">
+  <div class="container">
+    <h3>Our Team</h3>
+    <div class="team-grid">
+      <div class="team-card">
+        <img src="team1.jpg">
+        <p><strong>Founder & Geotechnical Engineer</strong></p>
+      </div>
+      <div class="team-card">
+        <img src="team2.jpg">
+        <p><strong>Lab Engineer</strong></p>
+      </div>
+      <div class="team-card">
+        <img src="team3.jpg">
+        <p><strong>Lab Technician</strong></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="container">
+    <h3>Contact / Book Appointment</h3>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Message"></textarea>
+      <button class="submit">Submit</button>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-grid">
+
+    <!-- Brand -->
+    <div class="footer-brand">
+      <h4>Trivandrum Geotechnical Testing & Solutions</h4>
+      <p>
+        A professional geotechnical testing laboratory providing accurate,
+        standardized, and reliable soil and material testing services
+        for construction and infrastructure projects.
+      </p>
+    </div>
+
+    <!-- Sitemap -->
+    <div class="footer-section">
+      <h4>Site Map</h4>
+      <div class="footer-links">
+        <a href="#home">Home</a>
+        <a href="#facilities">Facilities</a>
+        <a href="#about">About</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#team">Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+
+    <!-- Location -->
+    <div class="footer-section">
+      <h4>Location</h4>
+      <p>
+        Trivandrum, Kerala<br>
+        India
+      </p>
+      <div class="map">
+        <iframe
+          src="YOUR_GOOGLE_MAPS_EMBED_LINK"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+
+    <!-- Contact -->
+    <div class="footer-section footer-contact">
+      <h4>Contact</h4>
+      <p>
+        Email: info@tgts.in<br>
+        Phone: +91-XXXXXXXXXX
+      </p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © 2026 Trivandrum Geotechnical Testing and Solutions · tgts.in
+  </div>
+</footer>
+
+
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById("mobileMenu");
+    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+  }
+
+  // ===== CURSOR FOLLOWER (Desktop) =====
+  const cursorFollower = document.createElement('div');
+  cursorFollower.className = 'cursor-follower';
+  document.body.appendChild(cursorFollower);
+
+  const cursorDot = document.createElement('div');
+  cursorDot.className = 'cursor-dot';
+  document.body.appendChild(cursorDot);
+
+  let mouseX = 0, mouseY = 0;
+  let followerX = 0, followerY = 0;
+
+  document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    cursorDot.style.left = mouseX + 'px';
+    cursorDot.style.top = mouseY + 'px';
+  });
+
+  function animateCursor() {
+    followerX += (mouseX - followerX) * 0.15;
+    followerY += (mouseY - followerY) * 0.15;
+    cursorFollower.style.left = followerX + 'px';
+    cursorFollower.style.top = followerY + 'px';
+    requestAnimationFrame(animateCursor);
+  }
+  animateCursor();
+
+  // Add hover effect on interactive elements
+  const hoverElements = document.querySelectorAll('a, button, .facility-card, .team-card, .gallery-grid img, input, textarea');
+  hoverElements.forEach(el => {
+    el.addEventListener('mouseenter', () => cursorFollower.classList.add('hover'));
+    el.addEventListener('mouseleave', () => cursorFollower.classList.remove('hover'));
+  });
+
+  // Hide cursor follower on mobile
+  if ('ontouchstart' in window) {
+    cursorFollower.style.display = 'none';
+    cursorDot.style.display = 'none';
+  }
+
+  // ===== TOUCH INTERACTIONS (Mobile) =====
+  const touchCards = document.querySelectorAll('.facility-card, .team-card');
+  const touchImages = document.querySelectorAll('.gallery-grid img');
+
+  // Touch effect for cards - tap to activate, tap elsewhere to deactivate
+  touchCards.forEach(card => {
+    card.addEventListener('touchstart', (e) => {
+      // Remove active class from all other cards
+      touchCards.forEach(c => c.classList.remove('touch-active'));
+      card.classList.add('touch-active');
+    }, { passive: true });
+  });
+
+  // Touch effect for gallery images
+  touchImages.forEach(img => {
+    img.addEventListener('touchstart', (e) => {
+      touchImages.forEach(i => i.classList.remove('touch-active'));
+      img.classList.add('touch-active');
+    }, { passive: true });
+  });
+
+  // Remove active state when tapping elsewhere
+  document.addEventListener('touchstart', (e) => {
+    if (!e.target.closest('.facility-card') && !e.target.closest('.team-card')) {
+      touchCards.forEach(c => c.classList.remove('touch-active'));
+    }
+    if (!e.target.closest('.gallery-grid img')) {
+      touchImages.forEach(i => i.classList.remove('touch-active'));
+    }
+  }, { passive: true });
+
+  // Ripple effect on touch for buttons
+  const buttons = document.querySelectorAll('button');
+  buttons.forEach(btn => {
+    btn.addEventListener('touchstart', function(e) {
+      const ripple = document.createElement('span');
+      ripple.className = 'ripple';
+      const rect = this.getBoundingClientRect();
+      const touch = e.touches[0];
+      ripple.style.left = (touch.clientX - rect.left) + 'px';
+      ripple.style.top = (touch.clientY - rect.top) + 'px';
+      this.appendChild(ripple);
+      setTimeout(() => ripple.remove(), 600);
+    }, { passive: true });
+  });
+</script>
+
+</body>
+</html>
