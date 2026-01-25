@@ -281,10 +281,13 @@
       margin-top: 2.5rem;
       padding-top: 2rem;
       border-top: 1px solid rgba(255,255,255,0.2);
+      justify-content: flex-start;
     }
 
     .hero-stat {
-      text-align: left;
+      text-align: center;
+      flex: 1;
+      max-width: 150px;
     }
 
     .hero-stat-number {
@@ -326,6 +329,13 @@
 
       .hero-stats {
         justify-content: center;
+        gap: 1rem;
+      }
+
+      .hero-stat {
+        flex: 1;
+        max-width: none;
+        min-width: 0;
       }
 
       .hero h2 {
@@ -353,12 +363,24 @@
       }
 
       .hero-stats {
-        gap: 1.5rem;
-        flex-wrap: wrap;
+        gap: 0.8rem;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        padding: 1.5rem 0.5rem 0;
+      }
+
+      .hero-stat {
+        flex: 1;
+        padding: 0 0.2rem;
       }
 
       .hero-stat-number {
-        font-size: 1.6rem;
+        font-size: 1.4rem;
+      }
+
+      .hero-stat-label {
+        font-size: 0.65rem;
+        letter-spacing: 0.5px;
       }
 
       .hero-buttons {
@@ -676,7 +698,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease, opacity 0.3s ease;
+      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease, opacity 0.3s ease, border-color 0.3s ease;
       transform: translate(-50%, -50%);
     }
 
@@ -698,6 +720,25 @@
       transform: translate(-50%, -50%);
       transition: opacity 0.3s ease;
       box-shadow: 0 0 8px rgba(144, 175, 215, 0.692);
+    }
+
+    /* Mobile Touch Cursor - blue border for visibility on light backgrounds */
+    @media (hover: none) and (pointer: coarse) {
+      .cursor-follower {
+        border: 3px solid var(--blue);
+      }
+
+      .cursor-follower.hover {
+        width: 50px;
+        height: 50px;
+        background: rgba(10,79,163,0.15);
+        border-color: var(--blue);
+      }
+
+      .cursor-dot {
+        background: var(--blue);
+        box-shadow: 0 0 10px rgba(10,79,163,0.5);
+      }
     }
 
     /* ===== INPUT FOCUS EFFECTS ===== */
@@ -1050,16 +1091,15 @@ footer {
         <div class="team-card">
           <div class="team-card-front">
             <img src="team1.jpg" alt="Founder">
-            <h4>John Doe</h4>
+            <h4>Arvee Sujil</h4>
             <p class="designation">Founder & Geotechnical Engineer</p>
-            <p class="flip-hint">Hover to see more</p>
           </div>
           <div class="team-card-back">
             <h4>About</h4>
             <p class="description">Experienced geotechnical engineer with 15+ years in soil testing and foundation analysis. Leading TGTS with a vision for quality and precision.</p>
             <div class="contact-info">
-              <div class="contact-item">📧 <a href="mailto:founder@tgts.in">founder@tgts.in</a></div>
-              <div class="contact-item">📱 +91-XXXXXXXXXX</div>
+              <div class="contact-item"> <a href="mailto:founder@tgts.in">founder@tgts.in</a></div>
+              <div class="contact-item"> +91-XXXXXXXXXX</div>
             </div>
           </div>
         </div>
@@ -1070,9 +1110,8 @@ footer {
         <div class="team-card">
           <div class="team-card-front">
             <img src="team2.jpg" alt="Lab Engineer">
-            <h4>Jane Smith</h4>
+            <h4>Sabu</h4>
             <p class="designation">Lab Engineer</p>
-            <p class="flip-hint">Hover to see more</p>
           </div>
           <div class="team-card-back">
             <h4>About</h4>
@@ -1090,9 +1129,8 @@ footer {
         <div class="team-card">
           <div class="team-card-front">
             <img src="assets/dj.jpg" alt="Lab Technician" class="shift-right">
-            <h4>DJ</h4>
+            <h4>Druvajith Kalita</h4>
             <p class="designation">Lab Technician</p>
-            <p class="flip-hint">Hover to see more</p>
           </div>
           <div class="team-card-back">
             <h4>About</h4>
