@@ -108,63 +108,267 @@
     /* ===== HERO ===== */
     .hero {
       min-height: 90vh;
-      background:
-        linear-gradient(rgba(10,79,163,0.75), rgba(10,79,163,0.75)),
-        url('lab-hero.jpg') center/cover no-repeat;
+      background: linear-gradient(135deg, var(--blue) 0%, #0860c4 50%, #1a6fd4 100%);
       display: flex;
       align-items: center;
-      padding: 2rem 1.2rem;
+      padding: 3rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 70%;
+      height: 200%;
+      background: rgba(255,255,255,0.03);
+      transform: rotate(-15deg);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 120px;
+      background: linear-gradient(to top, rgba(255,255,255,0.05), transparent);
+      pointer-events: none;
+    }
+
+    .hero-wrapper {
+      max-width: 1200px;
+      margin: auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      width: 100%;
+      position: relative;
+      z-index: 1;
     }
 
     .hero-content {
-      max-width: 900px;
       color: white;
     }
 
+    .hero-greeting {
+      font-size: 1.1rem;
+      font-weight: 400;
+      opacity: 0.9;
+      margin-bottom: 0.5rem;
+      letter-spacing: 1px;
+    }
+
     .hero h2 {
-      font-size: 2.6rem;
+      font-size: 2.8rem;
+      margin-bottom: 1.2rem;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    .hero h2 span {
+      color: #7ec8ff;
+    }
+
+    .hero-tagline {
+      font-size: 1.2rem;
+      font-weight: 500;
       margin-bottom: 1rem;
+      color: rgba(255,255,255,0.95);
     }
 
     .hero p {
-      font-size: 1.15rem;
-      max-width: 700px;
+      font-size: 1.05rem;
+      max-width: 500px;
+      line-height: 1.7;
+      opacity: 0.9;
     }
 
-    .hero button {
-      margin-top: 1.8rem;
+    .hero-buttons {
+      display: flex;
+      gap: 1rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .hero-btn {
       padding: 0.9rem 1.8rem;
       font-size: 1rem;
-      background: white;
-      color: var(--blue);
       border: none;
-      border-radius: 4px;
+      border-radius: 50px;
       cursor: pointer;
       font-weight: 600;
       transition: all 0.3s ease;
       position: relative;
       overflow: hidden;
+      text-decoration: none;
+      display: inline-block;
     }
 
-    .hero button::after {
-      content: '';
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: -100%;
-      background: linear-gradient(90deg, transparent, rgba(10,79,163,0.2), transparent);
-      transition: left 0.5s ease;
+    .hero-btn-primary {
+      background: white;
+      color: var(--blue);
     }
 
-    .hero button:hover {
-      transform: scale(1.08);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    .hero-btn-primary:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.25);
       background: var(--light-blue);
     }
 
-    .hero button:hover::after {
-      left: 100%;
+    .hero-btn-secondary {
+      background: transparent;
+      color: white;
+      border: 2px solid rgba(255,255,255,0.5);
+    }
+
+    .hero-btn-secondary:hover {
+      background: rgba(255,255,255,0.1);
+      border-color: white;
+      transform: translateY(-3px);
+    }
+
+    .hero-image-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-image-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .hero-image-bg {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      width: 100%;
+      height: 100%;
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px;
+      z-index: 0;
+    }
+
+    .hero-image {
+      width: 100%;
+      height: 350px;
+      object-fit: cover;
+      border-radius: 20px;
+      position: relative;
+      z-index: 1;
+      box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+      border: 4px solid rgba(255,255,255,0.2);
+      transition: all 0.4s ease;
+    }
+
+    .hero-image:hover {
+      transform: scale(1.02);
+      box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .hero-stat {
+      text-align: left;
+    }
+
+    .hero-stat-number {
+      font-size: 2rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .hero-stat-label {
+      font-size: 0.85rem;
+      color: rgb(223, 228, 237);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* Hero responsive */
+    @media (max-width: 900px) {
+      .hero-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+      }
+
+      .hero-content {
+        order: 1;
+      }
+
+      .hero-image-container {
+        order: 0;
+      }
+
+      .hero p {
+        margin: 0 auto;
+      }
+
+      .hero-buttons {
+        justify-content: center;
+      }
+
+      .hero-stats {
+        justify-content: center;
+      }
+
+      .hero h2 {
+        font-size: 2.2rem;
+      }
+
+      .hero-image {
+        height: 280px;
+        max-width: 350px;
+      }
+
+      .hero-image-wrapper {
+        max-width: 350px;
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        padding: 2rem 1rem;
+      }
+
+      .hero h2 {
+        font-size: 1.8rem;
+      }
+
+      .hero-stats {
+        gap: 1.5rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-stat-number {
+        font-size: 1.6rem;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .hero-btn {
+        width: 100%;
+        max-width: 250px;
+        text-align: center;
+      }
     }
 
     section {
@@ -297,6 +501,10 @@
       box-shadow: 0 8px 25px rgba(10,79,163,0.3);
     }
 
+    .team-card img.shift-right {
+      object-position: right center;
+    }
+
     /* ===== CONTACT ===== */
     .contact {
       background: var(--light-blue);
@@ -362,7 +570,7 @@
       border-radius: 50%;
       pointer-events: none;
       z-index: 9999;
-      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease;
+      transition: transform 0.15s ease, width 0.3s ease, height 0.3s ease, background 0.3s ease, opacity 0.3s ease;
       transform: translate(-50%, -50%);
       mix-blend-mode: difference;
     }
@@ -383,6 +591,7 @@
       pointer-events: none;
       z-index: 9999;
       transform: translate(-50%, -50%);
+      transition: opacity 0.3s ease;
     }
 
     /* ===== INPUT FOCUS EFFECTS ===== */
@@ -649,13 +858,41 @@ footer {
 </header>
 
 <section id="home" class="hero">
-  <div class="hero-content">
-    <h2>Trivandrum Geotechnical Testing and Solutions</h2>
-    <p>
-      A professional geotechnical testing laboratory delivering reliable
-      soil and material testing services for construction projects.
-    </p>
-    <button onclick="location.href='#contact'">Book a Test</button>
+  <div class="hero-wrapper">
+    <div class="hero-content">
+      <p class="hero-greeting">Welcome to TGTS</p>
+      <h2>Trivandrum <span>Geotechnical</span> Testing & Solutions</h2>
+      <p class="hero-tagline">Your Trusted Partner in Construction Excellence</p>
+      <p>
+        A professional geotechnical testing laboratory delivering reliable
+        soil and material testing services for safe and sustainable construction projects.
+      </p>
+      <div class="hero-buttons">
+        <a href="#contact" class="hero-btn hero-btn-primary">Book a Test</a>
+        <a href="#facilities" class="hero-btn hero-btn-secondary">Explore Services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-number">500+</div>
+          <div class="hero-stat-label">Tests Completed</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">100+</div>
+          <div class="hero-stat-label">Happy Clients</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-number">10+</div>
+          <div class="hero-stat-label">Years Experience</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-image-container">
+      <div class="hero-image-wrapper">
+        <div class="hero-image-bg"></div>
+        <!-- Replace 'assets/hero-lab.jpg' with your laboratory image -->
+        <img src="assets/hero-lab.jpg" alt="TGTS Laboratory" class="hero-image">
+      </div>
+    </div>
   </div>
 </section>
 
@@ -706,7 +943,7 @@ footer {
         <p><strong>Lab Engineer</strong></p>
       </div>
       <div class="team-card">
-        <img src="team3.jpg">
+        <img src="assets/dj.jpg" class="shift-right">
         <p><strong>Lab Technician</strong></p>
       </div>
     </div>
@@ -802,6 +1039,8 @@ footer {
 
   let mouseX = 0, mouseY = 0;
   let followerX = 0, followerY = 0;
+  let isTouch = false;
+  let touchTimeout;
 
   document.addEventListener('mousemove', (e) => {
     mouseX = e.clientX;
@@ -826,10 +1065,51 @@ footer {
     el.addEventListener('mouseleave', () => cursorFollower.classList.remove('hover'));
   });
 
-  // Hide cursor follower on mobile
+  // ===== TOUCH CURSOR FOLLOWER (Mobile) =====
   if ('ontouchstart' in window) {
-    cursorFollower.style.display = 'none';
-    cursorDot.style.display = 'none';
+    // Show cursor elements on touch
+    cursorFollower.style.display = 'block';
+    cursorDot.style.display = 'block';
+    cursorFollower.style.opacity = '0';
+    cursorDot.style.opacity = '0';
+
+    // Touch start - show and position cursor
+    document.addEventListener('touchstart', (e) => {
+      const touch = e.touches[0];
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      followerX = mouseX;
+      followerY = mouseY;
+      
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+      cursorFollower.style.left = mouseX + 'px';
+      cursorFollower.style.top = mouseY + 'px';
+      
+      cursorFollower.style.opacity = '1';
+      cursorDot.style.opacity = '1';
+      cursorFollower.classList.add('hover');
+      
+      clearTimeout(touchTimeout);
+    }, { passive: true });
+
+    // Touch move - follow finger
+    document.addEventListener('touchmove', (e) => {
+      const touch = e.touches[0];
+      mouseX = touch.clientX;
+      mouseY = touch.clientY;
+      cursorDot.style.left = mouseX + 'px';
+      cursorDot.style.top = mouseY + 'px';
+    }, { passive: true });
+
+    // Touch end - fade out cursor
+    document.addEventListener('touchend', () => {
+      touchTimeout = setTimeout(() => {
+        cursorFollower.style.opacity = '0';
+        cursorDot.style.opacity = '0';
+        cursorFollower.classList.remove('hover');
+      }, 300);
+    }, { passive: true });
   }
 
   // ===== TOUCH INTERACTIONS (Mobile) =====
