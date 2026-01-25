@@ -466,45 +466,149 @@
     /* ===== TEAM ===== */
     .team-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.8rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
       margin-top: 2rem;
     }
 
+    .team-card-container {
+      perspective: 1000px;
+      height: 320px;
+    }
+
     .team-card {
-      border: 1px solid var(--light-blue);
-      padding: 1.6rem 1.2rem;
-      border-radius: 6px;
-      text-align: center;
-      background: var(--white);
-      transition: all 0.3s ease;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      transform-style: preserve-3d;
+      transition: transform 0.6s ease;
       cursor: pointer;
     }
 
-    .team-card:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(10,79,163,0.15);
-      border-color: var(--blue);
+    .team-card-container:hover .team-card,
+    .team-card-container.touch-active .team-card {
+      transform: rotateY(180deg);
     }
 
-    .team-card img {
-      width: 110px;
-      height: 110px;
+    .team-card-front,
+    .team-card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 12px;
+      border: 1px solid var(--light-blue);
+      background: var(--white);
+      box-shadow: 0 10px 30px rgba(10,79,163,0.1);
+    }
+
+    .team-card-front {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    .team-card-front img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
-      margin-bottom: 1rem;
       object-fit: cover;
-      transition: all 0.4s ease;
-      border: 3px solid transparent;
+      border: 4px solid var(--blue);
+      margin-bottom: 1.2rem;
+      transition: all 0.3s ease;
     }
 
-    .team-card:hover img {
-      transform: scale(1.1);
-      border-color: var(--blue);
-      box-shadow: 0 8px 25px rgba(10,79,163,0.3);
-    }
-
-    .team-card img.shift-right {
+    .team-card-front img.shift-right {
       object-position: right center;
+    }
+
+    .team-card-front h4 {
+      color: var(--blue);
+      font-size: 1.15rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .team-card-front .designation {
+      color: var(--gray);
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .team-card-front .flip-hint {
+      margin-top: 1rem;
+      font-size: 0.75rem;
+      color: var(--gray);
+      opacity: 0.7;
+    }
+
+    .team-card-back {
+      transform: rotateY(180deg);
+      padding: 1.8rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: linear-gradient(135deg, var(--blue) 0%, #0860c4 100%);
+      color: white;
+    }
+
+    .team-card-back h4 {
+      font-size: 1.1rem;
+      margin-bottom: 0.8rem;
+      color: white;
+    }
+
+    .team-card-back .description {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 1.2rem;
+      opacity: 0.95;
+      color: rgba(255,255,255,0.95);
+    }
+
+    .team-card-back .contact-info {
+      border-top: 1px solid rgba(255,255,255,0.2);
+      padding-top: 1rem;
+    }
+
+    .team-card-back .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.85rem;
+      margin-bottom: 0.5rem;
+      color: rgba(255,255,255,0.9);
+    }
+
+    .team-card-back .contact-item a {
+      color: var(--light-blue);
+      text-decoration: none;
+    }
+
+    .team-card-back .contact-item a:hover {
+      text-decoration: underline;
+    }
+
+    /* Team card responsive */
+    @media (max-width: 480px) {
+      .team-card-container {
+        height: 300px;
+      }
+
+      .team-card-front img {
+        width: 100px;
+        height: 100px;
+      }
+
+      .team-card-back {
+        padding: 1.5rem 1.2rem;
+      }
+
+      .team-card-back .description {
+        font-size: 0.85rem;
+      }
     }
 
     /* ===== CONTACT ===== */
@@ -627,16 +731,8 @@
       position: relative;
     }
 
-    .team-card.touch-active {
-      transform: translateY(-10px);
-      box-shadow: 0 20px 40px rgba(10,79,163,0.15);
-      border-color: var(--blue);
-    }
-
-    .team-card.touch-active img {
-      transform: scale(1.1);
-      border-color: var(--blue);
-      box-shadow: 0 8px 25px rgba(10,79,163,0.3);
+    .team-card-container.touch-active .team-card {
+      transform: rotateY(180deg);
     }
 
     /* ===== RIPPLE EFFECT ===== */
@@ -904,7 +1000,6 @@ footer {
     <div class="hero-image-container">
       <div class="hero-image-wrapper">
         <div class="hero-image-bg"></div>
-        <!-- Replace 'assets/hero-lab.jpg' with your laboratory image -->
         <img src="assets/hero-lab.jpg" alt="TGTS Laboratory" class="hero-image">
       </div>
     </div>
@@ -949,18 +1044,67 @@ footer {
   <div class="container">
     <h3>Our Team</h3>
     <div class="team-grid">
-      <div class="team-card">
-        <img src="team1.jpg">
-        <p><strong>Founder & Geotechnical Engineer</strong></p>
+      
+      <!-- Team Member 1 -->
+      <div class="team-card-container">
+        <div class="team-card">
+          <div class="team-card-front">
+            <img src="team1.jpg" alt="Founder">
+            <h4>John Doe</h4>
+            <p class="designation">Founder & Geotechnical Engineer</p>
+            <p class="flip-hint">Hover to see more</p>
+          </div>
+          <div class="team-card-back">
+            <h4>About</h4>
+            <p class="description">Experienced geotechnical engineer with 15+ years in soil testing and foundation analysis. Leading TGTS with a vision for quality and precision.</p>
+            <div class="contact-info">
+              <div class="contact-item">📧 <a href="mailto:founder@tgts.in">founder@tgts.in</a></div>
+              <div class="contact-item">📱 +91-XXXXXXXXXX</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="team-card">
-        <img src="team2.jpg">
-        <p><strong>Lab Engineer</strong></p>
+      
+      <!-- Team Member 2 -->
+      <div class="team-card-container">
+        <div class="team-card">
+          <div class="team-card-front">
+            <img src="team2.jpg" alt="Lab Engineer">
+            <h4>Jane Smith</h4>
+            <p class="designation">Lab Engineer</p>
+            <p class="flip-hint">Hover to see more</p>
+          </div>
+          <div class="team-card-back">
+            <h4>About</h4>
+            <p class="description">Specializes in advanced soil testing methodologies and quality control. Ensures all tests meet industry standards.</p>
+            <div class="contact-info">
+              <div class="contact-item"><a href="mailto:engineer@tgts.in">engineer@tgts.in</a></div>
+              <div class="contact-item">+91-XXXXXXXXXX</div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="team-card">
-        <img src="assets/dj.jpg" class="shift-right">
-        <p><strong>Lab Technician</strong></p>
+      
+      <!-- Team Member 3 -->
+      <div class="team-card-container">
+        <div class="team-card">
+          <div class="team-card-front">
+            <img src="assets/dj.jpg" alt="Lab Technician" class="shift-right">
+            <h4>DJ</h4>
+            <p class="designation">Lab Technician</p>
+            <p class="flip-hint">Hover to see more</p>
+          </div>
+          <div class="team-card-back">
+            <h4>About</h4>
+            <p class="description">Skilled technician handling day-to-day laboratory operations and equipment maintenance with precision and care.</p>
+            <div class="contact-info">
+              <div class="contact-item"><a href="mailto:lab@tgts.in">lab@tgts.in</a></div>
+              <div class="contact-item">+91-XXXXXXXXXX</div>
+            </div>
+          </div>
+        </div>
       </div>
+      
     </div>
   </div>
 </section>
@@ -1105,7 +1249,14 @@ footer {
       
       cursorFollower.style.opacity = '1';
       cursorDot.style.opacity = '1';
-      cursorFollower.classList.add('hover');
+      
+      // Check if touching an interactive element
+      const target = e.target;
+      if (target.closest('a, button, .facility-card, .team-card, .gallery-grid img, input, textarea')) {
+        cursorFollower.classList.add('hover');
+      } else {
+        cursorFollower.classList.remove('hover');
+      }
       
       clearTimeout(touchTimeout);
     }, { passive: true });
@@ -1130,15 +1281,28 @@ footer {
   }
 
   // ===== TOUCH INTERACTIONS (Mobile) =====
-  const touchCards = document.querySelectorAll('.facility-card, .team-card');
+  const touchFacilityCards = document.querySelectorAll('.facility-card');
+  const touchTeamCards = document.querySelectorAll('.team-card-container');
   const touchImages = document.querySelectorAll('.gallery-grid img');
 
-  // Touch effect for cards - tap to activate, tap elsewhere to deactivate
-  touchCards.forEach(card => {
+  // Touch effect for facility cards
+  touchFacilityCards.forEach(card => {
     card.addEventListener('touchstart', (e) => {
-      // Remove active class from all other cards
-      touchCards.forEach(c => c.classList.remove('touch-active'));
+      touchFacilityCards.forEach(c => c.classList.remove('touch-active'));
       card.classList.add('touch-active');
+    }, { passive: true });
+  });
+
+  // Touch effect for team cards - tap to flip
+  touchTeamCards.forEach(card => {
+    card.addEventListener('touchstart', (e) => {
+      // Toggle flip on tap
+      if (card.classList.contains('touch-active')) {
+        card.classList.remove('touch-active');
+      } else {
+        touchTeamCards.forEach(c => c.classList.remove('touch-active'));
+        card.classList.add('touch-active');
+      }
     }, { passive: true });
   });
 
@@ -1152,8 +1316,11 @@ footer {
 
   // Remove active state when tapping elsewhere
   document.addEventListener('touchstart', (e) => {
-    if (!e.target.closest('.facility-card') && !e.target.closest('.team-card')) {
-      touchCards.forEach(c => c.classList.remove('touch-active'));
+    if (!e.target.closest('.facility-card')) {
+      touchFacilityCards.forEach(c => c.classList.remove('touch-active'));
+    }
+    if (!e.target.closest('.team-card-container')) {
+      touchTeamCards.forEach(c => c.classList.remove('touch-active'));
     }
     if (!e.target.closest('.gallery-grid img')) {
       touchImages.forEach(i => i.classList.remove('touch-active'));
