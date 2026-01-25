@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Advanced Testing Equipment | TGTS</title>
+  <meta name="description" content="State-of-the-art geotechnical testing equipment at TGTS. Modern instruments for accurate soil and material testing.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --blue: #0a4fa3;
+      --light-blue: #eaf3ff;
+      --white: #ffffff;
+      --gray: #5a6775;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1c1c1c; background: var(--white); line-height: 1.6; }
+    
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--light-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover { transform: translateX(-5px); }
+    header h1 { color: var(--blue); font-size: 1.2rem; }
+
+    .facility-hero {
+      height: 50vh;
+      min-height: 350px;
+      background: linear-gradient(135deg, rgba(10,79,163,0.9), rgba(8,96,196,0.85)), 
+                  url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=1200&h=600&fit=crop') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+    .facility-hero h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    .facility-hero p { font-size: 1.2rem; max-width: 600px; opacity: 0.95; }
+    .facility-hero i { font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.9; }
+
+    .content { max-width: 900px; margin: auto; padding: 4rem 1.5rem; }
+    .content h3 { color: var(--blue); font-size: 1.6rem; margin: 2rem 0 1rem; }
+    .content p { color: var(--gray); margin-bottom: 1rem; }
+    
+    .equipment-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .equipment-item {
+      background: var(--white);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--light-blue);
+      text-align: center;
+      transition: all 0.3s ease;
+    }
+    .equipment-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(10,79,163,0.15);
+    }
+    .equipment-item i { font-size: 2.5rem; color: var(--blue); margin-bottom: 1rem; }
+    .equipment-item h4 { color: var(--blue); margin-bottom: 0.5rem; }
+    .equipment-item p { font-size: 0.9rem; margin: 0; }
+
+    .cta-section {
+      background: var(--light-blue);
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta-section h3 { margin-top: 0; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(10,79,163,0.3); }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-blue);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <h1>TGTS</h1>
+</header>
+
+<section class="facility-hero">
+  <div>
+    <i class="fas fa-microscope"></i>
+    <h2>Advanced Testing Equipment</h2>
+    <p>State-of-the-art instruments for precise and reliable testing</p>
+  </div>
+</section>
+
+<div class="content">
+  <h3>Our Equipment</h3>
+  <p>
+    TGTS is equipped with modern, calibrated instruments that meet international standards. 
+    Our equipment undergoes regular maintenance and calibration to ensure the highest accuracy 
+    in test results. We continuously upgrade our facilities to incorporate the latest technology 
+    in geotechnical testing.
+  </p>
+
+  <h3>Key Equipment</h3>
+  <div class="equipment-grid">
+    <div class="equipment-item">
+      <i class="fas fa-balance-scale"></i>
+      <h4>Digital Balances</h4>
+      <p>High-precision electronic balances for accurate weight measurements</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-thermometer-half"></i>
+      <h4>Hot Air Ovens</h4>
+      <p>Temperature-controlled ovens for moisture content determination</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-compress"></i>
+      <h4>Compression Testing Machine</h4>
+      <p>Automated CTM for UCS and strength tests</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-tachometer-alt"></i>
+      <h4>CBR Apparatus</h4>
+      <p>Complete CBR testing setup with moulds and penetration equipment</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-cogs"></i>
+      <h4>Triaxial Testing System</h4>
+      <p>Automated triaxial cell for comprehensive shear strength analysis</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-filter"></i>
+      <h4>Sieve Shaker</h4>
+      <p>Mechanical sieve shaker with complete sieve set</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-clock"></i>
+      <h4>Consolidation Apparatus</h4>
+      <p>Oedometer for one-dimensional consolidation tests</p>
+    </div>
+    <div class="equipment-item">
+      <i class="fas fa-tint"></i>
+      <h4>Permeability Equipment</h4>
+      <p>Constant and falling head permeameters</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Experience Our Facilities</h3>
+    <p>Schedule a visit to our laboratory or discuss your testing requirements.</p>
+    <a href="index.html#contact" class="cta-btn">Contact Us</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Trivandrum Geotechnical Testing and Solutions · tgts.in
+</footer>
+
+</body>
+</html>

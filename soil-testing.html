@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Soil Testing Laboratory | TGTS</title>
+  <meta name="description" content="Professional soil testing laboratory services at TGTS. Comprehensive soil analysis for construction and infrastructure projects in Trivandrum, Kerala.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --blue: #0a4fa3;
+      --light-blue: #eaf3ff;
+      --white: #ffffff;
+      --gray: #5a6775;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: #1c1c1c; background: var(--white); line-height: 1.6; }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--light-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover { transform: translateX(-5px); }
+    header h1 { color: var(--blue); font-size: 1.2rem; }
+
+    /* Hero */
+    .facility-hero {
+      height: 50vh;
+      min-height: 350px;
+      background: linear-gradient(135deg, rgba(10,79,163,0.9), rgba(8,96,196,0.85)), 
+                  url('https://images.unsplash.com/photo-1581093458791-9d42cc030552?w=1200&h=600&fit=crop') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      padding: 2rem;
+    }
+    .facility-hero h2 { font-size: 2.8rem; margin-bottom: 1rem; }
+    .facility-hero p { font-size: 1.2rem; max-width: 600px; opacity: 0.95; }
+    .facility-hero i { font-size: 4rem; margin-bottom: 1.5rem; opacity: 0.9; }
+
+    /* Content */
+    .content { max-width: 900px; margin: auto; padding: 4rem 1.5rem; }
+    .content h3 { color: var(--blue); font-size: 1.6rem; margin: 2rem 0 1rem; }
+    .content p { color: var(--gray); margin-bottom: 1rem; }
+    
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin: 2rem 0;
+    }
+    .service-item {
+      background: var(--light-blue);
+      padding: 1.5rem;
+      border-radius: 8px;
+      border-left: 4px solid var(--blue);
+    }
+    .service-item h4 { color: var(--blue); margin-bottom: 0.5rem; }
+    .service-item p { font-size: 0.95rem; margin: 0; }
+
+    .cta-section {
+      background: var(--light-blue);
+      padding: 3rem;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 3rem;
+    }
+    .cta-section h3 { margin-top: 0; }
+    .cta-btn {
+      display: inline-block;
+      background: var(--blue);
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+    .cta-btn:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(10,79,163,0.3); }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-blue);
+      color: var(--gray);
+      font-size: 0.9rem;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <h1>TGTS</h1>
+</header>
+
+<section class="facility-hero">
+  <div>
+    <i class="fas fa-flask"></i>
+    <h2>Soil Testing Laboratory</h2>
+    <p>Comprehensive soil analysis for safe and sustainable construction</p>
+  </div>
+</section>
+
+<div class="content">
+  <h3>About Our Soil Testing Lab</h3>
+  <p>
+    Our state-of-the-art soil testing laboratory is equipped with modern instruments and follows 
+    IS (Indian Standards) and ASTM protocols for all tests. We provide accurate and reliable 
+    soil characterization to support foundation design and construction decisions.
+  </p>
+  <p>
+    With over 10 years of experience, our team of qualified geotechnical engineers and technicians 
+    ensure that every sample is tested with precision and the results are delivered on time.
+  </p>
+
+  <h3>Tests We Offer</h3>
+  <div class="services-list">
+    <div class="service-item">
+      <h4>Grain Size Analysis</h4>
+      <p>Sieve analysis and hydrometer test for particle size distribution</p>
+    </div>
+    <div class="service-item">
+      <h4>Atterberg Limits</h4>
+      <p>Liquid limit, plastic limit, and plasticity index determination</p>
+    </div>
+    <div class="service-item">
+      <h4>Moisture Content</h4>
+      <p>Natural moisture content and specific gravity tests</p>
+    </div>
+    <div class="service-item">
+      <h4>Soil Classification</h4>
+      <p>IS/USCS classification based on test results</p>
+    </div>
+    <div class="service-item">
+      <h4>Permeability Test</h4>
+      <p>Constant head and falling head permeability tests</p>
+    </div>
+    <div class="service-item">
+      <h4>Consolidation Test</h4>
+      <p>One-dimensional consolidation for settlement analysis</p>
+    </div>
+  </div>
+
+  <div class="cta-section">
+    <h3>Need Soil Testing Services?</h3>
+    <p>Contact us today to discuss your project requirements and get a quote.</p>
+    <a href="index.html#contact" class="cta-btn">Book a Test</a>
+  </div>
+</div>
+
+<footer>
+  © 2026 Trivandrum Geotechnical Testing and Solutions · tgts.in
+</footer>
+
+</body>
+</html>

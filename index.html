@@ -633,41 +633,109 @@
     /* ===== FACILITIES ===== */
     .facility-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.6rem;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.8rem;
       margin-top: 2rem;
     }
 
     .facility-card {
-      border: 1px solid var(--light-blue);
-      padding: 1.6rem;
-      border-radius: 6px;
-      background: var(--white);
-      transition: all 0.3s ease;
-      cursor: pointer;
       position: relative;
+      border-radius: 12px;
+      background: var(--white);
+      transition: all 0.4s ease;
+      cursor: pointer;
       overflow: hidden;
+      text-decoration: none;
+      display: block;
+      min-height: 280px;
+      box-shadow: 0 4px 20px rgba(10,79,163,0.1);
     }
 
-    .facility-card::before {
-      content: '';
+    .facility-bg {
       position: absolute;
       top: 0;
-      left: -100%;
+      left: 0;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(10,79,163,0.1), transparent);
-      transition: left 0.5s ease;
+      background-size: cover;
+      background-position: center;
+      opacity: 0.15;
+      transition: all 0.4s ease;
+    }
+
+    .facility-content {
+      position: relative;
+      z-index: 2;
+      padding: 2rem;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .facility-card i {
+      font-size: 2.5rem;
+      color: var(--blue);
+      margin-bottom: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .facility-card h4 {
+      color: var(--blue);
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .facility-card p {
+      color: var(--gray);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      margin-bottom: 1rem;
+    }
+
+    .facility-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      font-weight: 600;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+    }
+
+    .facility-link i {
+      font-size: 0.85rem;
+      margin-bottom: 0;
+      transition: transform 0.3s ease;
     }
 
     .facility-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(10,79,163,0.15);
-      border-color: var(--blue);
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(10,79,163,0.2);
     }
 
-    .facility-card:hover::before {
-      left: 100%;
+    .facility-card:hover .facility-bg {
+      opacity: 0.25;
+      transform: scale(1.05);
+    }
+
+    .facility-card:hover i {
+      transform: scale(1.1);
+    }
+
+    .facility-card:hover .facility-link i {
+      transform: translateX(5px);
+    }
+
+    /* Touch active state for facility cards */
+    .facility-card.touch-active {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 40px rgba(10,79,163,0.2);
+    }
+
+    .facility-card.touch-active .facility-bg {
+      opacity: 0.25;
     }
 
     /* ===== ABOUT ===== */
@@ -970,16 +1038,6 @@
     }
 
     /* ===== TOUCH ACTIVE STATES (Mobile) ===== */
-    .facility-card.touch-active {
-      transform: translateY(-8px);
-      box-shadow: 0 12px 30px rgba(10,79,163,0.15);
-      border-color: var(--blue);
-    }
-
-    .facility-card.touch-active::before {
-      left: 100%;
-    }
-
     .gallery-grid img.touch-active {
       transform: scale(1.05);
       box-shadow: 0 15px 40px rgba(10,79,163,0.25);
@@ -1308,10 +1366,42 @@ footer {
   <div class="container">
     <h3>Our Laboratory Facilities</h3>
     <div class="facility-grid">
-      <div class="facility-card">Soil Testing Laboratory</div>
-      <div class="facility-card">Compaction & Strength Testing</div>
-      <div class="facility-card">Advanced Testing Equipment</div>
-      <div class="facility-card">Field Investigation Support</div>
+      <a href="soil-testing.html" class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1581093458791-9d42cc030552?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+          <i class="fas fa-flask"></i>
+          <h4>Soil Testing Laboratory</h4>
+          <p>Comprehensive soil analysis including grain size, Atterberg limits, and classification tests</p>
+          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="compaction-testing.html" class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+          <i class="fas fa-compress-arrows-alt"></i>
+          <h4>Compaction & Strength Testing</h4>
+          <p>Proctor compaction, CBR, and shear strength tests for construction projects</p>
+          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="advanced-equipment.html" class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+          <i class="fas fa-microscope"></i>
+          <h4>Advanced Testing Equipment</h4>
+          <p>State-of-the-art instruments calibrated to international standards</p>
+          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
+      <a href="field-investigation.html" class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+          <i class="fas fa-hard-hat"></i>
+          <h4>Field Investigation Support</h4>
+          <p>On-site soil sampling and subsurface exploration services</p>
+          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+        </div>
+      </a>
     </div>
   </div>
 </section>
