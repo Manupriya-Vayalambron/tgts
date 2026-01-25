@@ -5,7 +5,71 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Trivandrum Geotechnical Testing and Solutions | TGTS</title>
 
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="TGTS - Trivandrum Geotechnical Testing and Solutions. Professional soil testing laboratory in Kerala offering reliable geotechnical testing services for construction projects. Book your soil test today.">
+  <meta name="keywords" content="geotechnical testing, soil testing, Trivandrum, Kerala, soil testing lab, construction testing, foundation testing, compaction testing, CBR test, soil analysis, geotechnical lab, material testing, civil engineering, TGTS">
+  <meta name="author" content="Trivandrum Geotechnical Testing and Solutions">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  <meta name="geo.region" content="IN-KL">
+  <meta name="geo.placename" content="Trivandrum, Kerala">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://tgts.in/">
+  <meta property="og:title" content="TGTS - Trivandrum Geotechnical Testing and Solutions">
+  <meta property="og:description" content="Professional geotechnical testing laboratory in Trivandrum, Kerala. Accurate soil testing, compaction testing, and material analysis for construction projects.">
+  <meta property="og:image" content="https://tgts.in/assets/hero-lab.jpg">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:site_name" content="TGTS">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://tgts.in/">
+  <meta name="twitter:title" content="TGTS - Trivandrum Geotechnical Testing and Solutions">
+  <meta name="twitter:description" content="Professional geotechnical testing laboratory in Trivandrum, Kerala. Accurate soil testing for construction projects.">
+  <meta name="twitter:image" content="https://tgts.in/assets/hero-lab.jpg">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://tgts.in/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Trivandrum Geotechnical Testing and Solutions",
+    "alternateName": "TGTS",
+    "description": "Professional geotechnical testing laboratory providing soil testing, compaction testing, and material analysis services in Trivandrum, Kerala.",
+    "url": "https://tgts.in",
+    "telephone": "+91-XXXXXXXXXX",
+    "email": "info@tgts.in",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Trivandrum",
+      "addressRegion": "Kerala",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "8.5",
+      "longitude": "76.95"
+    },
+    "openingHours": "Mo-Sa 09:00-18:00",
+    "priceRange": "$$",
+    "image": "https://tgts.in/assets/hero-lab.jpg",
+    "sameAs": [],
+    "serviceType": ["Geotechnical Testing", "Soil Testing", "Material Testing", "Foundation Analysis"]
+  }
+  </script>
+
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <style>
     :root {
@@ -21,11 +85,109 @@
       padding: 0;
     }
 
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       color: #1c1c1c;
       background: var(--white);
       line-height: 1.6;
+    }
+
+    /* ===== ANIMATIONS ===== */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideInLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes slideInRight {
+      from {
+        opacity: 0;
+        transform: translateX(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    @keyframes scaleIn {
+      from {
+        opacity: 0;
+        transform: scale(0.9);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Scroll-triggered animation classes */
+    .animate-on-scroll {
+      opacity: 0;
+    }
+
+    .animate-on-scroll.animated {
+      animation-duration: 0.6s;
+      animation-fill-mode: both;
+      animation-timing-function: ease-out;
+    }
+
+    .fade-in-up.animated { animation-name: fadeInUp; }
+    .fade-in.animated { animation-name: fadeIn; }
+    .slide-in-left.animated { animation-name: slideInLeft; }
+    .slide-in-right.animated { animation-name: slideInRight; }
+    .scale-in.animated { animation-name: scaleIn; }
+
+    /* Staggered animation delays for grids */
+    .stagger-1 { animation-delay: 0.1s; }
+    .stagger-2 { animation-delay: 0.2s; }
+    .stagger-3 { animation-delay: 0.3s; }
+    .stagger-4 { animation-delay: 0.4s; }
+
+    /* Respect reduced motion preference */
+    @media (prefers-reduced-motion: reduce) {
+      html {
+        scroll-behavior: auto;
+      }
+      .animate-on-scroll {
+        opacity: 1;
+      }
+      .animate-on-scroll.animated {
+        animation: none;
+      }
+      .hero-content, .hero-image-container {
+        animation: none;
+      }
     }
 
     /* ===== HEADER ===== */
@@ -46,6 +208,28 @@
       align-items: center;
     }
 
+    .logo-container {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      text-decoration: none;
+      transition: transform 0.3s ease;
+    }
+
+    .logo-container:hover {
+      transform: scale(1.05);
+    }
+
+    .logo-container img {
+      height: 50px;
+      width: auto;
+      display: block;
+      object-fit: contain;
+      max-width: 180px;
+      filter: brightness(0) saturate(100%) invert(20%) sepia(80%) saturate(2500%) hue-rotate(200deg);
+      transition: filter 0.3s ease;
+    }
+
     header h1 {
       color: var(--blue);
       font-size: 1.4rem;
@@ -63,10 +247,27 @@
       color: var(--gray);
       font-weight: 500;
       font-size: 0.95rem;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--blue);
+      transition: width 0.3s ease;
     }
 
     nav a:hover {
       color: var(--blue);
+    }
+
+    nav a:hover::after {
+      width: 100%;
     }
 
     /* ===== HAMBURGER ===== */
@@ -153,6 +354,7 @@
 
     .hero-content {
       color: white;
+      animation: slideInLeft 0.8s ease-out forwards;
     }
 
     .hero-greeting {
@@ -239,6 +441,7 @@
       justify-content: center;
       align-items: center;
       position: relative;
+      animation: slideInRight 0.8s ease-out forwards;
     }
 
     .hero-image-wrapper {
@@ -408,6 +611,19 @@
       color: var(--blue);
       font-size: 1.8rem;
       margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+    }
+
+    h3::after {
+      content: '';
+      position: absolute;
+      bottom: -8px;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background: var(--blue);
+      border-radius: 2px;
     }
 
     p {
@@ -882,6 +1098,44 @@ footer {
   line-height: 1.6;
 }
 
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.2rem;
+  justify-content: center;
+}
+
+.social-links a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--blue);
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(10,79,163,0.4);
+}
+
+.social-links a.instagram:hover {
+  background: #1877f2;
+}
+
+.social-links a.facebook:hover {
+  background: #1877f2;
+}
+
+.social-links a.linkedin:hover {
+  background: #0a66c2;
+}
+
 .map iframe {
   width: 100%;
   height: 160px;
@@ -978,7 +1232,10 @@ footer {
 
 <header>
   <div class="nav">
-    <h1>TGTS</h1>
+    <a href="#home" class="logo-container">
+      <img src="assets/tgt-logo.png" alt="TGTS Logo">
+      <h1>TGTS</h1>
+    </a>
 
     <!-- Desktop Nav -->
     <nav class="desktop-nav">
@@ -1041,7 +1298,7 @@ footer {
     <div class="hero-image-container">
       <div class="hero-image-wrapper">
         <div class="hero-image-bg"></div>
-        <img src="assets/hero-lab.jpg" alt="TGTS Laboratory" class="hero-image">
+        <img src="assets/hero-lab.png" alt="TGTS Laboratory" class="hero-image">
       </div>
     </div>
   </div>
@@ -1210,6 +1467,11 @@ footer {
         Email: info@tgts.in<br>
         Phone: +91-XXXXXXXXXX
       </p>
+      <div class="social-links">
+        <a href="https://www.instagram.com/" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.facebook.com/" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://www.linkedin.com/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+      </div>
     </div>
 
   </div>
@@ -1379,6 +1641,91 @@ footer {
       setTimeout(() => ripple.remove(), 600);
     }, { passive: true });
   });
+
+  // ===== SCROLL ANIMATIONS =====
+  // Add animation classes to elements
+  document.querySelectorAll('section h3').forEach(el => {
+    el.classList.add('animate-on-scroll', 'fade-in-up');
+  });
+
+  document.querySelectorAll('.facility-card').forEach((el, i) => {
+    el.classList.add('animate-on-scroll', 'fade-in-up', `stagger-${(i % 4) + 1}`);
+  });
+
+  document.querySelectorAll('.gallery-grid img').forEach((el, i) => {
+    el.classList.add('animate-on-scroll', 'scale-in', `stagger-${(i % 4) + 1}`);
+  });
+
+  document.querySelectorAll('.team-card-container').forEach((el, i) => {
+    el.classList.add('animate-on-scroll', 'fade-in-up', `stagger-${(i % 3) + 1}`);
+  });
+
+  document.querySelector('.about p')?.classList.add('animate-on-scroll', 'fade-in-up');
+  document.querySelector('form')?.classList.add('animate-on-scroll', 'fade-in-up');
+
+  // Intersection Observer for scroll animations
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px 0px -50px 0px',
+    threshold: 0.1
+  };
+
+  const animationObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('animated');
+        animationObserver.unobserve(entry.target);
+      }
+    });
+  }, observerOptions);
+
+  document.querySelectorAll('.animate-on-scroll').forEach(el => {
+    animationObserver.observe(el);
+  });
+
+  // ===== COUNTER ANIMATION FOR STATS =====
+  const statNumbers = document.querySelectorAll('.hero-stat-number');
+  let statsAnimated = false;
+
+  function animateCounter(el) {
+    const text = el.textContent;
+    const match = text.match(/(\d+)/);
+    if (!match) return;
+    
+    const target = parseInt(match[1]);
+    const suffix = text.replace(match[1], '');
+    const duration = 1500;
+    const steps = 40;
+    const increment = target / steps;
+    let current = 0;
+    let step = 0;
+
+    const timer = setInterval(() => {
+      step++;
+      current = Math.min(Math.round(increment * step), target);
+      el.textContent = current + suffix;
+      
+      if (step >= steps) {
+        clearInterval(timer);
+        el.textContent = target + suffix;
+      }
+    }, duration / steps);
+  }
+
+  // Observe hero section for counter animation
+  const heroObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting && !statsAnimated) {
+        statsAnimated = true;
+        statNumbers.forEach((el, i) => {
+          setTimeout(() => animateCounter(el), i * 200);
+        });
+      }
+    });
+  }, { threshold: 0.5 });
+
+  const heroStats = document.querySelector('.hero-stats');
+  if (heroStats) heroObserver.observe(heroStats);
 </script>
 
 </body>
