@@ -1585,11 +1585,14 @@ footer {
 <section id="contact" class="contact">
   <div class="container">
     <h3>Contact / Book Appointment</h3>
-    <form>
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Message"></textarea>
-      <button class="submit">Submit</button>
+    <form action="https://formsubmit.co/tgt.in@gmail.com" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="4" placeholder="Message"></textarea>
+      <input type="hidden" name="_subject" value="New Contact Form Submission - TGTS">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://tgts.in/">
+      <button type="submit" class="submit">Submit</button>
     </form>
   </div>
 </section>
@@ -1642,13 +1645,13 @@ footer {
     <div class="footer-section footer-contact">
       <h4>Contact</h4>
       <p>
-        Email: info@tgts.in<br>
+        Email: tgts.in@gmail.com<br>
         Phone: +91-XXXXXXXXXX
       </p>
       <div class="social-links">
         <a href="https://www.instagram.com/" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/ompany/tgtsolutions/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
 
