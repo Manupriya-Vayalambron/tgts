@@ -1422,6 +1422,109 @@ footer {
     height: 150px;
   }
 }
+/* ===== CLIENT LOGO SLIDER (PNG-FRIENDLY, NO BOX) ===== */
+.client-logo-slider {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+  background: transparent;
+  padding: 1.8rem 0;
+  margin: 0 auto 2rem;
+  max-width: 1000px;
+}
+
+/* Soft fade edges for premium look */
+.client-logo-slider::before,
+.client-logo-slider::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.client-logo-slider::before {
+  left: 0;
+  background: linear-gradient(to right, #f7fbff, transparent);
+}
+
+.client-logo-slider::after {
+  right: 0;
+  background: linear-gradient(to left, #f7fbff, transparent);
+}
+
+.client-logo-track {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: max-content;
+  animation: client-scroll 26s linear infinite;
+}
+
+.client-logo-track:hover {
+  animation-play-state: paused;
+}
+
+/* ===== LOGOS (TRANSPARENT, FLOATING) ===== */
+.client-logo {
+  height: 72px;
+  width: auto;
+  object-fit: contain;
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+
+  opacity: 0.95;
+  transition: transform 0.35s ease, opacity 0.35s ease;
+}
+
+.client-logo:hover {
+  opacity: 1;
+  transform: scale(1.06);
+}
+
+
+/* ===== ANIMATION ===== */
+@keyframes client-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* ===== MOBILE OPTIMIZATION ===== */
+@media (max-width: 600px) {
+  .client-logo {
+    height: 48px;
+  }
+
+  .client-logo-track {
+    gap: 1.6rem;
+  }
+}
+
+.about-mv {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.about-mv-item h4 {
+  color: var(--blue);
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.about-mv-item p {
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 
   </style>
 </head>
@@ -1488,7 +1591,7 @@ footer {
           <div class="hero-stat-label">Happy Clients</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-number">10+</div>
+          <div class="hero-stat-number">20+</div>
           <div class="hero-stat-label">Years Experience</div>
         </div>
       </div>
@@ -1501,6 +1604,25 @@ footer {
     </div>
   </div>
 </section>
+
+  <!-- ===== CLIENT LOGO SLIDESHOW ===== -->
+  <section id="clients" style="background: #f7fbff; padding: 2.5rem 0 2rem;">
+    <div class="container">
+      <h3 style="text-align:center; margin-bottom:2rem;">Our Valuable Clients</h3>
+      <div class="client-logo-slider">
+        <div class="client-logo-track">
+          <!-- Add more logos as needed -->
+          <img src="assets/clients/vssc-logo.png" alt="Client 1" class="client-logo">
+          <img src="assets/clients/sfs-logo.png" alt="Client 2" class="client-logo">
+          <img src="assets/tgt-logo.png" alt="Client 3" class="client-logo">
+          <!-- Duplicate for seamless loop -->
+          <img src="assets/clients/vssc-logo.png" alt="Client 1" class="client-logo">
+          <img src="assets/clients/sfs-logo.png" alt="Client 2" class="client-logo">
+          <img src="assets/tgt-logo.png" alt="Client 3" class="client-logo">
+        </div>
+      </div>
+    </div>
+  </section>
 
 <section id="facilities">
   <div class="container">
@@ -1550,9 +1672,31 @@ footer {
   <div class="container">
     <h3>About TGTS</h3>
     <p>
-      TGTS provides accurate and standardized geotechnical testing
-      services to support safe and sustainable construction practices.
+      Trivandrum Geotechnical Testing & Solutions provides reliable soil testing and
+      geotechnical consultancy for safe, economical, and practical foundation design
+      across a wide range of civil engineering structures.
     </p>
+
+    <div class="about-mv">
+      <div class="about-mv-item">
+        <h4>Our Mission</h4>
+        <p>
+          To deliver accurate soil testing and geotechnical consultancy services that
+          support safe and economical foundation solutions through systematic field
+          investigations, standardized laboratory testing, and sound engineering
+          judgment in accordance with established codes of practice.
+        </p>
+      </div>
+
+      <div class="about-mv-item">
+        <h4>Our Vision</h4>
+        <p>
+          To be a trusted geotechnical testing and consultancy organization known for
+          technical integrity, practical engineering solutions, and meaningful
+          contribution to safe and sustainable civil infrastructure.
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -1579,11 +1723,11 @@ footer {
           <div class="team-card-front">
             <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&h=400&fit=crop&crop=face" alt="Founder">
             <h4>Dr. Arvee Sujil Jhonson</h4>
-            <p class="designation">Founder & Geotechnical Engineer</p>
+            <p class="designation">Founder & Managing Consultant, TGT&S</p>
           </div>
           <div class="team-card-back">
             <h4>About</h4>
-            <p class="description">Experienced geotechnical engineer with 15+ years in soil testing and foundation analysis. Leading TGTS with a vision for quality and precision.</p>
+            <p class="description">Experienced geotechnical engineer with 25+ years in testing and consultancy. Former Professor and Head of Department at College of Engineering Trivandrum (CET), with academic credentials from IIT Madras and Queen’s University Belfast.</p>
             <div class="contact-info">
               <div class="contact-item"> <a href="mailto:arveesujil@yahoo.co.uk">arveesujil@yahoo.co.uk</a></div>
               <div class="contact-item"> +91-9447411568</div>
@@ -1597,12 +1741,12 @@ footer {
         <div class="team-card">
           <div class="team-card-front">
             <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&crop=face" alt="Lab Engineer">
-            <h4>Sabu</h4>
-            <p class="designation">Lab Engineer</p>
+            <h4>Mr. Shabu Roy R. V</h4>
+            <p class="designation">Consultant, TGT&S</p>
           </div>
           <div class="team-card-back">
             <h4>About</h4>
-            <p class="description">Specializes in advanced soil testing methodologies and quality control. Ensures all tests meet industry standards.</p>
+            <p class="description">Retired Executive Engineer (NC), from Irrigation, Water Resources Depattment of Govt. of Kerala in 2025, with 23 years of experience in Civil Engineering.</p>
             <div class="contact-info">
               <div class="contact-item"><a href="mailto:engineer@tgts.in">engineer@tgts.in</a></div>
               <div class="contact-item">+91-9446500195</div>
@@ -1616,7 +1760,7 @@ footer {
         <div class="team-card">
           <div class="team-card-front">
             <img src="assets/dj.jpg" alt="Lab Technician" class="shift-right">
-            <h4>Druvajith Kalita</h4>
+            <h4>Mr. Druvajith Kalita</h4>
             <p class="designation">Lab Technician</p>
           </div>
           <div class="team-card-back">
@@ -2022,4 +2166,17 @@ footer {
 </script>
 
 </body>
+<script>
+// Optional: Pause on hover
+const slider = document.querySelector('.client-logo-slider');
+const track = document.querySelector('.client-logo-track');
+if (slider && track) {
+  slider.addEventListener('mouseenter', () => {
+    track.style.animationPlayState = 'paused';
+  });
+  slider.addEventListener('mouseleave', () => {
+    track.style.animationPlayState = 'running';
+  });
+}
+</script>
 </html>
