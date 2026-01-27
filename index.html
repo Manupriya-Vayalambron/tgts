@@ -1006,6 +1006,40 @@
       box-shadow: 0 0 0 3px rgba(10, 79, 163, 0.1);
     }
 
+    .form-success-message {
+      display: none;
+      background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+      border: 1px solid #28a745;
+      border-radius: 8px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      text-align: center;
+      animation: fadeInUp 0.5s ease;
+    }
+
+    .form-success-message.show {
+      display: block;
+    }
+
+    .form-success-message i {
+      font-size: 2.5rem;
+      color: #28a745;
+      margin-bottom: 0.75rem;
+      display: block;
+    }
+
+    .form-success-message h4 {
+      color: #155724;
+      font-size: 1.25rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .form-success-message p {
+      color: #155724;
+      font-size: 0.95rem;
+      margin: 0;
+    }
+
     button.submit {
       background: var(--blue);
       color: white;
@@ -1603,6 +1637,11 @@ footer {
 <section id="contact" class="contact">
   <div class="container">
     <h3>Contact / Book Appointment</h3>
+    <div class="form-success-message" id="formSuccessMessage">
+      <i class="fas fa-check-circle"></i>
+      <h4>Thank You!</h4>
+      <p>Your appointment request has been submitted successfully. We will contact you shortly to confirm your booking.</p>
+    </div>
     <form action="https://formsubmit.co/tgts.in@gmail.com" method="POST">
       <div class="form-group">
         <label for="name">Your Name</label>
@@ -1650,7 +1689,7 @@ footer {
       
       <input type="hidden" name="_subject" value="New Appointment Request - TGTS">
       <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://tgts.in/">
+      <input type="hidden" name="_next" value="https://tgts.in/#contact?submitted=true">
       <button type="submit" class="submit">Submit</button>
     </form>
   </div>
@@ -1709,7 +1748,7 @@ footer {
       <div class="social-links">
         <a href="https://www.instagram.com/" target="_blank" class="instagram" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
         <a href="https://www.facebook.com/" target="_blank" class="facebook" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://www.linkedin.com/ompany/tgtsolutions/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+        <a href="https://www.linkedin.com/company/tgtsolutions/" target="_blank" class="linkedin" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
       </div>
     </div>
 
@@ -1965,6 +2004,21 @@ footer {
 
   const heroStats = document.querySelector('.hero-stats');
   if (heroStats) heroObserver.observe(heroStats);
+
+  // ===== FORM SUBMISSION SUCCESS MESSAGE =====
+  const urlParams = new URLSearchParams(window.location.search);
+  const hash = window.location.hash;
+  
+  if (urlParams.get('submitted') === 'true' || hash.includes('submitted=true')) {
+    const successMessage = document.getElementById('formSuccessMessage');
+    if (successMessage) {
+      successMessage.classList.add('show');
+      // Scroll to contact section
+      document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+      // Clean up URL
+      history.replaceState(null, '', window.location.pathname + '#contact');
+    }
+  }
 </script>
 
 </body>
