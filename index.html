@@ -979,13 +979,31 @@
       margin-top: 1.5rem;
     }
 
-    input, textarea {
+    form label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 500;
+      color: var(--gray);
+    }
+
+    form .form-group {
+      margin-bottom: 1rem;
+    }
+
+    input, textarea, select {
       width: 100%;
       padding: 0.8rem;
-      margin-bottom: 1rem;
       border: 1px solid #cdddf2;
       border-radius: 4px;
       font-size: 1rem;
+      background: var(--white);
+      cursor: pointer;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      outline: none;
+      border-color: var(--blue);
+      box-shadow: 0 0 0 3px rgba(10, 79, 163, 0.1);
     }
 
     button.submit {
@@ -1586,10 +1604,51 @@ footer {
   <div class="container">
     <h3>Contact / Book Appointment</h3>
     <form action="https://formsubmit.co/tgts.in@gmail.com" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="email" placeholder="Your Email" required>
-      <textarea name="message" rows="4" placeholder="Message"></textarea>
-      <input type="hidden" name="_subject" value="New Contact Form Submission - TGTS">
+      <div class="form-group">
+        <label for="name">Your Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Your Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="phone">Your Phone Number</label>
+        <input type="tel" id="phone" name="phone" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="appointment-date">Schedule an Appointment</label>
+        <input type="date" id="appointment-date" name="appointment_date" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="time-slot">Preferred Time Slot</label>
+        <select id="time-slot" name="time_slot" required>
+          <option value="" disabled selected>Select a time slot</option>
+          <option value="10:00 - 10:30">10:00 AM - 10:30 AM</option>
+          <option value="10:30 - 11:00">10:30 AM - 11:00 AM</option>
+          <option value="11:00 - 11:30">11:00 AM - 11:30 AM</option>
+          <option value="11:30 - 12:00">11:30 AM - 12:00 PM</option>
+          <option value="12:00 - 12:30">12:00 PM - 12:30 PM</option>
+          <option value="12:30 - 13:00">12:30 PM - 01:00 PM</option>
+          <option value="14:00 - 14:30">02:00 PM - 02:30 PM</option>
+          <option value="14:30 - 15:00">02:30 PM - 03:00 PM</option>
+          <option value="15:00 - 15:30">03:00 PM - 03:30 PM</option>
+          <option value="15:30 - 16:00">03:30 PM - 04:00 PM</option>
+          <option value="16:00 - 16:30">04:00 PM - 04:30 PM</option>
+          <option value="16:30 - 17:00">04:30 PM - 05:00 PM</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="message">Message (Optional)</label>
+        <textarea id="message" name="message" rows="4"></textarea>
+      </div>
+      
+      <input type="hidden" name="_subject" value="New Appointment Request - TGTS">
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_next" value="https://tgts.in/">
       <button type="submit" class="submit">Submit</button>
