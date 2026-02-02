@@ -521,6 +521,57 @@
         padding: 3rem 1.5rem;
       }
 
+      /* Facilities tablet responsive */
+      .facility-grid {
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1.5rem;
+        padding: 0;
+      }
+
+      #facilities .container {
+        padding: 0 1.5rem;
+      }
+
+      #facilities h3 {
+        font-size: 1.8rem;
+      }
+
+      .facility-card {
+        min-height: 260px;
+      }
+
+      .facility-content {
+        padding: 1.5rem;
+      }
+
+      .facility-card h4 {
+        font-size: 1.1rem;
+      }
+
+      .facility-card p {
+        font-size: 0.9rem;
+      }
+
+      /* About section tablet responsive */
+      .about {
+        padding: 3rem 0;
+      }
+
+      .about h3 {
+        font-size: 1.8rem;
+      }
+
+      .about > p {
+        font-size: 1rem;
+        margin-bottom: 2.5rem;
+      }
+
+      /* Gallery section tablet responsive */
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.2rem;
+      }
+
       .hero-wrapper {
         grid-template-columns: 1fr;
         text-align: center;
@@ -580,6 +631,79 @@
       .hero {
         padding: 2rem 1rem;
         min-height: auto;
+      }
+
+      /* Facilities mobile responsive */
+      .facility-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+        padding: 0;
+      }
+
+      #facilities .container {
+        padding: 0 1rem;
+      }
+
+      #facilities h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .facility-card {
+        min-height: 240px;
+        border-radius: 10px;
+      }
+
+      .facility-content {
+        padding: 1.2rem;
+        text-align: center;
+      }
+
+      .facility-card i {
+        font-size: 2.2rem;
+      }
+
+      .facility-card h4 {
+        font-size: 1rem;
+        margin-bottom: 0.6rem;
+      }
+
+      .facility-card p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+
+      /* See More Button mobile styling */
+      #see-more-btn {
+        padding: 10px 25px !important;
+        font-size: 0.9rem !important;
+        margin-top: 20px !important;
+        border-radius: 8px !important;
+      }
+
+      /* About section mobile responsive */
+      .about {
+        padding: 2.5rem 0;
+      }
+
+      .about .container {
+        padding: 0 1rem;
+      }
+
+      .about h3 {
+        font-size: 1.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .about > p {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+      }
+
+      /* Gallery section mobile responsive */
+      .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+        gap: 1rem;
       }
 
       .hero h2 {
@@ -683,11 +807,30 @@
     }
 
     /* ===== FACILITIES ===== */
+    #facilities {
+      background: var(--white);
+      padding: 4rem 0;
+    }
+
     .facility-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 1.8rem;
       margin-top: 2rem;
+      padding: 0 0.5rem;
+    }
+
+    #facilities .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    #facilities h3 {
+      text-align: center;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      color: var(--blue);
     }
 
     .facility-card {
@@ -793,6 +936,84 @@
     /* ===== ABOUT ===== */
     .about {
       background: var(--light-blue);
+      padding: 4rem 0;
+    }
+
+    .about .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .about h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: var(--blue);
+      margin-bottom: 1.5rem;
+    }
+
+    .about > p {
+      text-align: center;
+      font-size: 1.1rem;
+      color: var(--gray);
+      max-width: 800px;
+      margin: 0 auto 3rem;
+      line-height: 1.7;
+    }
+
+    /* Very small mobile devices */
+    @media (max-width: 360px) {
+      #facilities .container {
+        padding: 0 0.8rem;
+      }
+
+      .facility-grid {
+        gap: 1rem;
+      }
+
+      #facilities h3 {
+        font-size: 1.4rem;
+      }
+
+      .facility-content {
+        padding: 1rem;
+      }
+
+      .facility-card h4 {
+        font-size: 0.95rem;
+      }
+
+      .facility-card p {
+        font-size: 0.8rem;
+      }
+
+      #see-more-btn {
+        padding: 8px 20px !important;
+        font-size: 0.85rem !important;
+      }
+
+      /* About section very small mobile */
+      .about {
+        padding: 2rem 0;
+      }
+
+      .about .container {
+        padding: 0 0.8rem;
+      }
+
+      .about h3 {
+        font-size: 1.4rem;
+      }
+
+      .about > p {
+        font-size: 0.9rem;
+      }
+
+      /* Gallery section very small mobile */
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 0.8rem;
+      }
     }
 
     /* ===== GALLERY ===== */
@@ -1632,43 +1853,112 @@ footer {
   <div class="container">
     <h3>Our Laboratory Facilities</h3>
     <div class="facility-grid">
-      <a href="soil-testing.html" class="facility-card">
-        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&h=300&fit=crop');"></div>
+      <!-- 1. Machine Boring -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('assets/site/site2.jpeg');"></div>
         <div class="facility-content">
-          <i class="fas fa-flask"></i>
-          <h4>Soil Testing Laboratory</h4>
-          <p>Comprehensive soil analysis including grain size, Atterberg limits, and classification tests</p>
-          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            <i class="fas fa-layer-group"></i>
+            <h4>Machine Boring, SPT & Soil Sampling</h4>
+            <p>For large structures, high-rise buildings, and difficult site conditions as per IS codes</p>
         </div>
-      </a>
-      <a href="compaction-testing.html" class="facility-card">
-        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=400&h=300&fit=crop');"></div>
+      </div>
+      <!-- 2. Hand Auger -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('assets/site/site1.jpeg');"></div>
         <div class="facility-content">
-          <i class="fas fa-compress-arrows-alt"></i>
-          <h4>Compaction & Strength Testing</h4>
-          <p>Proctor compaction, CBR, and shear strength tests for construction projects</p>
-          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            <i class="fas fa-tools"></i>
+            <h4>Hand Auger Boring & Soil Sampling</h4>
+            <p>For low-rise and medium-scale structures in accordance with IS standards</p>
         </div>
-      </a>
-      <a href="advanced-equipment.html" class="facility-card">
-        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=400&h=300&fit=crop');"></div>
+      </div>
+      <!-- 3. Particle Size -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1576086213369-97a306d36557?w=400&h=300&fit=crop');"></div>
         <div class="facility-content">
-          <i class="fas fa-microscope"></i>
-          <h4>Advanced Testing Equipment</h4>
-          <p>State-of-the-art instruments calibrated to international standards</p>
-          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
+            <i class="fas fa-filter"></i>
+            <h4>Particle Size Analysis</h4>
+            <p>Dry & Wet Sieve Analysis</p>
         </div>
-      </a>
-      <a href="field-investigation.html" class="facility-card">
-        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=400&h=300&fit=crop');"></div>
-        <div class="facility-content">
-          <i class="fas fa-hard-hat"></i>
-          <h4>Field Investigation Support</h4>
-          <p>On-site soil sampling and subsurface exploration services</p>
-          <span class="facility-link">Learn More <i class="fas fa-arrow-right"></i></span>
-        </div>
-      </a>
+      </div>
     </div>
+
+    <!-- Hidden Grid -->
+    <div id="more-facilities" class="facility-grid" style="display: none;">
+      <!-- 4. Water Content -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+            <i class="fas fa-temperature-high"></i>
+            <h4>Water Content Determination</h4>
+            <p>Oven Drying Method as per IS Code</p>
+        </div>
+      </div>
+      <!-- 5. Geotechnical Data Analysis -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+            <i class="fas fa-chart-line"></i>
+            <h4>Geotechnical Data Analysis</h4>
+            <p>Economic solutions ensuring safety, stability, and strength</p>
+        </div>
+      </div>
+      <!-- 6. Report Preparation -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1554224155-8d04cb21cd6c?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+            <i class="fas fa-file-alt"></i>
+            <h4>Soil Investigation Reports</h4>
+            <p>Accurate, professional, and timely technical recommendations</p>
+        </div>
+      </div>
+      <!-- 7. Foundation Support -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('assets/site/site2.jpeg');"></div>
+        <div class="facility-content">
+            <i class="fas fa-hard-hat"></i>
+            <h4>Foundation Support</h4>
+            <p>Construction-Stage Technical Support & Guidance</p>
+        </div>
+      </div>
+      <!-- 8. Rock Testing -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('assets/site/site1.jpeg');"></div>
+        <div class="facility-content">
+            <i class="fas fa-mountain"></i>
+            <h4>Rock Testing Services</h4>
+            <p>Strength testing and specific gravity using laboratory machinery</p>
+        </div>
+      </div>
+      <!-- 9. Consultancy -->
+      <div class="facility-card">
+        <div class="facility-bg" style="background-image: url('https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=300&fit=crop');"></div>
+        <div class="facility-content">
+            <i class="fas fa-briefcase"></i>
+            <h4>Geotechnical Consultancy</h4>
+            <p>Comprehensive engineering consultancy services</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px;">
+        <button id="see-more-btn" onclick="toggleFacilities()" style="background: var(--blue); color: white; border: none; padding: 12px 30px; border-radius: 8px; font-size: 1rem; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(10,79,163,0.3);">See More</button>
+    </div>
+
+    <script>
+    function toggleFacilities() {
+        var moreValues = document.getElementById("more-facilities");
+        var btnText = document.getElementById("see-more-btn");
+        
+        if (moreValues.style.display === "none") {
+            moreValues.style.display = "grid"; 
+            moreValues.style.marginTop = "20px";
+            btnText.innerHTML = "See Less";
+        } else {
+            moreValues.style.display = "none";
+            btnText.innerHTML = "See More";
+        }
+    }
+    </script>
   </div>
 </section>
 
@@ -1708,8 +1998,8 @@ footer {
   <div class="container">
     <h3>Laboratory & Work Area</h3>
     <div class="gallery-grid">
-      <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?w=600&h=400&fit=crop" alt="Laboratory Equipment">
-      <img src="https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=600&h=400&fit=crop" alt="Soil Testing">
+      <img src="assets/site/site1.jpeg" alt="Laboratory Equipment">
+      <img src="assets/site/site2.jpeg" alt="Soil Testing">
       <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?w=600&h=400&fit=crop" alt="Lab Analysis">
       <img src="https://images.unsplash.com/photo-1576086213369-97a306d36557?w=600&h=400&fit=crop" alt="Testing Process">
     </div>
@@ -1752,7 +2042,7 @@ footer {
             <h4>About</h4>
             <p class="description">Retired Executive Engineer (NC), from Irrigation, Water Resources Depattment of Govt. of Kerala in 2025, with 23 years of experience in Civil Engineering.</p>
             <div class="contact-info">
-              <div class="contact-item"><a href="mailto:engineer@tgts.in">engineer@tgts.in</a></div>
+              <div class="contact-item"><a href="mailto:shaburoyrv@gmail.com">shaburoyrv@gmail.com</a></div>
               <div class="contact-item">+91-9446500195</div>
             </div>
           </div>
