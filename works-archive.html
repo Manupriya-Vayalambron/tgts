@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Project Archive 2024–25 | TGTS</title>
+  <meta name="description" content="Soil investigation works conducted from June 2024 to March 2025 by Dr. Arvee Sujil Johnson, TGTS.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root { --blue:#0a4fa3; --light-blue:#eaf3ff; --white:#ffffff; --gray:#5a6775; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; color:#1c1c1c; background:var(--white); line-height:1.6; }
+    header { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:2px solid var(--light-blue); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+    .back-btn { display:inline-flex; align-items:center; gap:.5rem; color:var(--blue); text-decoration:none; font-weight:600; transition:all .3s ease; }
+    .back-btn:hover { transform:translateX(-5px); }
+    header .brand { color:var(--blue); font-size:1rem; font-weight:700; opacity:.85; }
+    .page-hero {
+      background:linear-gradient(135deg,rgba(10,79,163,.9),rgba(8,96,196,.87)),
+        url('https://images.unsplash.com/photo-1582719508461-905c673771fd?w=1200&h=400&fit=crop') center/cover;
+      padding:3.5rem 2rem 3rem; text-align:center; color:white;
+    }
+    .page-hero .badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); border-radius:20px; padding:.35rem 1rem; font-size:.8rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:1rem; }
+    .page-hero h2 { font-size:2.2rem; font-weight:700; margin-bottom:.6rem; }
+    .page-hero p { font-size:1rem; opacity:.9; max-width:620px; margin:0 auto; }
+    .summary-bar { background:var(--light-blue); padding:1.2rem 2rem; display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; border-bottom:2px solid #d6e6fb; }
+    .summary-stat { text-align:center; }
+    .summary-stat .num { font-size:1.6rem; font-weight:700; color:var(--blue); line-height:1; }
+    .summary-stat .lbl { font-size:.75rem; color:var(--gray); text-transform:uppercase; letter-spacing:.3px; margin-top:.2rem; }
+    .content { max-width:1000px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+    .filter-bar { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .search-box { flex:1; min-width:200px; padding:.65rem 1rem .65rem 2.5rem; border:1.5px solid #d6e6fb; border-radius:8px; font-size:.9rem; font-family:'Inter',sans-serif; outline:none; transition:border .2s; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a6775' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 0.8rem center; }
+    .search-box:focus { border-color:var(--blue); }
+    .result-count { font-size:.85rem; color:var(--gray); white-space:nowrap; }
+    .table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--light-blue); border-radius:10px; }
+    table { width:100%; min-width:760px; border-collapse:collapse; font-size:.88rem; }
+    thead th { background:var(--blue); color:white; padding:.75rem 1rem; text-align:left; font-weight:600; font-size:.8rem; position:sticky; top:72px; z-index:5; }
+    thead th:first-child { width:60px; text-align:center; }
+    tbody tr { border-bottom:1px solid var(--light-blue); transition:background .15s; }
+    tbody tr:hover { background:#f4f9ff; }
+    tbody td { padding:.65rem 1rem; color:#1c1c1c; vertical-align:top; }
+    tbody td:first-child { text-align:center; color:var(--gray); font-size:.82rem; font-weight:600; }
+    .client-name { color:var(--gray); font-size:.83rem; }
+    .no-results { text-align:center; padding:3rem; color:var(--gray); }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--light-blue); color:var(--gray); font-size:.88rem; }
+    @media(max-width:900px) { .summary-bar{gap:1.2rem;padding:1rem;} .summary-stat{min-width:150px;} .search-box{min-width:100%;} .result-count{width:100%;} }
+    @media(max-width:700px) { header{padding:.9rem 1rem;} .back-btn{font-size:.9rem;} .page-hero{padding:3rem 1rem 2.6rem;} .page-hero h2{font-size:1.6rem;} .page-hero p{font-size:.94rem;} .content{padding:2rem 1rem 3rem;} table{font-size:.82rem;} thead th,tbody td{padding:.55rem .7rem;} thead th{position:static;} .summary-bar{gap:1rem;padding:1rem;} .summary-stat .num{font-size:1.2rem;} }
+    @media(max-width:480px) { .page-hero h2{font-size:1.4rem;} .summary-bar{justify-content:flex-start;} .summary-stat{width:100%; text-align:left;} .summary-stat .lbl{font-size:.7rem;} .filter-bar{gap:.75rem;} .search-box{font-size:.86rem;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <span class="brand">TGTS</span>
+</header>
+
+<section class="page-hero">
+  <div class="badge"><i class="fas fa-archive"></i> &nbsp;Annexure III</div>
+  <h2>Project Archive 2024–25</h2>
+  <p>Soil investigation works conducted by Dr. Arvee Sujil Johnson from June 2024 to March 2025</p>
+</section>
+
+<div class="summary-bar">
+  <div class="summary-stat"><div class="num">123</div><div class="lbl">Projects Listed</div></div>
+  <div class="summary-stat"><div class="num">Jun 2024 – Mar 2025</div><div class="lbl">Period</div></div>
+  <div class="summary-stat"><div class="num">Kerala &amp; Tamil Nadu</div><div class="lbl">Coverage</div></div>
+</div>
+
+<div class="content">
+  <div class="filter-bar">
+    <input class="search-box" type="text" id="searchInput" placeholder="Search project or client name…" oninput="filterTable()">
+    <span class="result-count" id="resultCount">123 projects</span>
+  </div>
+
+  <div class="table-wrap">
+  <table id="projectTable">
+    <thead>
+      <tr>
+        <th>Sl.</th>
+        <th>Project / Soil Investigation Work</th>
+        <th>Client</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td>1</td><td>3 Storey Residential Building at Geetanjali Lane, Karyam, Sreekaryam, Tvpm</td><td class="client-name">Dr. Regi Kumar V</td></tr>
+      <tr><td>2</td><td>2 Storey Residential Building at Vettikonam, Vazhayila, Tvpm</td><td class="client-name">Nelson Enclave, Vazhayila, Tvpm</td></tr>
+      <tr><td>3</td><td>2 Storey Working Women's Hostel Building at Vanchikkavala, Cheruthoni, Idukki</td><td class="client-name">The Executive Engineer, KSEB, Idukki Division</td></tr>
+      <tr><td>4</td><td>Overhead Tank at Chackai, Tvpm</td><td class="client-name">Mr. Vineesh, Chackai, Tvpm</td></tr>
+      <tr><td>5</td><td>Three Storey Commercial Building at Anthalavattam, Chirayinkeezhu, Tvpm</td><td class="client-name">Mr. Aneesh, Anthalavattam</td></tr>
+      <tr><td>6</td><td>2 Storey Residential Building at Neendakara, Kollam</td><td class="client-name">Mr. Vinod Mohan M.C, Neendakara</td></tr>
+      <tr><td>7</td><td>2 Storey Residential Building at Karikkakkom, Akkulam, Tvpm</td><td class="client-name">Mr. Kiran S Nair, Karikkakkom</td></tr>
+      <tr><td>8</td><td>4 Storey Commercial Building at Chackai, Tvpm</td><td class="client-name">Mr. Prabhash S R, Chackai</td></tr>
+      <tr><td>9</td><td>2 Storey Residential / Office Building at Thayyil South, Valiyaparamba, Kasaragod</td><td class="client-name">Kavvayil Ayurveda Spa and Hospital</td></tr>
+      <tr><td>10</td><td>2 Storey Residential Building at Varkala, Tvpm</td><td class="client-name">Mr. Jithu Pratheep</td></tr>
+      <tr><td>11</td><td>3 Storey Apartment Building at Mukola, Mannanthala, Tvpm</td><td class="client-name">Mr. Naizim Baji</td></tr>
+      <tr><td>12</td><td>4 Storey Commercial Building at Manacaud, Tvpm</td><td class="client-name">Mr. Sivakumar</td></tr>
+      <tr><td>13</td><td>3 Storey Residential Building at Karunagapally, Kollam</td><td class="client-name">Mr. Aneesh Chandran</td></tr>
+      <tr><td>14</td><td>3 Storey Residential Building at Friends Colony, Kumarapuram, Tvpm</td><td class="client-name">Dr. Mohan Das</td></tr>
+      <tr><td>15</td><td>3 Storey Residential Building at Ulloor, Tvpm</td><td class="client-name">Mr. Subhramaniam Venkatraman Krishnan</td></tr>
+      <tr><td>16</td><td>2/3 Storey Residential Building at Parottukonam, Paruthippara, Tvpm</td><td class="client-name">Mr. A G. Baiju</td></tr>
+      <tr><td>17</td><td>3 Storey Residential Building at Kaimanam, Karamana, Tvpm</td><td class="client-name">Dr. Deepu V</td></tr>
+      <tr><td>18</td><td>3 Storey Residential Building at Kowdiar, Tvpm</td><td class="client-name">Mr. Sudheep George</td></tr>
+      <tr><td>19</td><td>2 Storey Residential Building at Chackai, Tvpm</td><td class="client-name">Mr. Sujith G S</td></tr>
+      <tr><td>20</td><td>3 Storey Residential Building at Meenamkulam, Tvpm</td><td class="client-name">Mr. Gibu Thomas</td></tr>
+      <tr><td>21</td><td>3 Storey Residential Building at Prasanth Nagar, Tvpm</td><td class="client-name">Mr. Nishanth S</td></tr>
+      <tr><td>22</td><td>2 Storey Residential Building at Murinjapalam, Tvpm</td><td class="client-name">Smt. Rani B</td></tr>
+      <tr><td>23</td><td>3 Storey Commercial Building at Enchakkal, Tvpm</td><td class="client-name">Mr. Biju &amp; Smt. Asha</td></tr>
+      <tr><td>24</td><td>2 Storey Residential Building at Nellimukku, Kollam</td><td class="client-name">Mr. Ranjith</td></tr>
+      <tr><td>25</td><td>3 Storey Commercial Building at Kazhakuttom, Tvpm</td><td class="client-name">Mr. Jayakumar M.S</td></tr>
+      <tr><td>26</td><td>2 Storey Residential Building at Kazhakuttom, Tvpm</td><td class="client-name">Mr. Avinash R</td></tr>
+      <tr><td>27</td><td>3 Storey Commercial Building at Chackai, Tvpm</td><td class="client-name">Mr. David George</td></tr>
+      <tr><td>28</td><td>2 Storey Residential Building at Sankumukam, Tvpm</td><td class="client-name">Smt. Deepthy Sanoop</td></tr>
+      <tr><td>29</td><td>4 Storey School Building at Loyola ICSE School, Mukundara, Mylakkara, Tvpm</td><td class="client-name">The Manager, Loyola ICSE School</td></tr>
+      <tr><td>30</td><td>2 Storey Residential Building at Padayani Road, PTP Nagar, Tvpm</td><td class="client-name">Mr. Gopakumar</td></tr>
+      <tr><td>31</td><td>4 Storey Commercial Building at Govt. Medical College Jn, Tvpm</td><td class="client-name">Mr. Shaji S</td></tr>
+      <tr><td>32</td><td>3 Storey Commercial Building at Punchakari, Thiruvallam, Tvpm</td><td class="client-name">Smt. Abna G N</td></tr>
+      <tr><td>33</td><td>2 Storey Residential Building at Padma Nagar, Eastfort, Tvpm</td><td class="client-name">Mr. R. Balachandran</td></tr>
+      <tr><td>34</td><td>Single Storey Commercial Building at Mukkadu, Kavanad, Kollam</td><td class="client-name">Mr. Binoy Benjamin</td></tr>
+      <tr><td>35</td><td>2 Storey Residential Building at Kadapakada, Kollam</td><td class="client-name">Mr. Subarayadu</td></tr>
+      <tr><td>36</td><td>3 Storey Residential Building at Kuravankonam, Tvpm</td><td class="client-name">Mr. Bibin J</td></tr>
+      <tr><td>37</td><td>4 Storey Commercial Building at Muttada, Tvpm</td><td class="client-name">Mr. Ashokan Athikkote</td></tr>
+      <tr><td>38</td><td>4 Storey Apartment Building at Kawdiar, Tvpm</td><td class="client-name">Mr. M. R. Narayanan</td></tr>
+      <tr><td>39</td><td>2 Storey Residential Building at NSP Nagar, Kesavadaspuram, Tvpm</td><td class="client-name">Mr. Abhijith</td></tr>
+      <tr><td>40</td><td>4 Storey Commercial Building at Pallimukku, Kollam</td><td class="client-name">Mr. Amarsha S</td></tr>
+      <tr><td>41</td><td>3 Storey Commercial Building at Kadavoor, Kollam</td><td class="client-name">Mr. Isidore</td></tr>
+      <tr><td>42</td><td>4 Storey Commercial Building at Adoor, Pathanamthitta</td><td class="client-name">Smt. Sony Ramachandran</td></tr>
+      <tr><td>43</td><td>Auditorium Building at Chittazha, Maruthoor, Tvpm</td><td class="client-name">M/s. Christ Centre Gospel Foundation</td></tr>
+      <tr><td>44</td><td>4 Storey Commercial Building near Varkala Railway Station, Tvpm</td><td class="client-name">Mr. Shukkoor S</td></tr>
+      <tr><td>45</td><td>5 Storey Commercial Building near St. Joseph School, General Hospital Jn, Tvpm</td><td class="client-name">H.H. Baselious Marthoma Mathews 3rd, Catholicos of the East and Malankara Metropolitan</td></tr>
+      <tr><td>46</td><td>3 Storey Residential Building at Kallattummuk, Kamaleswaram, Tvpm</td><td class="client-name">Mrs. Afra</td></tr>
+      <tr><td>47</td><td>Two Storey Residential Building at Akshaya Nagar, Nalanchira, Tvpm</td><td class="client-name">Mr. Pranoy K Pradeep</td></tr>
+      <tr><td>48</td><td>2 Storey Residential Building at Pallimukku, Kallayam, Tvpm</td><td class="client-name">Mr. Deepu Mathew</td></tr>
+      <tr><td>49</td><td>2 Storey Residential Building at Kariyavattom, Kazhakkuttom, Tvpm</td><td class="client-name">M/s. Royal Greens</td></tr>
+      <tr><td>50</td><td>3 Storey Commercial Building at Veliyam, Kollam</td><td class="client-name">Mr. Shaji S</td></tr>
+      <tr><td>51</td><td>2 Storey Residential Building at Nilamel, Kollam</td><td class="client-name">Mr. Shihan Ismail</td></tr>
+      <tr><td>52</td><td>3 Storey Commercial Building at Kesavadaspuram, Tvpm</td><td class="client-name">Mr. George Joshua</td></tr>
+      <tr><td>53</td><td>3 Storey Commercial Building at Eastfort (Inside Fort), Tvpm</td><td class="client-name">M/s. Ramachandran Textiles</td></tr>
+      <tr><td>54</td><td>3 Storey Commercial Building at Chalakuzhi Road, Medical College PO, Tvpm</td><td class="client-name">Mr. Nithyanand R</td></tr>
+      <tr><td>55</td><td>2 Storey Residential Building at Prasanth Nagar, Ulloor, Tvpm</td><td class="client-name">Mr. Ashish Murugan</td></tr>
+      <tr><td>56</td><td>2 Storey Residential Building at Murinjapallam, Tvpm</td><td class="client-name">M/s. Arcadea Builders And Interiors</td></tr>
+      <tr><td>57</td><td>2 Storey Residential Building at Kaimanam, Karamana, Tvpm</td><td class="client-name">Mr. Kishore</td></tr>
+      <tr><td>58</td><td>2 Storey Residential Building at T.B. Jn, Vazhappallyil, Attingal</td><td class="client-name">Mr. Sulfi S.H</td></tr>
+      <tr><td>59</td><td>2/3 Storey Residential Building at Kalady, Tvpm</td><td class="client-name">Mr. Shaji S</td></tr>
+      <tr><td>60</td><td>2 Storey Residential Building at Nannatkavu, Pothencode, Tvpm</td><td class="client-name">Mr. Al-Habeeb A</td></tr>
+      <tr><td>61</td><td>4 Storey Residential Building at Murinjapalam, Tvpm</td><td class="client-name">Smt. Anupama M.S</td></tr>
+      <tr><td>62</td><td>2 Storey Residential Building at Vattiyooravu, Tvpm</td><td class="client-name">Mr. Sumithra Das S</td></tr>
+      <tr><td>63</td><td>2 Storey New Sub-Treasury Building at Mundakayam, Kottayam</td><td class="client-name">M/s. HLL Lifecare Ltd</td></tr>
+      <tr><td>64</td><td>2 Storey Residential Building at Karikkakom, Tvpm</td><td class="client-name">Mr. Rajeev Thanuvan</td></tr>
+      <tr><td>65</td><td>2 Storey Municipal Market Building at Perumazhuthoor Market, Neyyattinkara, Tvpm</td><td class="client-name">Dr. Vijesh V</td></tr>
+      <tr><td>66</td><td>Two Storey Residential Building at Kaniyapuram, Tvpm</td><td class="client-name">Mr. Ashraf</td></tr>
+      <tr><td>67</td><td>4 Storey Residential Building at Rose Garden, Poothi Road, Kumarapuram, Tvpm</td><td class="client-name">Mr. Sreelesh</td></tr>
+      <tr><td>68</td><td>2 Storey Municipal Market, Neyyattinkara, Tvpm</td><td class="client-name">Ar. Vijesh V</td></tr>
+      <tr><td>69</td><td>5 Storey Commercial Building at Maanthura Beach, Varkala, Tvpm</td><td class="client-name">Mr. Faisal Salahudheen</td></tr>
+      <tr><td>70</td><td>5 Storey Commercial Building at Maanthura Beach, Varkala, Tvpm (2nd site)</td><td class="client-name">Mr. Faisal Salahudheen</td></tr>
+      <tr><td>71</td><td>5 Storey Residential cum Commercial Building at Medical College, Tvpm</td><td class="client-name">Mr. K. Nasser</td></tr>
+      <tr><td>72</td><td>3 Storey Residential Building at Iranimuttom, Tvpm</td><td class="client-name">Mr. Roy K.R.R</td></tr>
+      <tr><td>73</td><td>2 Storey Residential Building at Monvila, Kulathur, Tvpm</td><td class="client-name">Mr. Ajayagosh V</td></tr>
+      <tr><td>74</td><td>5 Storey Residential Building at Technopark, Kazhakuttom, Tvpm</td><td class="client-name">Mr. Manoj P.L</td></tr>
+      <tr><td>75</td><td>2 Storey Residential Building at Kolomkonam, Marakil, Pulirakonam, Tvpm</td><td class="client-name">M/s. Aham Builders</td></tr>
+      <tr><td>76</td><td>2 Storey Residential Building at Ezhukone, Kundara, Kollam</td><td class="client-name">Mr. Bejoy M. Chacko</td></tr>
+      <tr><td>77</td><td>5 Storey Hospital Building at Marthandam, Kanyakumari District, Tamil Nadu</td><td class="client-name">Mr. Dennis P</td></tr>
+      <tr><td>78</td><td>8 Storey Hospital Building at Punalur, Kollam</td><td class="client-name">Dr. Rajeev V.S</td></tr>
+      <tr><td>79</td><td>3 Storey Residential Building at Thycaud, Tvpm</td><td class="client-name">Dr. Vishwanathan</td></tr>
+      <tr><td>80</td><td>2 Storey Residential Building at Muttada Mandankovil Lane, Muttada, Tvpm</td><td class="client-name">Mr. Sajan Mattapplly</td></tr>
+      <tr><td>81</td><td>2 Storey Residential Building at Nettayam, Vattiyoorkavu, Tvpm</td><td class="client-name">Mr. Shajahan</td></tr>
+      <tr><td>82</td><td>3 Storey Residential Building at Nethaji Bose Road, Plamoodu, Pattom, Tvpm</td><td class="client-name">Mrs. Tina B</td></tr>
+      <tr><td>83</td><td>3 Storey Residential Building at Arasumoodu, Kulathur, Tvpm</td><td class="client-name">Smt. Sapna V</td></tr>
+      <tr><td>84</td><td>2 Storey Residential Building at Edakulam, Mannamoola, Tvpm</td><td class="client-name">Mr. B. Pankajashan Nair</td></tr>
+      <tr><td>85</td><td>3 Storey Residential Building at Venpalavattom, Anayara PO, Tvpm</td><td class="client-name">Mr. Harikrishnan S</td></tr>
+      <tr><td>86</td><td>2 Storey Residential Building at Kannamoola, Tvpm</td><td class="client-name">Mr. Bearny</td></tr>
+      <tr><td>87</td><td>3 Storey Residential Building at Headgever, Mandathuvilakam, Tvpm</td><td class="client-name">Smt. Bindu P</td></tr>
+      <tr><td>88</td><td>2 Storey Residential Building at Kuzhithura, Karunagappally, Kollam</td><td class="client-name">Smt. Chikku D</td></tr>
+      <tr><td>89</td><td>4 Storey Commercial Building at Attukkal, Tvpm</td><td class="client-name">The Secretary, Attukkal Bhagavathy Temple Trust</td></tr>
+      <tr><td>90</td><td>4 Storey Residential Building at Kanjurampara, Mruthenkuzhy, Tvpm</td><td class="client-name">Smt. Hyma S</td></tr>
+      <tr><td>91</td><td>2 Storey Residential Building at Pattoor, Tvpm</td><td class="client-name">Smt. Saranya</td></tr>
+      <tr><td>92</td><td>3 Storey Commercial Building at Karikkakom, Anayara, Tvpm</td><td class="client-name">Mr. Manosh G</td></tr>
+      <tr><td>93</td><td>19th Storey Hostel Building at Uday Palace Convention Centre, Kowdiar, Tvpm</td><td class="client-name">Mr. Mohan Nair</td></tr>
+      <tr><td>94</td><td>8M High Indoor Steel Structure at Arasumoodu, Monvila, Tvpm</td><td class="client-name">M/s. Flodestat Athletic Pvt Ltd</td></tr>
+      <tr><td>95</td><td>8M High Steel Structure Plant Shed at Thangasserry, Kollam</td><td class="client-name">Sanitary Waste Destroyer Plant, Kollam Municipal Corporation</td></tr>
+      <tr><td>96</td><td>Petrol Storage Tank Facility at Tholicode, Vithura, Tvpm</td><td class="client-name">Mr. A.M. Rajesh</td></tr>
+      <tr><td>97</td><td>3 Storey Commercial Building at Kavalkinarau, Nagercoil, Kanyakumari District, Tamil Nadu</td><td class="client-name">Mr. Ramraj</td></tr>
+      <tr><td>98</td><td>3 Storey Residential Building at Sreekantewaram, Tvpm</td><td class="client-name">Smt. Bindu Gopal</td></tr>
+      <tr><td>99</td><td>3 Storey Residential Building at Ambala Nagar, Kuravankonam, Tvpm</td><td class="client-name">Mr. Pratheesh T.S</td></tr>
+      <tr><td>100</td><td>3 Storey Residential Building at Bakery Junction, Palayam, Tvpm</td><td class="client-name">Mr. Azhar R</td></tr>
+      <tr><td>101</td><td>3 Storey Residential Building at Chandhavila, Trijothipuram, Tvpm</td><td class="client-name">Mr. R. Mohanachandran</td></tr>
+      <tr><td>102</td><td>3 Storey Commercial Building at Poonthi Road, Kumarapuram, Tvpm</td><td class="client-name">M/s. Minayil Ventures Pvt Ltd</td></tr>
+      <tr><td>103</td><td>3 Storey Treasury Office Building at Pooyiappally, Kottarakkara, Kollam</td><td class="client-name">The Deputy Vice President, HLL</td></tr>
+      <tr><td>104</td><td>2 Storey Residential Building at Kumarapuram, Tvpm</td><td class="client-name">Mr. Nithin Jayachandran</td></tr>
+      <tr><td>105</td><td>3 Storey Residential Building at Kawdiar, Tvpm</td><td class="client-name">Mr. George Mathew</td></tr>
+      <tr><td>106</td><td>2 Storey Residential Building at General Hospital Junction, Tvpm</td><td class="client-name">Smt. Renuka</td></tr>
+      <tr><td>107</td><td>3 Storey Commercial Building at Kaimanam, Pappanamcode PO, Tvpm</td><td class="client-name">Mr. Balamursli</td></tr>
+      <tr><td>108</td><td>2 Storey Residential Building at Kilimanoor, Tvpm</td><td class="client-name">Mr. Vishnu</td></tr>
+      <tr><td>109</td><td>2 Storey Residential Building at Beach Road, Kollam</td><td class="client-name">Mr. N. Soman</td></tr>
+      <tr><td>110</td><td>Open Football Turf, Multi-Level Indoor Badminton &amp; Swimming Pool</td><td class="client-name">M/s. Taampuran Sports Academy</td></tr>
+      <tr><td>111</td><td>2 Storey Residential Building at Kadapakkada, Kollam</td><td class="client-name">Smt. L. Gouri Mohan</td></tr>
+      <tr><td>112</td><td>2 Storey Residential Building at Anayara Gardens, Anayara, Tvpm</td><td class="client-name">Mr. Varun Somarajan</td></tr>
+      <tr><td>113</td><td>2 Storey Residential Building at Sastha Nagar, Karamana, Tvpm</td><td class="client-name">Mr. K. Moorthy</td></tr>
+      <tr><td>114</td><td>2 Storey Commercial Building at Neendakkara, Kollam</td><td class="client-name">Mr. Marx Francis</td></tr>
+      <tr><td>115</td><td>2 Storey Residential Building at Attingal, Tvpm</td><td class="client-name">Smt. Shiny</td></tr>
+      <tr><td>116</td><td>2 Storey Residential Building at Sasthamangalam, Tvpm</td><td class="client-name">Smt. Archana A</td></tr>
+      <tr><td>117</td><td>3 Storey Residential Building at Kallikadu, Kattakada, Tvpm</td><td class="client-name">Mr. Samuel Koonammavu</td></tr>
+      <tr><td>118</td><td>2 Storey Residential Building at Menamkulam, Tvpm</td><td class="client-name">Mr. Sharlet Fernandez</td></tr>
+      <tr><td>119</td><td>3 Storey Residential Building at Pallipuram, Tvpm</td><td class="client-name">Farm House Project for Mr. Vijayachandran</td></tr>
+      <tr><td>120</td><td>2 Storey Residential Building at Cheruvayikkal, Engineering College PO, Tvpm</td><td class="client-name">Smt. V. Krishnaveni</td></tr>
+      <tr><td>121</td><td>9M High RCC Structure near Amaravila Bridge, Neyyattinkara, Tvpm</td><td class="client-name">C/o Architect Vijesh V</td></tr>
+      <tr><td>122</td><td>Godown Building at Veli, Tvpm</td><td class="client-name">M/s. G.H.R Milkman's Dairy</td></tr>
+      <tr><td>123</td><td>Car Parking Facility Building at Kunnil Hypermarket, Kaniyapuram, Tvpm</td><td class="client-name">Mr. Shanavas N</td></tr>
+      <tr id="noResults" style="display:none;"><td colspan="3" class="no-results"><i class="fas fa-search" style="font-size:2rem;opacity:.3;display:block;margin-bottom:.5rem;"></i>No matching projects found.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<footer>© 2026 Trivandrum Geotechnical Testing and Solutions &nbsp;·&nbsp; tgts.in</footer>
+
+<script>
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#tableBody tr:not(#noResults)');
+  let visible = 0;
+  rows.forEach(r => {
+    const match = r.textContent.toLowerCase().includes(q);
+    r.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('resultCount').textContent = visible + ' project' + (visible !== 1 ? 's' : '');
+  document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects via CET/ITCSR | TGTS</title>
+  <meta name="description" content="Soil investigation works conducted through ITCSR, College of Engineering Trivandrum from June 2024 to January 2026.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root { --blue:#0a4fa3; --light-blue:#eaf3ff; --white:#ffffff; --gray:#5a6775; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; color:#1c1c1c; background:var(--white); line-height:1.6; }
+    header { position:sticky; top:0; z-index:100; background:var(--white); border-bottom:2px solid var(--light-blue); padding:1rem 2rem; display:flex; justify-content:space-between; align-items:center; }
+    .back-btn { display:inline-flex; align-items:center; gap:.5rem; color:var(--blue); text-decoration:none; font-weight:600; transition:all .3s ease; }
+    .back-btn:hover { transform:translateX(-5px); }
+    header .brand { color:var(--blue); font-size:1rem; font-weight:700; opacity:.85; }
+    .page-hero {
+      background:linear-gradient(135deg,rgba(10,79,163,.92),rgba(26,111,212,.88)),
+        url('https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=1200&h=400&fit=crop') center/cover;
+      padding:3.5rem 2rem 3rem; text-align:center; color:white;
+    }
+    .page-hero .badge { display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3); border-radius:20px; padding:.35rem 1rem; font-size:.8rem; letter-spacing:1px; text-transform:uppercase; margin-bottom:1rem; }
+    .page-hero h2 { font-size:2.2rem; font-weight:700; margin-bottom:.6rem; }
+    .page-hero p { font-size:1rem; opacity:.9; max-width:600px; margin:0 auto; }
+    .summary-bar { background:var(--light-blue); padding:1.2rem 2rem; display:flex; justify-content:center; flex-wrap:wrap; gap:2rem; border-bottom:2px solid #d6e6fb; }
+    .summary-stat { text-align:center; }
+    .summary-stat .num { font-size:1.6rem; font-weight:700; color:var(--blue); line-height:1; }
+    .summary-stat .lbl { font-size:.75rem; color:var(--gray); text-transform:uppercase; letter-spacing:.3px; margin-top:.2rem; }
+    .content { max-width:1000px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+    .filter-bar { display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap; }
+    .search-box { flex:1; min-width:200px; padding:.65rem 1rem .65rem 2.5rem; border:1.5px solid #d6e6fb; border-radius:8px; font-size:.9rem; font-family:'Inter',sans-serif; outline:none; transition:border .2s; background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a6775' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 0.8rem center; }
+    .search-box:focus { border-color:var(--blue); }
+    .result-count { font-size:.85rem; color:var(--gray); white-space:nowrap; }
+    .table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--light-blue); border-radius:10px; }
+    table { width:100%; min-width:760px; border-collapse:collapse; font-size:.88rem; }
+    thead th { background:var(--blue); color:white; padding:.75rem 1rem; text-align:left; font-weight:600; font-size:.8rem; letter-spacing:.2px; position:sticky; top:72px; z-index:5; }
+    thead th:first-child { width:60px; text-align:center; }
+    tbody tr { border-bottom:1px solid var(--light-blue); transition:background .15s; }
+    tbody tr:hover { background:#f4f9ff; }
+    tbody td { padding:.65rem 1rem; color:#1c1c1c; vertical-align:top; }
+    tbody td:first-child { text-align:center; color:var(--gray); font-size:.82rem; font-weight:600; }
+    .client-name { color:var(--gray); font-size:.83rem; }
+    .no-results { text-align:center; padding:3rem; color:var(--gray); }
+    .govt-badge { display:inline-block; background:#fff3cd; color:#856404; border-radius:4px; padding:.1rem .45rem; font-size:.72rem; font-weight:700; margin-left:.3rem; }
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--light-blue); color:var(--gray); font-size:.88rem; }
+    @media(max-width:900px) { .summary-bar{gap:1.2rem;padding:1rem;} .summary-stat{min-width:150px;} .search-box{min-width:100%;} .result-count{width:100%;} }
+    @media(max-width:700px) { header{padding:.9rem 1rem;} .back-btn{font-size:.9rem;} .page-hero{padding:3rem 1rem 2.6rem;} .page-hero h2{font-size:1.6rem;} .page-hero p{font-size:.94rem;} .content{padding:2rem 1rem 3rem;} table{font-size:.82rem;} thead th,tbody td{padding:.55rem .7rem;} thead th{position:static;} .summary-bar{gap:1rem;padding:1rem;} .summary-stat .num{font-size:1.2rem;} }
+    @media(max-width:480px) { .page-hero h2{font-size:1.4rem;} .summary-bar{justify-content:flex-start;} .summary-stat{width:100%; text-align:left;} .summary-stat .lbl{font-size:.7rem;} .filter-bar{gap:.75rem;} .search-box{font-size:.86rem;} }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <span class="brand">TGTS</span>
+</header>
+
+<section class="page-hero">
+  <div class="badge"><i class="fas fa-university"></i> &nbsp;Annexure II</div>
+  <h2>Projects via CET / ITCSR</h2>
+  <p>Soil investigation works conducted through ITCSR Office, College of Engineering Trivandrum, Thiruvananthapuram 695016</p>
+</section>
+
+<div class="summary-bar">
+  <div class="summary-stat"><div class="num">52</div><div class="lbl">Projects Listed</div></div>
+  <div class="summary-stat"><div class="num">Jun 2024 – Jan 2026</div><div class="lbl">Period</div></div>
+  <div class="summary-stat"><div class="num">VSSC · ISRO · KSHB · KPHCC</div><div class="lbl">Major Clients</div></div>
+</div>
+
+<div class="content">
+  <div class="filter-bar">
+    <input class="search-box" type="text" id="searchInput" placeholder="Search project or client name…" oninput="filterTable()">
+    <span class="result-count" id="resultCount">52 projects</span>
+  </div>
+
+  <div class="table-wrap">
+  <table id="projectTable">
+    <thead>
+      <tr>
+        <th>Sl.</th>
+        <th>Project / Soil Investigation Work</th>
+        <th>Client / Agency</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td>1</td><td>Pig Farm Building at Parasala, Thiruvananthapuram</td><td class="client-name">-</td></tr>
+      <tr><td>2</td><td>15-Storey Building at Thampuranmukku, Kuzhivila</td><td class="client-name">M/s. Condor Builders Pvt Ltd, Pattom, Tvpm</td></tr>
+      <tr><td>3</td><td>PHC Building at Karuvatta</td><td class="client-name">Executive Engineer, KSHB, Alappuzha</td></tr>
+      <tr><td>4</td><td>Police Quarters Building at Cherthala</td><td class="client-name">Chief Engineer, KPHCC Ltd, Tvpm</td></tr>
+      <tr><td>5</td><td>Police Quarters Building at Alappuzha</td><td class="client-name">Chief Engineer, KPHCC Ltd, Tvpm</td></tr>
+      <tr><td>6</td><td>Anganvady Building at Kavadikonam, Parippaly, Kollam</td><td class="client-name">AE, Kalluvathukkal GP, Kollam</td></tr>
+      <tr><td>7</td><td>18-Storey Apartment Building at Muttada</td><td class="client-name">M/s. Condor Builders Pvt Ltd, Pattom, Tvpm</td></tr>
+      <tr><td>8</td><td>18-Storey Apartment Building at Akkulam</td><td class="client-name">M/s. Condor Builders Pvt Ltd, Pattom, Tvpm</td></tr>
+      <tr><td>9</td><td>Cherummiyur GP</td><td class="client-name">-</td></tr>
+      <tr><td>10</td><td>KPHCC, Varkala</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>11</td><td>Hostel Building at Agriculture College, Vellayani, Thiruvananthapuram</td><td class="client-name">Kerala Agriculture University</td></tr>
+      <tr><td>12</td><td>Retaining Wall Construction</td><td class="client-name">-</td></tr>
+      <tr><td>13</td><td>VSSC, LPSC, Valiyamala – Canteen Building</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>14</td><td>VSSC, LPSC, Valiyamala – CISF Quarters Building</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>15</td><td>VSSC, ISRO – Abdul Kalam Centre, Kawdiar</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>16</td><td>VSSC, ISRO, TERLS – Heavy Vehicle Building</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>17</td><td>VSSC, ISRO, TERLS – Indoor Badminton Court Building</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>18</td><td>VSSC, ISRO, TERLS – RTGS Building</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>19</td><td>SFS, Kaniyapuram – 12-Storey Apartment Building</td><td class="client-name">SFS</td></tr>
+      <tr><td>20</td><td>SFS, Opposite Lulu Mall – 12-Storey Apartment Building</td><td class="client-name">SFS</td></tr>
+      <tr><td>21</td><td>Working Women's Hostel Building at Cheruthoni, Vazhathoppu, Idukki</td><td class="client-name">EE, KSHB, Painavu</td></tr>
+      <tr><td>22</td><td>GEC Boys Hostel Building at GEC Painavu</td><td class="client-name">EE, KSHB, Painavu</td></tr>
+      <tr><td>23</td><td>Advanced Technologies in Bovine Production &amp; Research Centre, Kulathapuzha, Kollam</td><td class="client-name">KLD Board</td></tr>
+      <tr><td>24</td><td>Interpretation Centre at Papanasam, Varkala</td><td class="client-name">KTIL</td></tr>
+      <tr><td>25</td><td>Smart Tourist Hub at Papanasam, Varkala</td><td class="client-name">KTIL</td></tr>
+      <tr><td>26</td><td>Alappuzha Water Wonderland – Beach Buildings</td><td class="client-name">KTIL</td></tr>
+      <tr><td>27</td><td>Alappuzha Water Wonderland – Canal Buildings</td><td class="client-name">KTIL</td></tr>
+      <tr><td>28</td><td>Three-Storey Terminal Building at Punnamada Finishing Point, Alappuzha</td><td class="client-name">KTIL</td></tr>
+      <tr><td>29</td><td>KPHCC – Uduma</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>30</td><td>KPHCC – Nandavanam</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>31</td><td>KPHCC – Kannanalloor, Kollam</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>32</td><td>Perumon Temple, Kazhakuttom, Thiruvananthapuram</td><td class="client-name">Temple Trust</td></tr>
+      <tr><td>33</td><td>KPHCC – DPO, Dharmasala</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>34</td><td>KPHCC – Valancherry</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>35</td><td>KPHCC – Vandoor</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>36</td><td>KPHCC – Peravoor</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>37</td><td>KPHCC – Kochi</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>38</td><td>KPHCC – Kochi (2nd site)</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>39</td><td>KPHCC – Koyilandy</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>40</td><td>KPHCC – Kodencherry</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>41</td><td>KPHCC – Thrissur</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>42</td><td>KPHCC – SPO, Dharmasala</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>43</td><td>KPHCC – Idukki</td><td class="client-name">KPHCC Ltd</td></tr>
+      <tr><td>44</td><td>Pedestal in APLD Building at ISRO, IIST, Valiyamala</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>45</td><td>Road Construction at Petrochemical Park, KINFRA, Kochi</td><td class="client-name">KINFRA</td></tr>
+      <tr><td>46</td><td>Road Construction for VSSC, LPSC, Valiyamala</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>47</td><td>NGLV Facility Building for VSSC, LPSC, Valiyamala</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>48</td><td>OH Water Tank at Vattiyurkavu for VSSC, ISRO, Veli</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>49</td><td>Storage Building at RFF, Veli for VSSC, ISRO, Veli</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>50</td><td>Sub-Station Structures at KSEB, Paruthippara</td><td class="client-name">KSEB</td></tr>
+      <tr><td>51</td><td>Road Construction for ISRO IIST, Valiyamala</td><td class="client-name">VSSC / ISRO <span class="govt-badge">Govt. of India</span></td></tr>
+      <tr><td>52</td><td>Amenity Centre Complex at University Karivattom Campus, Kazhakuttom, Tvpm</td><td class="client-name">University of Kerala</td></tr>
+      <tr id="noResults" style="display:none;"><td colspan="3" class="no-results"><i class="fas fa-search" style="font-size:2rem;opacity:.3;display:block;margin-bottom:.5rem;"></i>No matching projects found.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<footer>© 2026 Trivandrum Geotechnical Testing and Solutions &nbsp;·&nbsp; tgts.in</footer>
+
+<script>
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#tableBody tr:not(#noResults)');
+  let visible = 0;
+  rows.forEach(r => {
+    const match = r.textContent.toLowerCase().includes(q);
+    r.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('resultCount').textContent = visible + ' project' + (visible !== 1 ? 's' : '');
+  document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+}
+</script>
+</body>
+</html>

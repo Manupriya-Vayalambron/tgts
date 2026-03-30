@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Projects – TGTS | Trivandrum Geotechnical Testing & Solutions</title>
+  <meta name="description" content="Soil investigation projects conducted through M/s Trivandrum Geotechnical Testing & Solutions from April 2025 onwards.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root { --blue:#0a4fa3; --light-blue:#eaf3ff; --white:#ffffff; --gray:#5a6775; }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body { font-family:'Inter',sans-serif; color:#1c1c1c; background:var(--white); line-height:1.6; }
+
+    header {
+      position:sticky; top:0; z-index:100; background:var(--white);
+      border-bottom:2px solid var(--light-blue); padding:1rem 2rem;
+      display:flex; justify-content:space-between; align-items:center;
+    }
+    .back-btn { display:inline-flex; align-items:center; gap:.5rem; color:var(--blue); text-decoration:none; font-weight:600; transition:all .3s ease; }
+    .back-btn:hover { transform:translateX(-5px); }
+    header .brand { color:var(--blue); font-size:1rem; font-weight:700; opacity:.85; }
+
+    .page-hero {
+      background:linear-gradient(135deg,rgba(10,79,163,.92),rgba(8,96,196,.88)),
+        url('https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=1200&h=400&fit=crop') center/cover;
+      padding:3.5rem 2rem 3rem; text-align:center; color:white;
+    }
+    .page-hero .badge {
+      display:inline-block; background:rgba(255,255,255,.15); border:1px solid rgba(255,255,255,.3);
+      border-radius:20px; padding:.35rem 1rem; font-size:.8rem; letter-spacing:1px;
+      text-transform:uppercase; margin-bottom:1rem;
+    }
+    .page-hero h2 { font-size:2.2rem; font-weight:700; margin-bottom:.6rem; }
+    .page-hero p { font-size:1rem; opacity:.9; max-width:600px; margin:0 auto; }
+
+    .summary-bar {
+      background:var(--light-blue); padding:1.2rem 2rem;
+      display:flex; justify-content:center; flex-wrap:wrap; gap:2rem;
+      border-bottom:2px solid #d6e6fb;
+    }
+    .summary-stat { text-align:center; }
+    .summary-stat .num { font-size:1.6rem; font-weight:700; color:var(--blue); line-height:1; }
+    .summary-stat .lbl { font-size:.75rem; color:var(--gray); text-transform:uppercase; letter-spacing:.3px; margin-top:.2rem; }
+
+    .content { max-width:1000px; margin:0 auto; padding:2.5rem 1.5rem 4rem; }
+
+    .filter-bar {
+      display:flex; align-items:center; gap:1rem; margin-bottom:1.5rem; flex-wrap:wrap;
+    }
+    .search-box {
+      flex:1; min-width:200px; padding:.65rem 1rem .65rem 2.5rem;
+      border:1.5px solid #d6e6fb; border-radius:8px; font-size:.9rem;
+      font-family:'Inter',sans-serif; outline:none; transition:border .2s;
+      background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235a6775' stroke-width='2'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E") no-repeat 0.8rem center;
+    }
+    .search-box:focus { border-color:var(--blue); }
+    .result-count { font-size:.85rem; color:var(--gray); white-space:nowrap; }
+
+    .table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--light-blue); border-radius:10px; }
+    table { width:100%; min-width:900px; border-collapse:collapse; font-size:.88rem; }
+    thead th {
+      background:var(--blue); color:white; padding:.75rem 1rem;
+      text-align:left; font-weight:600; font-size:.8rem; letter-spacing:.2px;
+      position:sticky; top:72px; z-index:5;
+    }
+    thead th:first-child { width:60px; text-align:center; }
+    tbody tr { border-bottom:1px solid var(--light-blue); transition:background .15s; }
+    tbody tr:hover { background:#f4f9ff; }
+    tbody td { padding:.65rem 1rem; color:#1c1c1c; vertical-align:top; }
+    tbody td:first-child { text-align:center; color:var(--gray); font-size:.82rem; font-weight:600; }
+    .id-badge {
+      display:inline-block; background:var(--light-blue); color:var(--blue);
+      border-radius:4px; padding:.1rem .45rem; font-size:.76rem; font-weight:700;
+      white-space:nowrap;
+    }
+    .client-name { color:var(--gray); font-size:.83rem; }
+    .no-results { text-align:center; padding:3rem; color:var(--gray); }
+
+    footer { text-align:center; padding:1.5rem; border-top:1px solid var(--light-blue); color:var(--gray); font-size:.88rem; }
+
+    @media(max-width:900px) {
+      .summary-bar { gap:1.2rem; padding:1rem; }
+      .summary-stat { min-width:150px; }
+      .search-box { min-width:100%; }
+      .result-count { width:100%; }
+    }
+    @media(max-width:700px) {
+      header { padding:.9rem 1rem; }
+      .back-btn { font-size:.9rem; }
+      .page-hero { padding:3rem 1rem 2.6rem; }
+      .page-hero h2 { font-size:1.6rem; }
+      .page-hero p { font-size:.94rem; }
+      .content { padding:2rem 1rem 3rem; }
+      table { font-size:.82rem; }
+      thead th, tbody td { padding:.55rem .7rem; }
+      thead th { position:static; }
+      .summary-bar { gap:1rem; padding:1rem; }
+      .summary-stat .num { font-size:1.2rem; }
+    }
+    @media(max-width:480px) {
+      .page-hero h2 { font-size:1.4rem; }
+      .summary-bar { justify-content:flex-start; }
+      .summary-stat { width:100%; text-align:left; }
+      .summary-stat .lbl { font-size:.7rem; }
+      .filter-bar { gap:.75rem; }
+      .search-box { font-size:.86rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <span class="brand">TGTS</span>
+</header>
+
+<section class="page-hero">
+  <div class="badge"><i class="fas fa-building"></i> &nbsp;Annexure I</div>
+  <h2>Projects via TGTS</h2>
+  <p>Soil investigation works conducted through M/s. Trivandrum Geotechnical Testing &amp; Solutions, Kawdiar, Thiruvananthapuram</p>
+</section>
+
+<div class="summary-bar">
+  <div class="summary-stat"><div class="num">149</div><div class="lbl">Projects Listed</div></div>
+  <div class="summary-stat"><div class="num">Apr 2025</div><div class="lbl">Operations Started</div></div>
+  <div class="summary-stat"><div class="num">Kerala &amp; TN</div><div class="lbl">Coverage</div></div>
+  <div class="summary-stat"><div class="num">MSME</div><div class="lbl">Reg. UDYAM KL-12-0103982</div></div>
+</div>
+
+<div class="content">
+  <div class="filter-bar">
+    <input class="search-box" type="text" id="searchInput" placeholder="Search project or client name…" oninput="filterTable()">
+    <span class="result-count" id="resultCount">149 projects</span>
+  </div>
+
+  <div class="table-wrap">
+  <table id="projectTable">
+    <thead>
+      <tr>
+        <th>Sl.</th>
+        <th>Project ID</th>
+        <th>Project Name / Description</th>
+        <th>Client</th>
+      </tr>
+    </thead>
+    <tbody id="tableBody">
+      <tr><td>1</td><td><span class="id-badge">25W002</span></td><td>2 Storey Residential Building at Choozhampala, Ambalamukku, Thiruvananthapuram</td><td class="client-name">M/s Urban Nova Global Consultancy Pvt Ltd, Tvpm</td></tr>
+      <tr><td>2</td><td><span class="id-badge">25W003</span></td><td>Construction of a Gallery in Playground in Ananthapuri Stadium, Ambalathara</td><td class="client-name">Corporation of Trivandrum, Thiruvananthapuram</td></tr>
+      <tr><td>3</td><td><span class="id-badge">25W004</span></td><td>4 Storey Commercial Building at Chackai-Npettah Road, Thiruvananthapuram</td><td class="client-name">M/s Sivalal, SGS Realtors Developers &amp; Consultants, Tvpm</td></tr>
+      <tr><td>4</td><td><span class="id-badge">25W005</span></td><td>2 Storey Residential Building at Jagathy, Thiruvananthapuram</td><td class="client-name">Mr Anildeep, Jagathy</td></tr>
+      <tr><td>5</td><td><span class="id-badge">25W006</span></td><td>2 Storey Residential Building near Cosmopolitan Hospital Junction, Thiruvananthapuram</td><td class="client-name">Mr Manoj Abraham</td></tr>
+      <tr><td>6</td><td><span class="id-badge">25W007</span></td><td>4 Storey Commercial Building at Chittacodu, Olathanni, Thiruvananthapuram</td><td class="client-name">Mr Manohar N.K</td></tr>
+      <tr><td>7</td><td><span class="id-badge">25W008</span></td><td>2 Storey Residential Building at Kudapannakunnu, Thiruvananthapuram</td><td class="client-name">Mr Adarsh. M</td></tr>
+      <tr><td>8</td><td><span class="id-badge">25W009</span></td><td>2 Storey Residential Building at Vadacode, Pattoor, Thiruvananthapuram</td><td class="client-name">Dr Nimisha, Pattoor</td></tr>
+      <tr><td>9</td><td><span class="id-badge">25W010</span></td><td>Residential Building at Kanamoola, Ayyankali Road</td><td class="client-name">Mr Sandeep</td></tr>
+      <tr><td>10</td><td><span class="id-badge">25W011</span></td><td>2 Storey Residential Building at Maruthoor, Thiruvananthapuram</td><td class="client-name">Mr Hanz M. Haneefa</td></tr>
+      <tr><td>11</td><td><span class="id-badge">25W012</span></td><td>4 Storey Residential Building at Nedumon, Kovalam, Thiruvananthapuram</td><td class="client-name">M/s Sidhu Sisters Realtors Developers Pvt Ltd</td></tr>
+      <tr><td>12</td><td><span class="id-badge">25W013</span></td><td>3 Storey Commercial Building at Chinnakada, Kollam</td><td class="client-name">Mr Anil Roby</td></tr>
+      <tr><td>13</td><td><span class="id-badge">25W014</span></td><td>3 Storey Residential Building near Kaudiar Palace, Thiruvananthapuram</td><td class="client-name">Mrs Himashree</td></tr>
+      <tr><td>14</td><td><span class="id-badge">25W015</span></td><td>3 Storey Commercial Building at Nalumukku Pettah, Thiruvananthapuram</td><td class="client-name">Mr Pankajakshan</td></tr>
+      <tr><td>15</td><td><span class="id-badge">25W016</span></td><td>4 Storey Residential Building at Vattakarikakam, Thiruvananthapuram</td><td class="client-name">Trinity Home, Vattakarikakaom</td></tr>
+      <tr><td>16</td><td><span class="id-badge">25W017</span></td><td>2 Storey Residential Building at Sakthikulangara, Kollam</td><td class="client-name">Mr Jubin J Cassamaya</td></tr>
+      <tr><td>17</td><td><span class="id-badge">25W018</span></td><td>3 Storey Commercial Building at Kulavikonam, Nedumangad, Thiruvananthapuram</td><td class="client-name">Mr Al Ameen</td></tr>
+      <tr><td>18</td><td><span class="id-badge">25W019</span></td><td>3 Storey Commercial Building at Ramankulangara, Kollam</td><td class="client-name">Mr Vincent Jeremiah</td></tr>
+      <tr><td>19</td><td><span class="id-badge">25W020</span></td><td>2 Storey Residential Building at Pulanivilla, Sreekariyam, Thiruvananthapuram</td><td class="client-name">Mr Anoop Rajan</td></tr>
+      <tr><td>20</td><td><span class="id-badge">25W023</span></td><td>3 Storey Residential Building at Vallacadavu, Muttathara, Thiruvananthapuram</td><td class="client-name">Smt Soumya Sobha, C/O SHIELD Constructions</td></tr>
+      <tr><td>21</td><td><span class="id-badge">25W024</span></td><td>2 Storey Residential Building at Bhoothakulam, Paravoor, Kollam</td><td class="client-name">Mr Bineesh Manikandan Pillai</td></tr>
+      <tr><td>22</td><td><span class="id-badge">25W025</span></td><td>2 Storey Residential Building at Udayanoor Temple Road, Thiruvananthapuram</td><td class="client-name">Dr Sheemol V.N</td></tr>
+      <tr><td>23</td><td><span class="id-badge">25W026</span></td><td>2 Storey Residential Building at Temple Road, Vellayani, Thiruvananthapuram</td><td class="client-name">Mr Arjun, Vellayani</td></tr>
+      <tr><td>24</td><td><span class="id-badge">25W027</span></td><td>5 Storey Commercial Building at Killipalam, Thiruvananthapuram</td><td class="client-name">M/s Vijaya Lekshmi Textiles</td></tr>
+      <tr><td>25</td><td><span class="id-badge">25W028</span></td><td>2 Storey Residential Building at Proudikonam, Nalanchira, Thiruvananthapuram</td><td class="client-name">Mr Vysakh Ramesh</td></tr>
+      <tr><td>26</td><td><span class="id-badge">25W029</span></td><td>2 Storey Residential Building at Ambalathara, Poonthura, Thiruvananthapuram</td><td class="client-name">Mr Kiran Babu</td></tr>
+      <tr><td>27</td><td><span class="id-badge">25W030</span></td><td>Construction of a 2 Storey School Building at Government BHSS Pettah, Thiruvananthapuram</td><td class="client-name">Corporation of Trivandrum, Thiruvananthapuram</td></tr>
+      <tr><td>28</td><td><span class="id-badge">25W032</span></td><td>Technical Notes on Geotechnic aspects – Residential Building at Kulathupuzha</td><td class="client-name">Mrs Ramla Beevi</td></tr>
+      <tr><td>29</td><td><span class="id-badge">25W033</span></td><td>Technical Notes on Geotechnic aspects – Residential Building at Kulathupuzha</td><td class="client-name">Mr Aneesh</td></tr>
+      <tr><td>30</td><td><span class="id-badge">25W034</span></td><td>2 Storey Commercial cum Residential Building at Kairali Nagar, Kuravankonam, Thiruvananthapuram</td><td class="client-name">Mr V.P Joy</td></tr>
+      <tr><td>31</td><td><span class="id-badge">25W036</span></td><td>3 Storey Residential Building at Ulloor, Thiruvananthapuram</td><td class="client-name">Mr Devi, C/o Jack Constructions Pvt Ltd</td></tr>
+      <tr><td>32</td><td><span class="id-badge">25W038</span></td><td>5 Storey Commercial Building at Palkulangara, Pettah, Thiruvananthapuram</td><td class="client-name">Mr Babu Palkulangara</td></tr>
+      <tr><td>33</td><td><span class="id-badge">25W039</span></td><td>3 Storey Commercial Building at Menillam, Thiruvallom, Thiruvananthapuram</td><td class="client-name">Mr Prasanth N.U</td></tr>
+      <tr><td>34</td><td><span class="id-badge">25W040</span></td><td>3 Storey Commercial Building at Idapazhanji, Thiruvananthapuram</td><td class="client-name">Mr Rajeev</td></tr>
+      <tr><td>35</td><td><span class="id-badge">25W041</span></td><td>Construction of Sanitary Waste Incinerator Plant at Varkala, Tvpm</td><td class="client-name">M/s Floret Technologies, Pazhavangadi</td></tr>
+      <tr><td>36</td><td><span class="id-badge">25W042</span></td><td>2 Storey Commercial cum Residential Building at Kizhakebhagom, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Abhi Raj R.S</td></tr>
+      <tr><td>37</td><td><span class="id-badge">25W045</span></td><td>2 Storey Residential Building at Karyavattom, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Smt Lekshmi Satheesh</td></tr>
+      <tr><td>38</td><td><span class="id-badge">25W046</span></td><td>4 Storey Commercial Building at Pulayanarkotta, Aakulam, Thiruvananthapuram</td><td class="client-name">Mr Anil Kumar V.R</td></tr>
+      <tr><td>39</td><td><span class="id-badge">25W047</span></td><td>3 Storey Commercial Building at Polayathodu, Kollam</td><td class="client-name">Mr Jihas</td></tr>
+      <tr><td>40</td><td><span class="id-badge">25W048</span></td><td>3 Storey Residential Building at Valiyavilla, Thirumala, Thiruvananthapuram</td><td class="client-name">Mr Srejith Chandran</td></tr>
+      <tr><td>41</td><td><span class="id-badge">25W049</span></td><td>2 Storey Residential Building at Killimanoor, Thiruvananthapuram</td><td class="client-name">Mrs Geethakumari</td></tr>
+      <tr><td>42</td><td><span class="id-badge">25W052</span></td><td>4 Storey Commercial Building at Kottiyam, Kollam</td><td class="client-name">Mr Muhammad Salim</td></tr>
+      <tr><td>43</td><td><span class="id-badge">25W053</span></td><td>2 Storey Residential Building at Punaloor, Kollam</td><td class="client-name">Mr Iyas Muhammad</td></tr>
+      <tr><td>44</td><td><span class="id-badge">25W054</span></td><td>2 Storey Residential Building at Vazhavilla, Karikkakom, Thiruvananthapuram</td><td class="client-name">Mr Ram Prabhu</td></tr>
+      <tr><td>45</td><td><span class="id-badge">25W055</span></td><td>Construction of Diesel Generator Foundation at Aakulam Plant of Hindustan Latex Ltd</td><td class="client-name">M/s HLL</td></tr>
+      <tr><td>46</td><td><span class="id-badge">25W056</span></td><td>Construction of 3 Storey School Building at Thazhuthalla, Kottiyam, Kollam</td><td class="client-name">BE Max Public School</td></tr>
+      <tr><td>47</td><td><span class="id-badge">25W057</span></td><td>2 Storey Residential Building at Pongumoodu, Thiruvananthapuram</td><td class="client-name">Mr Renjith</td></tr>
+      <tr><td>48</td><td><span class="id-badge">25W058</span></td><td>Construction of Material Collection Facility Building at Tholicodu, Anad Panchayat</td><td class="client-name">Asst Engineer, Anad Panchayath</td></tr>
+      <tr><td>49</td><td><span class="id-badge">25W059</span></td><td>3 Storey Commercial cum Residential Building at Nagaroor, Thiruvananthapuram</td><td class="client-name">Mr Anil Divakaran</td></tr>
+      <tr><td>50</td><td><span class="id-badge">25W060</span></td><td>3 Storey Residential Building at Pettah, Thiruvananthapuram</td><td class="client-name">Mr Mukesh</td></tr>
+      <tr><td>51</td><td><span class="id-badge">25W061</span></td><td>4 Storey Commercial Building at Kovalam, Thiruvananthapuram</td><td class="client-name">Mrs Rushda Shameema</td></tr>
+      <tr><td>52</td><td><span class="id-badge">25W063</span></td><td>2 Storey Residential Building at Vanchiyoor, Thiruvananthapuram</td><td class="client-name">Mr Satheesh Kumar K.S</td></tr>
+      <tr><td>53</td><td><span class="id-badge">25W064</span></td><td>2 Storey Residential Building at Ambalathara, Near Pazhanchira Temple, Thiruvananthapuram</td><td class="client-name">Mr Arun Kayikkara</td></tr>
+      <tr><td>54</td><td><span class="id-badge">25W065</span></td><td>2 Storey Residential Building at Ambalathara, Near Pazhanchira Temple, Thiruvananthapuram</td><td class="client-name">Mr Vishnu Babu</td></tr>
+      <tr><td>55</td><td><span class="id-badge">25W066</span></td><td>2 Storey Residential Building at Korrani, Attingal, Thiruvananthapuram</td><td class="client-name">Smt Anjana R</td></tr>
+      <tr><td>56</td><td><span class="id-badge">25W067</span></td><td>2 Storey Residential Building at Attingal Club Road, Attingal, Thiruvananthapuram</td><td class="client-name">C/o Mr Sreejith</td></tr>
+      <tr><td>57</td><td><span class="id-badge">25W069</span></td><td>Construction of a Sanitary Waste Destroyer Plant at Attingal, Thiruvananthapuram</td><td class="client-name">M/s Floret Technologies, Pazhavangadi</td></tr>
+      <tr><td>58</td><td><span class="id-badge">25W072</span></td><td>4 Storey Commercial Building near Kollam Collectorate, Kollam</td><td class="client-name">C/o Arun Jayapalan</td></tr>
+      <tr><td>59</td><td><span class="id-badge">25W073</span></td><td>2 Storey Residential Building at Maruthadi, Kollam</td><td class="client-name">C/o Arun Jayapalan</td></tr>
+      <tr><td>60</td><td><span class="id-badge">25W074</span></td><td>2 Storey Residential Building at Edapazhanjil, Thiruvananthapuram</td><td class="client-name">M/s Gaxella Constructions &amp; Interiors</td></tr>
+      <tr><td>61</td><td><span class="id-badge">25W075</span></td><td>Construction of a 2 Wheeler Parking Area at Thampanoor Railway Station, Tvpm</td><td class="client-name">M/s LIMAX</td></tr>
+      <tr><td>62</td><td><span class="id-badge">25W077</span></td><td>Technical Notes – Sheet Pile Installation at Nedumbasserry, Ernakulam</td><td class="client-name">Airport Golf View Hotel, Nedumbasserry</td></tr>
+      <tr><td>63</td><td><span class="id-badge">25W078</span></td><td>2 Storey Residential Building near Killipalam Bund Road, Thiruvananthapuram</td><td class="client-name">Mr Sathesh</td></tr>
+      <tr><td>64</td><td><span class="id-badge">25W079</span></td><td>Construction of Gallery for Playground at Attakulangara East Fort School</td><td class="client-name">Thiruvananthapuram Corporation</td></tr>
+      <tr><td>65</td><td><span class="id-badge">25W081</span></td><td>2 Storey Commercial Building at Uchakkada, Vizhinjam, Thiruvananthapuram</td><td class="client-name">Mr Rajesh Johnson</td></tr>
+      <tr><td>66</td><td><span class="id-badge">25W085</span></td><td>Construction of a Ready Mix Concrete Plant for KINFRA PARK, Menamkulam, Tvpm</td><td class="client-name">Mr Satheesh Kumar K.S</td></tr>
+      <tr><td>67</td><td><span class="id-badge">25W086</span></td><td>2 Storey Residential Building at Subhash Nagar, Attakulangara, Thiruvananthapuram</td><td class="client-name">Dr Santhosh N</td></tr>
+      <tr><td>68</td><td><span class="id-badge">25W087</span></td><td>8 Storey Senior Living Apartments at Bishop House, Mannanthala, Thiruvananthapuram</td><td class="client-name">Fr Shibu O. Plavilla</td></tr>
+      <tr><td>69</td><td><span class="id-badge">25W090</span></td><td>2 Storey Residential cum Commercial Building at Kulathoor Jn, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Shajahan, Kulathoor</td></tr>
+      <tr><td>70</td><td><span class="id-badge">25W091</span></td><td>5 Storey Commercial Building at Ambadi Nagar, Sreekariyam, Thiruvananthapuram</td><td class="client-name">M/s Ceezion Developers &amp; Contractors, Vanchiyoor</td></tr>
+      <tr><td>71</td><td><span class="id-badge">25W093</span></td><td>Construction of a Retaining Wall at Thekumoodu Bund Colony, Thiruvananthapuram</td><td class="client-name">Corporation of Trivandrum, Thiruvananthapuram</td></tr>
+      <tr><td>72</td><td><span class="id-badge">25W094</span></td><td>4 Storey Commercial Building at Moongodu, Malayinkeezhu, Thiruvananthapuram</td><td class="client-name">Mr M. Unnikrishnan</td></tr>
+      <tr><td>73</td><td><span class="id-badge">25W095</span></td><td>3 Storey Commercial Building at Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mrs Amitha Sabeer</td></tr>
+      <tr><td>74</td><td><span class="id-badge">25W096</span></td><td>4 Storey Shopping Complex at Pallichal, Thiruvananthapuram</td><td class="client-name">Smt Preetha S</td></tr>
+      <tr><td>75</td><td><span class="id-badge">25W097</span></td><td>2 Storey Residential Building at Pachaloor, Thiruvananthapuram</td><td class="client-name">Mr Santhosh Kumar</td></tr>
+      <tr><td>76</td><td><span class="id-badge">25W098</span></td><td>3 Storey Residential Building at Bharanikavu, Punalur, Kollam</td><td class="client-name">Dr Seetharaman</td></tr>
+      <tr><td>77</td><td><span class="id-badge">25W099</span></td><td>2 Storey Residential Building at Mangad, Kollam</td><td class="client-name">Mr Sunshine S</td></tr>
+      <tr><td>78</td><td><span class="id-badge">25W100</span></td><td>2 Storey Residential Building at Mananthala, Thiruvananthapuram</td><td class="client-name">Mr Amal Mathew</td></tr>
+      <tr><td>79</td><td><span class="id-badge">25W101</span></td><td>3 Storey Residential Building at Gandhipuram, Sreekariyam, Thiruvananthapuram</td><td class="client-name">Mr Roshan R.A</td></tr>
+      <tr><td>80</td><td><span class="id-badge">25W102</span></td><td>2 Storey Residential Building at Peyyad, Thiruvananthapuram</td><td class="client-name">Smt Uma U</td></tr>
+      <tr><td>81</td><td><span class="id-badge">25W103</span></td><td>Residential Building at Madathunada, Nalanchira, Thiruvananthapuram</td><td class="client-name">Dr Prem Krishnan</td></tr>
+      <tr><td>82</td><td><span class="id-badge">25W105</span></td><td>5 Storey Commercial Building at Vatiyoorkavu, Thiruvananthapuram</td><td class="client-name">Smt Supriya</td></tr>
+      <tr><td>83</td><td><span class="id-badge">25W106</span></td><td>2 Storey Residential Building at Eanchakkal, Thiruvananthapuram</td><td class="client-name">Mr Sreekanth</td></tr>
+      <tr><td>84</td><td><span class="id-badge">25W107</span></td><td>5 Storey Commercial Building at Thampooranmukku, Kulathoor, Thiruvananthapuram</td><td class="client-name">M/s CONDOR Builders</td></tr>
+      <tr><td>85</td><td><span class="id-badge">25W108</span></td><td>3 Storey Residential Building at Pachaloor, Thiruvananthapuram</td><td class="client-name">Smt Dhanya S</td></tr>
+      <tr><td>86</td><td><span class="id-badge">25W109</span></td><td>3 Storey Commercial Building at Karuvatta, Adoor, Kollam</td><td class="client-name">Mr Titty B George</td></tr>
+      <tr><td>87</td><td><span class="id-badge">25W111</span></td><td>3 Storey Residential Building at Thirumoolavaram, Kollam</td><td class="client-name">Dr Ramesh Chandran</td></tr>
+      <tr><td>88</td><td><span class="id-badge">25W112</span></td><td>2 Storey Residential Building at Nethaji, Mannancherry, Alappuzha</td><td class="client-name">Mr Gautham Krishna</td></tr>
+      <tr><td>89</td><td><span class="id-badge">25W113</span></td><td>2 Storey Commercial Building at Mangottukonam, Sreekariyam, Thiruvananthapuram</td><td class="client-name">M/s HLO LABS Pvt Ltd, Ernakulam</td></tr>
+      <tr><td>90</td><td><span class="id-badge">25W114</span></td><td>3 Storey Residential Building at Ashramam, Kollam</td><td class="client-name">C/o Arun Jayapalan</td></tr>
+      <tr><td>91</td><td><span class="id-badge">25W115</span></td><td>2 Storey Residential Building at Karipur, Malayinkeezhu, Thiruvananthapuram</td><td class="client-name">Smt Reshma S</td></tr>
+      <tr><td>92</td><td><span class="id-badge">25W116</span></td><td>4 Storey Commercial Building at Tutors Lane, Statue, Thiruvananthapuram</td><td class="client-name">Dr Jayakumar</td></tr>
+      <tr><td>93</td><td><span class="id-badge">25W117</span></td><td>3 Storey Commercial Building at Nemom, Thiruvananthapuram</td><td class="client-name">Mr Haji Mohammad</td></tr>
+      <tr><td>94</td><td><span class="id-badge">25W118</span></td><td>2 nos of Three Storeyed Buildings at Cheruvaikkal, Aakulam, Thiruvananthapuram</td><td class="client-name">M/s Satsang Foundation</td></tr>
+      <tr><td>95</td><td><span class="id-badge">25W119</span></td><td>2 Storey Residential Building at Kallumukku, Manacaud, Thiruvananthapuram</td><td class="client-name">Mr Syad Rahman</td></tr>
+      <tr><td>96</td><td><span class="id-badge">25W120</span></td><td>2 Storey Residential Building near KIMS Hospital, Thiruvananthapuram</td><td class="client-name">Smt Sajitha Sainam Beevi</td></tr>
+      <tr><td>97</td><td><span class="id-badge">25W122</span></td><td>2 Storey Residential Building at Ulloor, Thiruvananthapuram</td><td class="client-name">Smt Anuja A.L</td></tr>
+      <tr><td>98</td><td><span class="id-badge">25W123</span></td><td>6 Storey Apartment Building at Kanamoola, Thiruvananthapuram</td><td class="client-name">C/o Biju Varghese</td></tr>
+      <tr><td>99</td><td><span class="id-badge">25W124</span></td><td>2 Storey Residential Building at Anjalimoodu, Chengannur</td><td class="client-name">Mr Dilsith Plapally</td></tr>
+      <tr><td>100</td><td><span class="id-badge">25W126</span></td><td>3 Storey Commercial Building at Asramam, Kollam</td><td class="client-name">Mr Arun Jayapalan</td></tr>
+      <tr><td>101</td><td><span class="id-badge">25W127</span></td><td>3 Storey Kitchen Block at Kerala Agriculture University, Vellayani, Thiruvananthapuram</td><td class="client-name">AEE Kerala Agriculture University, Vellayani</td></tr>
+      <tr><td>102</td><td><span class="id-badge">25W128</span></td><td>3 Storey Commercial Building at Ambalathara, Poonthura, Thiruvananthapuram</td><td class="client-name">Mr Vignesh Asok Kumar</td></tr>
+      <tr><td>103</td><td><span class="id-badge">25W129</span></td><td>3 Storey Residential Building at Kariyavattom, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Sudhir</td></tr>
+      <tr><td>104</td><td><span class="id-badge">25W130</span></td><td>3 Storey Residential Building at Kappil, Varkala, Thiruvananthapuram</td><td class="client-name">Mr Thomas Parambil, Architect</td></tr>
+      <tr><td>105</td><td><span class="id-badge">25W131</span></td><td>3 Storey Residential Building at Panambeta, Pathanamthitta</td><td class="client-name">Mr Sajeev</td></tr>
+      <tr><td>106</td><td><span class="id-badge">25W132</span></td><td>Construction of 1.50 Lakh Litre Fire Water Storage Tank and Pump House for KSEB, Killi Kattakada</td><td class="client-name">KSEB, Kattakada</td></tr>
+      <tr><td>107</td><td><span class="id-badge">25W133</span></td><td>3 Storey Commercial cum Residential Building at Panakavu, Vatiyoorkavu, Thiruvananthapuram</td><td class="client-name">Smt Hazeena Beegam</td></tr>
+      <tr><td>108</td><td><span class="id-badge">25W134</span></td><td>2 Storey Residential Building at Manankuanji Market Junction, Pathanamthitta</td><td class="client-name">Mr Jibi M Varghese</td></tr>
+      <tr><td>109</td><td><span class="id-badge">25W135</span></td><td>3 Storey Nursery School Building at Menamkulam, Thiruvananthapuram</td><td class="client-name">Smt Aswathy</td></tr>
+      <tr><td>110</td><td><span class="id-badge">25W136</span></td><td>Construction of Condenser Foundation Structure at Tvpm MILMA Dairy, Ambalathara, Tvpm</td><td class="client-name">MD, MILMA</td></tr>
+      <tr><td>111</td><td><span class="id-badge">25W138</span></td><td>Construction of Residential Building at Kadavor, Kollam</td><td class="client-name">Mr Manoj Sradyam</td></tr>
+      <tr><td>112</td><td><span class="id-badge">25W139</span></td><td>5 Storey Commercial Building opposite AJ Hospital, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Usman Koya</td></tr>
+      <tr><td>113</td><td><span class="id-badge">25W140</span></td><td>3 Storey Residential Building at Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Shalen N</td></tr>
+      <tr><td>114</td><td><span class="id-badge">25W141</span></td><td>5 Storey Residential Building at Prasanth Nagar, West Fort, Thiruvananthapuram</td><td class="client-name">M/s Blessing Homes</td></tr>
+      <tr><td>115</td><td><span class="id-badge">25W142</span></td><td>4 Storey Commercial Building at Karunagapally, Kollam</td><td class="client-name">Mr Ansar</td></tr>
+      <tr><td>116</td><td><span class="id-badge">25W143</span></td><td>2 Storey Residential Building at Jaison Nagar, Aralvaimozhi, Nagercoil</td><td class="client-name">Smt Subarna A.B</td></tr>
+      <tr><td>117</td><td><span class="id-badge">25W144</span></td><td>3 Storey Residential Building at Karikkakom, Thiruvananthapuram</td><td class="client-name">Mr Abhilash B.S</td></tr>
+      <tr><td>118</td><td><span class="id-badge">25W146</span></td><td>4 Storey Commercial Building at Attinkuzhi, Kulathoor, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Nithin Fernandez</td></tr>
+      <tr><td>119</td><td><span class="id-badge">25W147</span></td><td>3 Storey Commercial Building at Chandavilla, Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mr Shiraz Khan</td></tr>
+      <tr><td>120</td><td><span class="id-badge">25W148</span></td><td>2 Storey Residential Building at Kattayikonam, Thiruvananthapuram</td><td class="client-name">Mr Harikumar S</td></tr>
+      <tr><td>121</td><td><span class="id-badge">25W149</span></td><td>4 Storey Office Building – Administrative Block for Panchakarma Hospital, Poojapura</td><td class="client-name">C/o Sreejith</td></tr>
+      <tr><td>122</td><td><span class="id-badge">25W150</span></td><td>3 Storey Residential Building at Gowreesapattom, Thiruvananthapuram</td><td class="client-name">Mr Chacko Simon</td></tr>
+      <tr><td>123</td><td><span class="id-badge">25W151</span></td><td>3 Storey Residential Building at Kazhakootam, Thiruvananthapuram</td><td class="client-name">Mrs Ambika Vijayan</td></tr>
+      <tr><td>124</td><td><span class="id-badge">25W152</span></td><td>3 Storey Residential Building at Moongodu, Peyyad, Thiruvananthapuram</td><td class="client-name">M/s POLY CAPITAL</td></tr>
+      <tr><td>125</td><td><span class="id-badge">25W153</span></td><td>2 Storey Residential Building at Killipalam, Railway Cross, Thiruvananthapuram</td><td class="client-name">Sri Ananda Chidambaram</td></tr>
+      <tr><td>126</td><td><span class="id-badge">25W154</span></td><td>4 Storey Residential Building at Continental Gardens, Vayillikada, Thiruvananthapuram</td><td class="client-name">Mr Sidharth</td></tr>
+      <tr><td>127</td><td><span class="id-badge">25W155</span></td><td>2 Storey Residential Building at Edavilakom, Murukumpuzha, Thiruvananthapuram</td><td class="client-name">Mr Shiju D.T</td></tr>
+      <tr><td>128</td><td><span class="id-badge">25W156</span></td><td>3 Storey Commercial Building at Jagathy, Mudupura, Thiruvananthapuram</td><td class="client-name">Mr Arun K</td></tr>
+      <tr><td>129</td><td><span class="id-badge">25W157</span></td><td>2 Storey Residential Building at Parumala, Tiruvalla, Pathanamthitta</td><td class="client-name">Mr Joju Varghese</td></tr>
+      <tr><td>130</td><td><span class="id-badge">25W158</span></td><td>3 Storey Residential Building at Kazhakootam, Near GHS, Thiruvananthapuram</td><td class="client-name">Smt Saritha</td></tr>
+      <tr><td>131</td><td><span class="id-badge">25W159</span></td><td>Construction of a Convention Centre Building at Pravachambalam, Tvpm</td><td class="client-name">Mr Sivarajan</td></tr>
+      <tr><td>132</td><td><span class="id-badge">25W160</span></td><td>4 Storey Commercial Building at Kumarapuram-Poonthi, Thiruvananthapuram</td><td class="client-name">Mr Anu Krishna</td></tr>
+      <tr><td>133</td><td><span class="id-badge">25W161</span></td><td>3 Storey Residential Building at Azhikode, Thiruvananthapuram</td><td class="client-name">Mr Aslam Sulaiman</td></tr>
+      <tr><td>134</td><td><span class="id-badge">25W162</span></td><td>2 Storey Residential Building at Puthiya Palam, Manvilla, Pangappara, Thiruvananthapuram</td><td class="client-name">Mr Manohar Singh G</td></tr>
+      <tr><td>135</td><td><span class="id-badge">25W164</span></td><td>4 Storey Commercial Building at Anayara, Thiruvananthapuram</td><td class="client-name">Mr Syam S Dharan</td></tr>
+      <tr><td>136</td><td><span class="id-badge">25W165</span></td><td>3 Storey Residential Building at Ulloor Gardens, Kochuloor, Thiruvananthapuram</td><td class="client-name">Mrs Amritha Sasi</td></tr>
+      <tr><td>137</td><td><span class="id-badge">25W166</span></td><td>Construction of Ground Floor &amp; Mezzanine Floor at Industrial Estate, Karunagapally, Kollam</td><td class="client-name">Mr Sivadas Unnithan</td></tr>
+      <tr><td>138</td><td><span class="id-badge">25W167</span></td><td>3 Storey Residential Building at Venga, Sasthamcotta, Kollam</td><td class="client-name">Mr Anoop S</td></tr>
+      <tr><td>139</td><td><span class="id-badge">25W168</span></td><td>3 Storey Residential Building at Attukal, Manacaud, Thiruvananthapuram</td><td class="client-name">M/s Aham Builders</td></tr>
+      <tr><td>140</td><td><span class="id-badge">25W169</span></td><td>2 Storey Residential Building at Mananthala, Thiruvananthapuram</td><td class="client-name">M/s Couteous Infrastructures, Projects &amp; Pvt Ltd</td></tr>
+      <tr><td>141</td><td><span class="id-badge">25W170</span></td><td>2 Storey Residential Building at Kudapannakunnu, Thiruvananthapuram</td><td class="client-name">Mr Melvin Thomas</td></tr>
+      <tr><td>142</td><td><span class="id-badge">25W172</span></td><td>4 Storey Residential Building at Indraji Nagar, Pullanivilla, Karyavattom, Thiruvananthapuram</td><td class="client-name">M/s HBS Constructions</td></tr>
+      <tr><td>143</td><td><span class="id-badge">25W173</span></td><td>5 Storey Commercial Building at Puthenpalam, Nedumangad, Thiruvananthapuram</td><td class="client-name">Mr Nazeer</td></tr>
+      <tr><td>144</td><td><span class="id-badge">25W174</span></td><td>2 Storey Residential Building at Sarathy Junction, Kollam</td><td class="client-name">Mr Ananda Mohan</td></tr>
+      <tr><td>145</td><td><span class="id-badge">25W176</span></td><td>2 Storey Residential Building at Manampoor Kallambalam, Thiruvananthapuram</td><td class="client-name">Mr Firoz</td></tr>
+      <tr><td>146</td><td><span class="id-badge">25W177</span></td><td>3 Storey Residential Building at Kunjiveedu, Medical College, Thiruvananthapuram</td><td class="client-name">Mr Biju L.V</td></tr>
+      <tr><td>147</td><td><span class="id-badge">25W178</span></td><td>2 Storey Residential Building at Kundamankadavu, Tirumala, Thiruvananthapuram</td><td class="client-name">Mr Chandra Das</td></tr>
+      <tr><td>148</td><td><span class="id-badge">25W179</span></td><td>4 Storey Commercial Building at Eanikkara, Karakulam, Thiruvananthapuram</td><td class="client-name">Mr Achuthan Nair</td></tr>
+      <tr id="noResults" style="display:none;"><td colspan="4" class="no-results"><i class="fas fa-search" style="font-size:2rem;opacity:.3;display:block;margin-bottom:.5rem;"></i>No matching projects found.</td></tr>
+    </tbody>
+  </table>
+  </div>
+</div>
+
+<footer>© 2026 Trivandrum Geotechnical Testing and Solutions &nbsp;·&nbsp; tgts.in</footer>
+
+<script>
+function filterTable() {
+  const q = document.getElementById('searchInput').value.toLowerCase();
+  const rows = document.querySelectorAll('#tableBody tr:not(#noResults)');
+  let visible = 0;
+  rows.forEach(r => {
+    const match = r.textContent.toLowerCase().includes(q);
+    r.style.display = match ? '' : 'none';
+    if (match) visible++;
+  });
+  document.getElementById('resultCount').textContent = visible + ' project' + (visible !== 1 ? 's' : '');
+  document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
+}
+</script>
+</body>
+</html>

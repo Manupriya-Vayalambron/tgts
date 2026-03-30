@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Arvee Sujil Johnson - Biodata | TGTS</title>
+  <meta name="description" content="Biodata of Dr. Arvee Sujil Johnson, Geotechnical Consultant & Founder of TGTS, Trivandrum. Ph.D from Queen's University Belfast, 28+ years experience.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --blue: #0a4fa3;
+      --blue-mid: #0860c4;
+      --light-blue: #eaf3ff;
+      --white: #ffffff;
+      --gray: #5a6775;
+      --dark: #1c1c1c;
+      --accent: #7ec8ff;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Inter', sans-serif; color: var(--dark); background: var(--white); line-height: 1.7; }
+    img { max-width: 100%; height: auto; }
+
+    /* ===== HEADER ===== */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--white);
+      border-bottom: 2px solid var(--light-blue);
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .back-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--blue);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.3s ease;
+    }
+    .back-btn:hover { transform: translateX(-5px); }
+    header .brand { color: var(--blue); font-size: 1rem; font-weight: 700; opacity: 0.85; }
+
+    /* ===== HERO BANNER ===== */
+    .bio-hero {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 60%, #1a6fd4 100%);
+      padding: 3.5rem 2rem 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .bio-hero::before {
+      content: '';
+      position: absolute;
+      top: -60%;
+      right: -10%;
+      width: 55%;
+      height: 220%;
+      background: rgba(255,255,255,0.04);
+      transform: rotate(-15deg);
+    }
+    .bio-hero-inner {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      gap: 2.5rem;
+      position: relative;
+      z-index: 1;
+    }
+    .bio-avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.3);
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.25);
+    }
+    .bio-avatar-placeholder {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      border: 4px solid rgba(255,255,255,0.3);
+      background: rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+    .bio-avatar-placeholder i { font-size: 3.5rem; color: rgba(255,255,255,0.7); }
+    .bio-hero-text { color: white; }
+    .bio-hero-text .pre-title {
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      opacity: 0.8;
+      margin-bottom: 0.4rem;
+    }
+    .bio-hero-text h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+    .bio-hero-text .designation {
+      font-size: 1rem;
+      opacity: 0.9;
+      margin-bottom: 0.3rem;
+    }
+    .bio-hero-text .sub-designation {
+      font-size: 0.9rem;
+      opacity: 0.75;
+    }
+    .bio-hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+    }
+    .bio-tag {
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: white;
+      padding: 0.3rem 0.85rem;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      font-weight: 500;
+    }
+
+    /* ===== CONTENT LAYOUT ===== */
+    .bio-content {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem 4rem;
+    }
+
+    /* ===== SECTION ===== */
+    .bio-section {
+      margin-bottom: 2.5rem;
+    }
+    .bio-section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--blue);
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 1.2rem;
+      padding-bottom: 0.6rem;
+      border-bottom: 2px solid var(--light-blue);
+    }
+    .bio-section-title i { font-size: 1rem; opacity: 0.8; }
+
+    /* ===== INFO GRID ===== */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem 2rem;
+    }
+    .info-item { display: flex; flex-direction: column; }
+    .info-label { font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.5px; color: var(--gray); font-weight: 600; margin-bottom: 0.15rem; }
+    .info-value { font-size: 0.97rem; color: var(--dark); font-weight: 500; }
+
+    /* ===== QUALIFICATIONS TABLE ===== */
+    .qual-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .qual-table th {
+      background: var(--blue);
+      color: white;
+      padding: 0.7rem 1rem;
+      text-align: left;
+      font-weight: 600;
+      font-size: 0.82rem;
+      letter-spacing: 0.3px;
+    }
+    .qual-table td {
+      padding: 0.75rem 1rem;
+      border-bottom: 1px solid var(--light-blue);
+      color: var(--dark);
+      vertical-align: top;
+    }
+    .qual-table tr:last-child td { border-bottom: none; }
+    .qual-table tr:nth-child(even) td { background: #f8fbff; }
+    .qual-table .degree-badge {
+      display: inline-block;
+      background: var(--light-blue);
+      color: var(--blue);
+      border-radius: 4px;
+      padding: 0.1rem 0.5rem;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+
+    /* ===== EXPERIENCE TIMELINE ===== */
+    .timeline { position: relative; padding-left: 1.5rem; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 6px;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--blue), var(--light-blue));
+    }
+    .timeline-item {
+      position: relative;
+      margin-bottom: 1.5rem;
+      padding-left: 1.5rem;
+    }
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -1.5rem;
+      top: 6px;
+      width: 10px;
+      height: 10px;
+      background: var(--blue);
+      border-radius: 50%;
+      border: 2px solid var(--white);
+      box-shadow: 0 0 0 2px var(--blue);
+    }
+    .timeline-item:first-child::before { background: var(--blue); width: 12px; height: 12px; top: 5px; }
+    .timeline-role {
+      font-weight: 700;
+      color: var(--dark);
+      font-size: 0.97rem;
+      margin-bottom: 0.1rem;
+    }
+    .timeline-org {
+      font-size: 0.88rem;
+      color: var(--blue);
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+    }
+    .timeline-period {
+      font-size: 0.82rem;
+      color: var(--gray);
+    }
+
+    /* ===== CONSULTANCY STATS ===== */
+    .stats-bar {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-bottom: 1.2rem;
+    }
+    .stat-card {
+      flex: 1;
+      min-width: 140px;
+      background: var(--light-blue);
+      border-radius: 10px;
+      padding: 1.1rem 1.3rem;
+      text-align: center;
+      border-left: 4px solid var(--blue);
+    }
+    .stat-number { font-size: 1.8rem; font-weight: 700; color: var(--blue); line-height: 1; }
+    .stat-label { font-size: 0.78rem; color: var(--gray); margin-top: 0.3rem; text-transform: uppercase; letter-spacing: 0.3px; }
+
+    /* ===== PUBLICATIONS ===== */
+    .pub-list { list-style: none; padding: 0; }
+    .pub-list li {
+      padding: 0.7rem 0;
+      border-bottom: 1px solid var(--light-blue);
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.6;
+      display: flex;
+      gap: 0.8rem;
+    }
+    .pub-list li:last-child { border-bottom: none; }
+    .pub-num {
+      flex-shrink: 0;
+      width: 22px;
+      height: 22px;
+      background: var(--blue);
+      color: white;
+      border-radius: 50%;
+      font-size: 0.72rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 2px;
+    }
+
+    /* ===== MEMBERSHIPS ===== */
+    .membership-list { list-style: none; padding: 0; }
+    .membership-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      padding: 0.65rem 0;
+      border-bottom: 1px solid var(--light-blue);
+      font-size: 0.93rem;
+      color: var(--dark);
+    }
+    .membership-list li:last-child { border-bottom: none; }
+    .membership-list li i { color: var(--blue); font-size: 0.75rem; margin-top: 5px; flex-shrink: 0; }
+
+    /* ===== COLLAPSIBLE SECTIONS ===== */
+    .collapsible-header {
+      cursor: pointer;
+      user-select: none;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .collapsible-header .toggle-icon { transition: transform 0.3s ease; font-size: 0.85rem; color: var(--gray); }
+    .collapsible-header.open .toggle-icon { transform: rotate(180deg); }
+    .collapsible-body {
+      display: none;
+      margin-top: 0.8rem;
+    }
+    .collapsible-body.open { display: block; }
+
+    /* ===== CONTACT CARD ===== */
+    .contact-card {
+      background: linear-gradient(135deg, var(--blue) 0%, var(--blue-mid) 100%);
+      border-radius: 12px;
+      padding: 1.8rem 2rem;
+      color: white;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .contact-card h4 { font-size: 1.1rem; margin-bottom: 0.8rem; }
+    .contact-detail {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 0.9rem;
+      opacity: 0.95;
+      margin-bottom: 0.4rem;
+    }
+    .contact-detail a { color: white; text-decoration: none; }
+    .contact-detail a:hover { text-decoration: underline; }
+    .contact-detail i { opacity: 0.8; width: 16px; text-align: center; }
+    .download-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: white;
+      color: var(--blue);
+      padding: 0.75rem 1.5rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .download-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.2); }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      border-top: 1px solid var(--light-blue);
+      color: var(--gray);
+      font-size: 0.88rem;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 700px) {
+      .bio-hero-inner { flex-direction: column; text-align: center; }
+      .bio-hero-tags { justify-content: center; }
+      .info-grid { grid-template-columns: 1fr; }
+      .qual-table { font-size: 0.83rem; display: block; overflow-x: auto; white-space: nowrap; }
+      .qual-table th, .qual-table td { padding: 0.55rem 0.7rem; }
+      .stats-bar { flex-direction: column; }
+      .contact-card { flex-direction: column; }
+      .download-btn { width: 100%; justify-content: center; }
+      .bio-hero-text h1 { font-size: 1.7rem; }
+      header { padding: 0.9rem 1rem; }
+    }
+    @media (max-width: 480px) {
+      .bio-content { padding: 2rem 1rem 3rem; }
+      .bio-hero { padding: 2.5rem 1rem 3rem; }
+      .bio-avatar,
+      .bio-avatar-placeholder { width: 120px; height: 120px; }
+      .bio-hero-text h1 { font-size: 1.5rem; }
+      .bio-tag { font-size: 0.75rem; }
+      .timeline { padding-left: 1rem; }
+      .timeline-item { padding-left: 1.2rem; }
+      .timeline-item::before { left: -1.25rem; }
+      .contact-card { padding: 1.3rem 1rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+  <span class="brand">TGTS</span>
+</header>
+
+<!-- HERO -->
+<section class="bio-hero">
+  <div class="bio-hero-inner">
+    <!-- If a photo is available, replace the placeholder above with:-->
+    <img src="assets/team/arvee sir.jpeg" alt="Dr. Arvee Sujil Johnson" class="bio-avatar">
+    <div class="bio-hero-text">
+      <p class="pre-title">Founder & Managing Consultant</p>
+      <h1>Dr. Arvee Sujil Johnson</h1>
+      <p class="designation">Geotechnical Consultant & Proprietor, TGTS</p>
+      <p class="sub-designation">Professor in Civil Engineering (Rtd.) · College of Engineering Trivandrum</p>
+      <div class="bio-hero-tags">
+        <span class="bio-tag"><i class="fas fa-graduation-cap"></i> Ph.D · Queen's University Belfast</span>
+        <span class="bio-tag"><i class="fas fa-university"></i> MS · IIT Madras</span>
+        <span class="bio-tag"><i class="fas fa-briefcase"></i> 28+ Years Experience</span>
+        <span class="bio-tag"><i class="fas fa-file-contract"></i> MSME Reg. KL-12-0103982</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MAIN CONTENT -->
+<div class="bio-content">
+
+  <!-- PERSONAL INFO -->
+  <div class="bio-section">
+    <div class="bio-section-title">
+      <i class="fas fa-id-card"></i> Personal Information
+    </div>
+    <div class="info-grid">
+      <div class="info-item">
+        <span class="info-label">Full Name</span>
+        <span class="info-value">Dr. Arvee Sujil Johnson</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Date of Birth</span>
+        <span class="info-value">7th May 1968</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Home Address</span>
+        <span class="info-value">LAVER, F14F-Peroor Nagar, Kawdiar PO, Thiruvananthapuram 695003</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Office Address</span>
+        <span class="info-value">M2, JNWA, Jawahar Nagar, Kawdiar PO, Thiruvananthapuram 695003</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Mobile</span>
+        <span class="info-value">+91-9447411568</span>
+      </div>
+      <div class="info-item">
+        <span class="info-label">Email</span>
+        <span class="info-value">arveesujil@yahoo.co.uk</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUALIFICATIONS -->
+  <div class="bio-section">
+    <div class="bio-section-title">
+      <i class="fas fa-graduation-cap"></i> Academic Qualifications
+    </div>
+    <table class="qual-table">
+      <thead>
+        <tr>
+          <th>Degree</th>
+          <th>Year</th>
+          <th>Specialization</th>
+          <th>Institution</th>
+          <th>Grade</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><span class="degree-badge">Ph.D.</span></td>
+          <td>1998</td>
+          <td>Geotechnical Engineering</td>
+          <td>The Queen's University of Belfast, UK</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><span class="degree-badge">M.S.</span></td>
+          <td>1994</td>
+          <td>Ocean Engineering</td>
+          <td>IIT Madras, Chennai</td>
+          <td>9.8 / 10</td>
+        </tr>
+        <tr>
+          <td><span class="degree-badge">B.Tech</span></td>
+          <td>1989</td>
+          <td>Civil Engineering</td>
+          <td>College of Engineering Trivandrum, University of Kerala</td>
+          <td>0.79</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- EXPERIENCE -->
+  <div class="bio-section">
+    <div class="bio-section-title">
+      <i class="fas fa-briefcase"></i> Professional Experience
+    </div>
+    <div class="timeline">
+      <div class="timeline-item">
+        <div class="timeline-role">Geotechnical Consultant & Proprietor</div>
+        <div class="timeline-org">M/s. Trivandrum Geotechnical Testing & Solutions (TGTS)</div>
+        <div class="timeline-period">April 2025 - Present</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Professor (Civil Engineering)</div>
+        <div class="timeline-org">College of Engineering Trivandrum, Dept. of Technical Education, Govt. of Kerala</div>
+        <div class="timeline-period">June 2013 - May 2024 &nbsp;·&nbsp; 11 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Associate Professor (Civil Engineering)</div>
+        <div class="timeline-org">College of Engineering Trivandrum</div>
+        <div class="timeline-period">Aug 2010 - June 2013 &nbsp;·&nbsp; 3 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Assistant Professor (Civil Engineering)</div>
+        <div class="timeline-org">College of Engineering Trivandrum</div>
+        <div class="timeline-period">June 2000 - Aug 2010 &nbsp;·&nbsp; 10 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Assistant Engineer (Civil)</div>
+        <div class="timeline-org">Kerala State Electricity Board, Thiruvananthapuram</div>
+        <div class="timeline-period">March 1998 - May 2000 &nbsp;·&nbsp; 2.4 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Post Graduate Trainee</div>
+        <div class="timeline-org">M/s. John Brown, Bangalore</div>
+        <div class="timeline-period">Mar 1994 - Aug 1994 &nbsp;·&nbsp; 0.7 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Graduate Apprentice Trainee</div>
+        <div class="timeline-org">VSSC, ISRO, Thiruvananthapuram</div>
+        <div class="timeline-period">Dec 1990 - Aug 1991 &nbsp;·&nbsp; 0.75 years</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-role">Site Engineer</div>
+        <div class="timeline-org">Ceemex, Engineers & Contractors, Thiruvananthapuram</div>
+        <div class="timeline-period">Feb 1990 - Aug 1990 &nbsp;·&nbsp; 0.6 years</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONSULTANCY HIGHLIGHTS -->
+  <div class="bio-section">
+    <div class="bio-section-title">
+      <i class="fas fa-hard-hat"></i> Consultancy & Soil Investigation
+    </div>
+    <div class="stats-bar">
+      <div class="stat-card">
+        <div class="stat-number">1500+</div>
+        <div class="stat-label">Total Soil Investigations</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">200+</div>
+        <div class="stat-label">High-Rise Projects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">28 yrs</div>
+        <div class="stat-label">Consultancy Experience</div>
+      </div>
+    </div>
+    <p style="color:var(--gray); font-size:0.93rem; line-height:1.7;">
+      Conducted over 1,500 soil investigations for structures across Kerala and Tamil Nadu - including high-rise apartments, office buildings, transmission towers, overhead water tanks, road and railway bridges, and hydro-electric projects - serving both Government and private agencies. Key clients include VSSC/ISRO (Veli, Valiyamala & Mahendragiri), IIST, ISER-Trivandrum, KSEB, KSHB, KPHCC, KWA, CPWD, Indian Navy, Indian Army (Garrison Engineers), and leading private builders such as M/s Skyline Foundation Structures, M/s Condor Builders, and M/s Artech Realtors.
+    </p>
+  </div>
+
+  <!-- PUBLICATIONS - COLLAPSIBLE -->
+  <div class="bio-section">
+    <div class="bio-section-title collapsible-header" onclick="toggleSection('pubs')">
+      <span><i class="fas fa-book-open"></i> Research Publications</span>
+      <i class="fas fa-chevron-down toggle-icon" id="pubs-icon"></i>
+    </div>
+    <div class="collapsible-body" id="pubs-body">
+
+      <p style="color:var(--gray);font-size:0.88rem;margin-bottom:1rem;"><strong>International Journals</strong></p>
+      <ul class="pub-list">
+        <li><span class="pub-num">1</span>Pranesh, M.R. & Johnson, A.S. (1995) 'Submarine pipeline routing software', <em>Computers and Structures Jl.</em>, Vol. 57, No. 2, p.233-252.</li>
+        <li><span class="pub-num">2</span>Sivakumar, V., Doran, I.G., Graham, J. and Johnson, A.S. (2001) 'The effect of anisotropic elasticity on the yielding characteristics of overconsolidated natural clay', <em>Canadian Geotechnical Jl</em>, 38, No. 1, p125-137.</li>
+        <li><span class="pub-num">3</span>Doran, I.G., Sivakumar, V., Graham, J. and Johnson, A.S. (2000) 'Estimation of in-situ stresses using anisotropic elasticity and suction measurements', <em>Geotechnique Jl.</em>, 50, No. 2, 189-196.</li>
+        <li><span class="pub-num">4</span>Johnson, A.S. & Anusha R. (2015) 'Chemical and Geotechnical Properties of Termite Mound and Adjacent Soils in South India', <em>Intl Jl in Geotechnical Engineering</em>, Vol. 17, p.233-252.</li>
+        <li><span class="pub-num">5</span>Kavitha Suresh, Ashik Afsal A R, et al. and Johnson, A.S. (2023) 'Wood ash as stabilizer for pavement subgrade', <em>Materials Today</em>, 2023 (Accepted).</li>
+      </ul>
+
+      <p style="color:var(--gray);font-size:0.88rem;margin:1.2rem 0 1rem;"><strong>International Conferences (selected)</strong></p>
+      <ul class="pub-list">
+        <li><span class="pub-num">1</span>Pranesh & Johnson (1994) 'Submarine pipeline sea-floor-obstruction interaction', Intl. Conf. on Hydraulic Research, Singapore.</li>
+        <li><span class="pub-num">2</span>Doran, Sivakumar, Johnson & Cummings (1998) 'Measurement and prediction of effective stress in the sample', 1st Intl. Conf. On Site Characterization, Atlanta.</li>
+        <li><span class="pub-num">3</span>Johnson & Unnikrishnan (2001) 'Pore water pressure equation for sampling using anisotropic elastic theory', Intl. Conf. on Civil Engineering, IISc Bangalore.</li>
+        <li><span class="pub-num">4</span>Reshma R, Johnson A.S. et al. (2008) 'Model and Prototype Testing of Well Rings as Foundation', IACMAG, Goa.</li>
+        <li><span class="pub-num">5</span>Jaya V & Johnson A.S. (2021) 'A Case Study on effect of Vibration from pile Driving on nearby buildings', DFI India Virtual Conference, Chennai.</li>
+      </ul>
+
+      <p style="color:var(--gray);font-size:0.85rem;margin-top:1rem;">
+        <i class="fas fa-info-circle" style="color:var(--blue);"></i>&nbsp; Total publications: <strong>52</strong> (5 International Journals + 15 International Conferences + 32 National Conferences). Full list available on request.
+      </p>
+    </div>
+  </div>
+
+  <!-- MEMBERSHIPS -->
+  <div class="bio-section">
+    <div class="bio-section-title">
+      <i class="fas fa-users"></i> Membership in Professional Bodies
+    </div>
+    <ul class="membership-list">
+      <li><i class="fas fa-circle"></i> Associate Member, Institution of Engineers (India)</li>
+      <li><i class="fas fa-circle"></i> Life Member, Indian Society of Technical Education</li>
+      <li><i class="fas fa-circle"></i> Life Member, Indian Geotechnical Society</li>
+      <li><i class="fas fa-circle"></i> Life Member, Institute of Urban Transport (India)</li>
+      <li><i class="fas fa-circle"></i> Life Member, Indian Society for Rock Mechanics and Tunnelling Technology</li>
+      <li><i class="fas fa-circle"></i> Life Member, Indian Water Resources Society</li>
+      <li><i class="fas fa-circle"></i> Life Member, Indian Society of Hydraulics</li>
+    </ul>
+  </div>
+
+  <!-- CONTACT / CTA -->
+  <div class="bio-section">
+    <div class="contact-card">
+      <div>
+        <h4>Get in Touch</h4>
+        <div class="contact-detail"><i class="fas fa-phone"></i> <a href="tel:+919447411568">+91-9447411568</a></div>
+        <div class="contact-detail"><i class="fas fa-envelope"></i> <a href="mailto:arveesujil@yahoo.co.uk">arveesujil@yahoo.co.uk</a></div>
+        <div class="contact-detail"><i class="fas fa-map-marker-alt"></i> M2, Jawahar Nagar, Kawdiar PO, Thiruvananthapuram 695003</div>
+      </div>
+      <a href="index.html#contact" class="download-btn">
+        <i class="fas fa-paper-plane"></i> Book a Consultation
+      </a>
+    </div>
+  </div>
+
+</div><!-- /bio-content -->
+
+<footer>
+  © 2026 Trivandrum Geotechnical Testing and Solutions &nbsp;·&nbsp; tgts.in
+</footer>
+
+<script>
+  function toggleSection(id) {
+    const body = document.getElementById(id + '-body');
+    const icon = document.getElementById(id + '-icon');
+    const header = body.previousElementSibling;
+    body.classList.toggle('open');
+    icon.classList.toggle('rotate');
+    header.classList.toggle('open');
+    if (icon.classList.contains('rotate')) {
+      icon.style.transform = 'rotate(180deg)';
+    } else {
+      icon.style.transform = 'rotate(0deg)';
+    }
+  }
+</script>
+
+</body>
+</html>
