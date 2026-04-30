@@ -299,14 +299,16 @@
       display: none;
       flex-direction: column;
       width: 100%;
-      position: absolute;
-      top: 100%;
+      position: fixed;
+      top: 90px;
       left: 0;
       right: 0;
       background: var(--white);
       border-top: 1px solid var(--light-blue);
       box-shadow: 0 18px 30px rgba(10,79,163,0.12);
       z-index: 1000;
+      max-height: calc(100vh - 90px);
+      overflow-y: auto;
     }
 
     .mobile-menu.is-open {
