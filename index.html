@@ -279,6 +279,9 @@
       display: none;
       flex-direction: column;
       gap: 4px;
+      padding: 0;
+      border: 0;
+      background: transparent;
       cursor: pointer;
       position: relative;
       z-index: 1001;
@@ -295,8 +298,19 @@
     .mobile-menu {
       display: none;
       flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
       background: var(--white);
       border-top: 1px solid var(--light-blue);
+      box-shadow: 0 18px 30px rgba(10,79,163,0.12);
+      z-index: 1000;
+    }
+
+    .mobile-menu.is-open {
+      display: flex;
     }
 
     .mobile-menu a {
@@ -2187,11 +2201,11 @@ footer {
     </nav>
 
     <!-- Hamburger -->
-    <div class="hamburger" onclick="toggleMenu()">
+    <button class="hamburger" type="button" aria-label="Toggle navigation menu" aria-controls="mobileMenu" aria-expanded="false" onclick="toggleMenu()">
       <span></span>
       <span></span>
       <span></span>
-    </div>
+    </button>
   </div>
 
   <!-- Mobile Menu -->
@@ -2491,15 +2505,17 @@ footer {
 
 <section id="gallery">
   <div class="container">
-    <h3>Laboratory & Work Area</h3>
     <div style="text-align:center; margin:0 0 1.5rem;">
-      <a href="gallery.html" class="hero-btn hero-btn-primary" style="display:inline-flex;">Open Full Gallery</a>
+      <h3 style="margin-bottom:.4rem;">Laboratory &amp; Work Area</h3>
     </div>
     <div class="gallery-grid">
       <img src="assets/site/site1.jpeg" alt="Laboratory Equipment">
       <img src="assets/site/site2.jpeg" alt="Soil Testing">
       <img src="assets/site/lab1.jpeg" alt="Lab Analysis">
       <img src="assets/site/lab2.jpeg" alt="Mixing Equipment">
+    </div>
+    <div style="text-align:center; margin-top:1.5rem;">
+      <a href="gallery.html" style="display:inline-block; color:var(--blue); font-weight:600; text-decoration:none;">Open Full Gallery</a>
     </div>
   </div>
 </section>
@@ -2701,7 +2717,13 @@ footer {
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   function toggleMenu() {
     const menu = document.getElementById("mobileMenu");
-    menu.style.display = menu.style.display === "flex" ? "none" : "flex";
+    if (!menu) return;
+
+    const isOpen = menu.classList.toggle("is-open");
+    const hamburger = document.querySelector(".hamburger");
+    if (hamburger) {
+      hamburger.setAttribute("aria-expanded", String(isOpen));
+    }
   }
 
   // ===== CURSOR FOLLOWER (Desktop) =====
