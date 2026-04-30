@@ -199,7 +199,6 @@
       background: var(--white);
       border-bottom: 2px solid var(--light-blue);
       padding: 1rem;
-      position: relative;
     }
 
     .nav {
@@ -300,10 +299,10 @@
     .mobile-menu {
       display: none;
       flex-direction: column;
-      width: 100vw;
+      width: 100%;
       position: absolute;
       top: 100%;
-      left: -1rem;
+      left: 0;
       right: 0;
       background: var(--white);
       border-top: 1px solid var(--light-blue);
@@ -2505,7 +2504,7 @@ footer {
   </div>
 </section>
 
-<section id="gallery">
+<section id="gallery" style="padding-bottom: 2rem;">
   <div class="container">
     <div style="text-align:center; margin:0 0 1.5rem;">
       <h3 style="margin-bottom:.4rem;">Laboratory &amp; Work Area</h3>
@@ -2516,7 +2515,7 @@ footer {
       <img src="assets/site/lab1.jpeg" alt="Lab Analysis">
       <img src="assets/site/lab2.jpeg" alt="Mixing Equipment">
     </div>
-    <div style="text-align:center; margin-top:1.5rem;">
+    <div style="text-align:center; margin-top:1.5rem; padding-bottom:0;">
       <a href="gallery.html" style="display:inline-block; color:var(--blue); font-weight:600; text-decoration:none;">Open Full Gallery</a>
     </div>
   </div>
