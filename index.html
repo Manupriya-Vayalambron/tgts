@@ -199,6 +199,7 @@
       background: var(--white);
       border-bottom: 2px solid var(--light-blue);
       padding: 1rem;
+      position: relative;
     }
 
     .nav {
@@ -207,6 +208,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      position: relative;
     }
 
     .logo-container {
@@ -298,17 +300,15 @@
     .mobile-menu {
       display: none;
       flex-direction: column;
-      width: 100%;
-      position: fixed;
-      top: 90px;
-      left: 0;
+      width: 100vw;
+      position: absolute;
+      top: 100%;
+      left: -1rem;
       right: 0;
       background: var(--white);
       border-top: 1px solid var(--light-blue);
       box-shadow: 0 18px 30px rgba(10,79,163,0.12);
-      z-index: 1000;
-      max-height: calc(100vh - 90px);
-      overflow-y: auto;
+      z-index: 999;
     }
 
     .mobile-menu.is-open {
