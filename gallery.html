@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery | TGTS</title>
+  <meta name="description" content="A visual gallery of soil testing and laboratory work at TGTS.">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --blue:#0a4fa3;
+      --ink:#17212b;
+      --muted:#5a6775;
+      --line:#d9e7fb;
+      --bg:#f6f9ff;
+      --white:#ffffff;
+    }
+    * { box-sizing:border-box; margin:0; padding:0; }
+    html { scroll-behavior:smooth; }
+    body {
+      font-family:'Inter',sans-serif;
+      color:var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(15,105,207,.10), transparent 28%),
+        radial-gradient(circle at 85% 10%, rgba(10,79,163,.10), transparent 22%),
+        var(--bg);
+      line-height:1.6;
+    }
+    header {
+      position:sticky; top:0; z-index:100;
+      background:rgba(255,255,255,.92);
+      backdrop-filter:blur(10px);
+      border-bottom:1px solid var(--line);
+    }
+    .header-inner {
+      max-width:1180px;
+      margin:0 auto;
+      padding:1rem 1.5rem;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+    }
+    .back-btn {
+      display:inline-flex;
+      align-items:center;
+      gap:.55rem;
+      color:var(--blue);
+      text-decoration:none;
+      font-weight:700;
+      transition:transform .2s ease, opacity .2s ease;
+    }
+    .back-btn:hover { transform:translateX(-4px); opacity:.92; }
+    .page-title {
+      max-width:1180px;
+      margin:0 auto;
+      padding:2rem 1.5rem 1rem;
+    }
+    .page-title h1 {
+      font-size:1.9rem;
+      line-height:1.15;
+      color:var(--blue);
+      margin-bottom:.4rem;
+    }
+    .gallery-wrap { max-width:1180px; margin:0 auto; padding:0 1.5rem 3.5rem; }
+    .gallery-grid { display:grid; grid-template-columns:repeat(2, minmax(0, 1fr)); gap:1rem; }
+    .gallery-card {
+      background:var(--white);
+      border:1px solid var(--line);
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 24px rgba(18,35,61,.06);
+      transition:transform .2s ease, box-shadow .2s ease;
+    }
+    .gallery-card:hover { transform:translateY(-4px); box-shadow:0 16px 34px rgba(18,35,61,.12); }
+    .gallery-card img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; background:#eef4fc; }
+    .caption { padding:1rem 1.05rem 1.1rem; }
+    .caption h3 { font-size:1rem; margin-bottom:.25rem; color:var(--ink); }
+    .caption p { font-size:.9rem; color:var(--muted); }
+    footer { text-align:center; color:var(--muted); padding:1.4rem 1rem 2rem; font-size:.9rem; }
+    @media (max-width: 900px) {
+      .gallery-grid { grid-template-columns:1fr; }
+    }
+    @media (max-width: 600px) {
+      .header-inner, .page-title, .gallery-wrap { padding-left:1rem; padding-right:1rem; }
+      .gallery-card { border-radius:20px; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back to Home</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-title">
+      <h1>Gallery</h1>
+    </section>
+
+    <section class="gallery-wrap">
+      <div class="gallery-grid">
+        <article class="gallery-card">
+          <img src="assets/gallery/hydrometeranalysis.jpeg" alt="Hydrometer analysis setup">
+          <div class="caption">
+            <h3>Hydrometer Analysis</h3>
+            <p>Sample analysis setup used for fine-grained soil testing and grading evaluation.</p>
+          </div>
+        </article>
+        <article class="gallery-card">
+          <img src="assets/gallery/liquidlimit.jpeg" alt="Liquid limit test setup">
+          <div class="caption">
+            <h3>Liquid Limit Test</h3>
+            <p>Laboratory test station used to determine the consistency limits of soil samples.</p>
+          </div>
+        </article>
+        <article class="gallery-card">
+          <img src="assets/gallery/specificgravitytest.jpeg" alt="Specific gravity test equipment">
+          <div class="caption">
+            <h3>Specific Gravity Test</h3>
+            <p>Equipment and containers arranged for specific gravity measurement in the lab.</p>
+          </div>
+        </article>
+        <article class="gallery-card">
+          <img src="assets/gallery/watercontentanalysis.jpeg" alt="Water content analysis setup">
+          <div class="caption">
+            <h3>Water Content Analysis</h3>
+            <p>Testing arrangement for moisture content determination on soil samples.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+</body>
+</html>

@@ -35,7 +35,7 @@
     .result-count { font-size:.85rem; color:var(--gray); white-space:nowrap; }
     .table-wrap { width:100%; overflow-x:auto; -webkit-overflow-scrolling:touch; border:1px solid var(--light-blue); border-radius:10px; }
     table { width:100%; min-width:760px; border-collapse:collapse; font-size:.88rem; }
-    thead th { background:var(--blue); color:white; padding:.75rem 1rem; text-align:left; font-weight:600; font-size:.8rem; position:sticky; top:72px; z-index:5; }
+    thead th { background:var(--blue); color:white; padding:.75rem 1rem; text-align:left; font-weight:600; font-size:.8rem; }
     thead th:first-child { width:60px; text-align:center; }
     tbody tr { border-bottom:1px solid var(--light-blue); transition:background .15s; }
     tbody tr:hover { background:#f4f9ff; }
@@ -63,7 +63,7 @@
 </section>
 
 <div class="summary-bar">
-  <div class="summary-stat"><div class="num">123</div><div class="lbl">Projects Listed</div></div>
+  <div class="summary-stat"><div class="num">121</div><div class="lbl">Projects Listed</div></div>
   <div class="summary-stat"><div class="num">Jun 2024 – Mar 2025</div><div class="lbl">Period</div></div>
   <div class="summary-stat"><div class="num">Kerala &amp; Tamil Nadu</div><div class="lbl">Coverage</div></div>
 </div>
@@ -71,7 +71,7 @@
 <div class="content">
   <div class="filter-bar">
     <input class="search-box" type="text" id="searchInput" placeholder="Search project or client name…" oninput="filterTable()">
-    <span class="result-count" id="resultCount">123 projects</span>
+    <span class="result-count" id="resultCount">121 projects</span>
   </div>
 
   <div class="table-wrap">
@@ -86,9 +86,8 @@
     <tbody id="tableBody">
       <tr><td>1</td><td>3 Storey Residential Building at Geetanjali Lane, Karyam, Sreekaryam, Tvpm</td><td class="client-name">Dr. Regi Kumar V</td></tr>
       <tr><td>2</td><td>2 Storey Residential Building at Vettikonam, Vazhayila, Tvpm</td><td class="client-name">Nelson Enclave, Vazhayila, Tvpm</td></tr>
-      <tr><td>3</td><td>2 Storey Working Women's Hostel Building at Vanchikkavala, Cheruthoni, Idukki</td><td class="client-name">The Executive Engineer, KSEB, Idukki Division</td></tr>
-      <tr><td>4</td><td>Overhead Tank at Chackai, Tvpm</td><td class="client-name">Mr. Vineesh, Chackai, Tvpm</td></tr>
-      <tr><td>5</td><td>Three Storey Commercial Building at Anthalavattam, Chirayinkeezhu, Tvpm</td><td class="client-name">Mr. Aneesh, Anthalavattam</td></tr>
+      <tr><td>3</td><td>Overhead Tank at Chackai, Tvpm</td><td class="client-name">Mr. Vineesh, Chackai, Tvpm</td></tr>
+      <tr><td>4</td><td>Three Storey Commercial Building at Anthalavattam, Chirayinkeezhu, Tvpm</td><td class="client-name">Mr. Aneesh, Anthalavattam</td></tr>
       <tr><td>6</td><td>2 Storey Residential Building at Neendakara, Kollam</td><td class="client-name">Mr. Vinod Mohan M.C, Neendakara</td></tr>
       <tr><td>7</td><td>2 Storey Residential Building at Karikkakkom, Akkulam, Tvpm</td><td class="client-name">Mr. Kiran S Nair, Karikkakkom</td></tr>
       <tr><td>8</td><td>4 Storey Commercial Building at Chackai, Tvpm</td><td class="client-name">Mr. Prabhash S R, Chackai</td></tr>
@@ -178,7 +177,6 @@
       <tr><td>92</td><td>3 Storey Commercial Building at Karikkakom, Anayara, Tvpm</td><td class="client-name">Mr. Manosh G</td></tr>
       <tr><td>93</td><td>19th Storey Hostel Building at Uday Palace Convention Centre, Kowdiar, Tvpm</td><td class="client-name">Mr. Mohan Nair</td></tr>
       <tr><td>94</td><td>8M High Indoor Steel Structure at Arasumoodu, Monvila, Tvpm</td><td class="client-name">M/s. Flodestat Athletic Pvt Ltd</td></tr>
-      <tr><td>95</td><td>8M High Steel Structure Plant Shed at Thangasserry, Kollam</td><td class="client-name">Sanitary Waste Destroyer Plant, Kollam Municipal Corporation</td></tr>
       <tr><td>96</td><td>Petrol Storage Tank Facility at Tholicode, Vithura, Tvpm</td><td class="client-name">Mr. A.M. Rajesh</td></tr>
       <tr><td>97</td><td>3 Storey Commercial Building at Kavalkinarau, Nagercoil, Kanyakumari District, Tamil Nadu</td><td class="client-name">Mr. Ramraj</td></tr>
       <tr><td>98</td><td>3 Storey Residential Building at Sreekantewaram, Tvpm</td><td class="client-name">Smt. Bindu Gopal</td></tr>
@@ -216,6 +214,14 @@
 <footer>© 2026 Trivandrum Geotechnical Testing and Solutions &nbsp;·&nbsp; tgts.in</footer>
 
 <script>
+function renumberRows() {
+  const rows = document.querySelectorAll('#tableBody tr:not(#noResults)');
+  rows.forEach((row, index) => {
+    const firstCell = row.querySelector('td');
+    if (firstCell) firstCell.textContent = index + 1;
+  });
+}
+
 function filterTable() {
   const q = document.getElementById('searchInput').value.toLowerCase();
   const rows = document.querySelectorAll('#tableBody tr:not(#noResults)');
@@ -228,6 +234,8 @@ function filterTable() {
   document.getElementById('resultCount').textContent = visible + ' project' + (visible !== 1 ? 's' : '');
   document.getElementById('noResults').style.display = visible === 0 ? '' : 'none';
 }
+
+renumberRows();
 </script>
 </body>
 </html>
