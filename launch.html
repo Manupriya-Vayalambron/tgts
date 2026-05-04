@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TGTS Official Launch</title>
+  <meta name="description" content="Official website launch page for Trivandrum Geotechnical Testing and Solutions.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Manrope:wght@400;600;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --midnight: #0d1d34;
+      --navy: #12345f;
+      --royal: #0a4fa3;
+      --gold: #c9a45c;
+      --champagne: #f2e5cd;
+      --mist: #e9f1fd;
+      --white: #ffffff;
+      --shadow: rgba(6, 20, 44, 0.24);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: 'Manrope', sans-serif;
+      color: var(--white);
+      background:
+        radial-gradient(circle at 18% 16%, rgba(201, 164, 92, 0.16), transparent 38%),
+        radial-gradient(circle at 90% 10%, rgba(15, 81, 167, 0.18), transparent 40%),
+        linear-gradient(155deg, #0a172d 0%, var(--midnight) 45%, #112f59 100%);
+      overflow-x: hidden;
+      display: grid;
+      place-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .texture {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(120deg, transparent 0%, rgba(242, 229, 205, 0.05) 35%, transparent 70%),
+        repeating-linear-gradient(45deg, transparent 0, transparent 16px, rgba(255, 255, 255, 0.012) 16px, rgba(255, 255, 255, 0.012) 17px);
+    }
+
+    .launch-card {
+      width: min(760px, 100%);
+      position: relative;
+      border: 1px solid rgba(242, 229, 205, 0.26);
+      border-radius: 24px;
+      padding: 2.4rem 1.4rem 2.2rem;
+      background: linear-gradient(180deg, rgba(10, 29, 57, 0.95), rgba(12, 44, 88, 0.94));
+      box-shadow: 0 20px 45px var(--shadow);
+      backdrop-filter: blur(2px);
+      animation: fadeUp 0.8s ease-out both;
+    }
+
+    .crest {
+      width: 110px;
+      height: 110px;
+      margin: 0 auto 1rem;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, #f6fbff, #d7e7ff 70%, #bdd3f6);
+      border: 2px solid rgba(255, 255, 255, 0.45);
+      display: grid;
+      place-items: center;
+      box-shadow: 0 8px 24px rgba(13, 60, 128, 0.26);
+    }
+
+    .crest img {
+      width: 76%;
+      height: 76%;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(21%) sepia(88%) saturate(1824%) hue-rotate(201deg) brightness(91%) contrast(96%);
+    }
+
+    .tag {
+      text-align: center;
+      font-size: 0.8rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--champagne);
+      margin-bottom: 0.9rem;
+    }
+
+    h1 {
+      font-family: 'Cinzel', serif;
+      text-align: center;
+      font-size: clamp(1.8rem, 4.6vw, 3.05rem);
+      line-height: 1.25;
+      color: var(--mist);
+      text-wrap: balance;
+      margin-bottom: 0.85rem;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 0.65s ease-out 0.2s forwards;
+    }
+
+    .subtitle {
+      max-width: 580px;
+      margin: 0 auto;
+      text-align: center;
+      color: #c4dbff;
+      font-size: clamp(0.94rem, 2.4vw, 1.08rem);
+      line-height: 1.68;
+      opacity: 0;
+      transform: translateY(12px);
+      animation: rise 0.65s ease-out 0.3s forwards;
+    }
+
+    .divider {
+      width: 120px;
+      height: 2px;
+      margin: 1.4rem auto 1.2rem;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out 0.4s forwards;
+    }
+
+    .ribbon-wrap {
+      position: relative;
+      width: min(480px, 94%);
+      height: 86px;
+      margin: 0 auto 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: rise 0.65s ease-out 0.45s forwards;
+    }
+
+    .ribbon {
+      position: absolute;
+      top: 37px;
+      width: calc(50% - 34px);
+      height: 12px;
+      background: linear-gradient(90deg, #eacb8c 0%, #cda25b 45%, #b78845 100%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), inset 0 -1px 0 rgba(102, 65, 15, 0.2);
+      transition: transform 0.7s ease, opacity 0.55s ease;
+    }
+
+    .ribbon.left {
+      left: 0;
+      border-radius: 8px 0 0 8px;
+      transform-origin: right center;
+    }
+
+    .ribbon.right {
+      right: 0;
+      border-radius: 0 8px 8px 0;
+      transform-origin: left center;
+    }
+
+    .bow {
+      position: relative;
+      width: 86px;
+      height: 72px;
+      z-index: 2;
+      transition: transform 0.65s ease, opacity 0.4s ease;
+    }
+
+    .loop {
+      position: absolute;
+      top: 12px;
+      width: 40px;
+      height: 32px;
+      background: linear-gradient(145deg, #f2d7a4, #bf904b);
+      border-radius: 62% 38% 56% 44%;
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.45), 0 2px 6px rgba(95, 62, 22, 0.18);
+    }
+
+    .loop.left {
+      left: 4px;
+      transform: rotate(18deg);
+    }
+
+    .loop.right {
+      right: 4px;
+      transform: rotate(-18deg) scaleX(-1);
+    }
+
+    .knot {
+      position: absolute;
+      top: 20px;
+      left: 50%;
+      width: 20px;
+      height: 22px;
+      transform: translateX(-50%);
+      border-radius: 10px;
+      background: linear-gradient(160deg, #ffe6b8, #b98542);
+      box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2), 0 2px 5px rgba(90, 58, 18, 0.2);
+    }
+
+    .knot::before {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 2px;
+      bottom: 2px;
+      width: 2px;
+      transform: translateX(-50%);
+      background: rgba(104, 63, 14, 0.35);
+      border-radius: 2px;
+    }
+
+    .tail {
+      position: absolute;
+      top: 40px;
+      width: 14px;
+      height: 30px;
+      background: linear-gradient(180deg, #efd3a0, #b78441);
+      clip-path: polygon(0 0, 100% 0, 88% 74%, 50% 100%, 12% 74%);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.35);
+    }
+
+    .tail.left {
+      left: 27px;
+      transform: rotate(6deg);
+    }
+
+    .tail.right {
+      right: 27px;
+      transform: rotate(-6deg);
+    }
+
+    .launch-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      min-height: 54px;
+      padding: 0.85rem 1.9rem;
+      border: none;
+      border-radius: 999px;
+      font-family: 'Manrope', sans-serif;
+      font-size: 1.01rem;
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      color: var(--midnight);
+      background: linear-gradient(120deg, var(--champagne), var(--gold));
+      cursor: pointer;
+      box-shadow: 0 12px 30px rgba(217, 179, 107, 0.32);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .launch-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 16px 38px rgba(217, 179, 107, 0.42);
+    }
+
+    .launch-btn:active {
+      transform: translateY(0);
+    }
+
+    .actions {
+      display: flex;
+      justify-content: center;
+      opacity: 0;
+      animation: rise 0.7s ease-out 0.55s forwards;
+    }
+
+    .note {
+      text-align: center;
+      margin-top: 0.9rem;
+      color: #b8d2f5;
+      font-size: 0.86rem;
+      opacity: 0;
+      animation: fadeIn 0.6s ease-out 0.68s forwards;
+    }
+
+    .status {
+      text-align: center;
+      min-height: 1.2rem;
+      margin-top: 0.75rem;
+      font-size: 0.84rem;
+      color: var(--champagne);
+    }
+
+    .cutting .ribbon.left {
+      transform: translateX(-22px) rotate(-5deg);
+      opacity: 0.42;
+    }
+
+    .cutting .ribbon.right {
+      transform: translateX(22px) rotate(5deg);
+      opacity: 0.42;
+    }
+
+    .cutting .bow {
+      transform: scale(0.8) translateY(-2px);
+      opacity: 0.2;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes rise {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @media (max-width: 540px) {
+      .launch-card {
+        padding: 2rem 1rem 1.5rem;
+        border-radius: 18px;
+      }
+
+      .crest {
+        width: 92px;
+        height: 92px;
+      }
+
+      .tag {
+        font-size: 0.74rem;
+      }
+
+      .ribbon-wrap {
+        height: 74px;
+      }
+
+      .ribbon {
+        top: 33px;
+        width: calc(50% - 28px);
+      }
+
+      .bow {
+        width: 68px;
+        height: 62px;
+      }
+
+      .loop {
+        width: 31px;
+        height: 25px;
+      }
+
+      .knot {
+        top: 19px;
+        width: 17px;
+        height: 18px;
+      }
+
+      .tail {
+        top: 35px;
+        width: 11px;
+        height: 23px;
+      }
+
+      .tail.left {
+        left: 21px;
+      }
+
+      .tail.right {
+        right: 21px;
+      }
+
+      .launch-btn {
+        width: 100%;
+      }
+
+      .actions {
+        padding: 0 0.4rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="texture" aria-hidden="true"></div>
+
+  <main class="launch-card" role="main" aria-labelledby="launch-title">
+    <div class="crest" aria-hidden="true">
+      <img src="assets/tgt-logo.png" alt="TGTS logo">
+    </div>
+    <h1 id="launch-title">TGTS.in Launch </h1>
+    <p class="subtitle">
+      Trivandrum Geotechnical Testing and Solutions now opens its official website for clients,
+      consultants, and project stakeholders.
+    </p>
+    <div class="divider" aria-hidden="true"></div>
+
+    <div class="ribbon-wrap" id="ribbonWrap" aria-hidden="true">
+      <span class="ribbon left"></span>
+      <span class="ribbon right"></span>
+      <span class="bow">
+        <span class="loop left"></span>
+        <span class="loop right"></span>
+        <span class="knot"></span>
+        <span class="tail left"></span>
+        <span class="tail right"></span>
+      </span>
+    </div>
+
+    <div class="actions">
+      <button class="launch-btn" id="launchButton" type="button" aria-label="Launch TGTS website now">
+        Cut Ribbon & Launch
+      </button>
+    </div>
+  </main>
+
+  <script>
+    (function () {
+      var launchButton = document.getElementById('launchButton');
+      var statusText = document.getElementById('statusText');
+      var ribbonWrap = document.getElementById('ribbonWrap');
+      var launched = false;
+
+      function setStatus(message) {
+        if (statusText) {
+          statusText.textContent = message;
+        }
+      }
+
+      function launchWebsite() {
+        if (launched) {
+          return;
+        }
+
+        launched = true;
+        launchButton.disabled = true;
+        ribbonWrap.classList.add('cutting');
+        setStatus('Ribbon cut. Redirecting to tgts.in...');
+
+        window.setTimeout(function () {
+          window.location.assign('https://tgts.in');
+        }, 900);
+      }
+
+      launchButton.addEventListener('click', launchWebsite);
+    })();
+  </script>
+</body>
+</html>
